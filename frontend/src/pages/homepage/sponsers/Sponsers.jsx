@@ -1,5 +1,7 @@
-import { SparklesCore } from '../../../components/aceternity/sparkles'
 import React from 'react'
+import { SparklesCore } from '../../../components/aceternity/sparkles'
+import { LampContainer } from '../../../components/aceternity/lamp'
+import {motion} from 'framer-motion'
 
 const Sponsers = () => {
     return (
@@ -9,13 +11,13 @@ const Sponsers = () => {
                     Aceternity
                 </h1>
                 <div className=" w-full text-center h-40 relative">
-                    {/* Gradients */}
+                    Gradients
                     <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
                     <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
                     <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
                     <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
 
-                    {/* Core component */}
+                    Core component
                     <SparklesCore
                         background="transparent"
                         minSize={0.4}
@@ -25,10 +27,12 @@ const Sponsers = () => {
                         particleColor="#FFFFFF"
                     />
 
-                    {/* Radial Gradient to prevent sharp edges */}
+                    Radial Gradient to prevent sharp edges
                     <div className="absolute inset-0 w-full h-full  [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
                 </div>
             </div>
+
+            
         </section>
     )
 }

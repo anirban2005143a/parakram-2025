@@ -3,8 +3,8 @@ import HeroSection from './heroSection/HeroSection'
 import Navbar from '../../components/navbar/Navbar'
 import MemorySection from './memories/MemorySection'
 import EventsCarousel from './gallery/EventsCarousel'
-import OurGoal from './ourGoal/OurGoal'
 import Sponsers from './sponsers/Sponsers'
+import SportsInParakram from './SportsInParakram/SportsInParakram'
 
 const Home = () => {
     return (
@@ -15,7 +15,7 @@ const Home = () => {
                 <HeroSection />
                 <EventsCarousel />
                 <MemorySection />
-                <OurGoal/>
+                <SportsInParakram/>
                 <Sponsers/>
             </div>
         </>

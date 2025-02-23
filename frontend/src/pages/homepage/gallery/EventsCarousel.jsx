@@ -32,7 +32,7 @@ const EventsCarousel = () => {
     
 
     return (
-        <div id='gallery' className=' pt-[200px] pb-20'>
+        <section id='events' className=' pt-[200px] pb-20'>
             <GalleryHeading />
             <div ref={circularGelleryRef} className=' h-[500px] relative overflow-visible ' >
                 <CircularGallery bend={4} textColor="#ffffff" borderRadius={0.05} />
@@ -85,7 +85,7 @@ const EventsCarousel = () => {
                 </PinContainer>
             </div> */}
 
-        </div>
+        </section>
     );
 };
 

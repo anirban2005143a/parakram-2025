@@ -369,15 +369,20 @@ class App {
   onTouchDown(e) {
     this.isDown = true;
     this.scroll.position = this.scroll.current;
-    this.start = e.touches ? e.touches[0].clientX*0.01 : e.clientX*0.01;
+    this.start = e.touches ? e.touches[0].clientX : e.clientX;
   }
+
   onTouchMove(e) {
     if (!this.isDown) return;
-    const x = e.touches ? e.touches[0].clientX*0.01 : e.clientX*0.01;
-    const distance = (this.start - x) * 0.0005;
-    this.scroll.target = (this.scroll.position + distance) * 0.001;
-    console.log("hbuhvbbv")
+    const x = e.touches ? e.touches[0].clientX : e.clientX;
+    const distance = (this.start - x) * 0.5; // Damping factor of 0.5
+    
+    // Minimum threshold to prevent small movements
+    if (Math.abs(distance) > 5) {
+      this.scroll.target = (this.scroll.position + distance);
+    }
   }
+
   onTouchUp() {
     this.isDown = false;
     this.onCheck();
@@ -478,3 +483,5 @@ export default function CircularGallery({
     <div className='w-full h-full overflow-hidden  cursor-grab active:cursor-grabbing flex justify-center items-center' ref={containerRef} />
   );
 }
+
+

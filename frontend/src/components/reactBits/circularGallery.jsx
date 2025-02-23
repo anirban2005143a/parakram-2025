@@ -375,7 +375,7 @@ class App {
   onTouchMove(e) {
     if (!this.isDown) return;
     const x = e.touches ? e.touches[0].clientX : e.clientX;
-    const distance = (this.start - x) * 0.5; // Damping factor of 0.5
+    const distance = (this.start - x) * 0.2; // Damping factor of 0.5
     
     // Minimum threshold to prevent small movements
     if (Math.abs(distance) > 5) {

@@ -387,10 +387,24 @@ class App {
     this.isDown = false;
     this.onCheck();
   }
-  onWheel() {
-    this.scroll.target += 2;
-    this.onCheckDebounce();
+  // onWheel() {
+  //   this.scroll.target += 2;
+  //   this.onCheckDebounce();
+  // }
+
+  onWheel(e) {
+    const delta = e.deltaY || e.deltaX;
+    const sensitivity = 0.05;
+    const normalizedDelta = delta * sensitivity;
+  
+    // Smoothly update the scroll target
+    const updateScroll = () => {
+      this.scroll.target += normalizedDelta;
+      this.onCheckDebounce();
+    };
+    requestAnimationFrame(updateScroll);
   }
+
   onCheck() {
     if (!this.medias || !this.medias[0]) return;
     const width = this.medias[0].width;

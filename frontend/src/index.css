@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-@plugin "tailwindcss-animate";
+/* @plugin "tailwindcss-animate"; */
 
-@custom-variant dark (&:is(.dark *));
+/* @custom-variant dark (&:is(.dark *)); */
 
 .great-vibes-regular {
     font-family: "Great Vibes", serif;
@@ -28,8 +28,14 @@
     font-style: normal;
 }
 
+/* .quintessential-regular {
+    font-family: "Quintessential", serif;
+    font-weight: 400;
+    font-style: normal;
+} */
+
 body {
- background-color:  black;
+    background-color: black;
 }
 
 ::-webkit-scrollbar {

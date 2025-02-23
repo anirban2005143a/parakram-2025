@@ -212,7 +212,6 @@ class Media {
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.src = this.image;
-    console.log(this.image)
     img.onload = () => {
       texture.image = img;
       this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
@@ -370,13 +369,14 @@ class App {
   onTouchDown(e) {
     this.isDown = true;
     this.scroll.position = this.scroll.current;
-    this.start = e.touches ? e.touches[0].clientX : e.clientX;
+    this.start = e.touches ? e.touches[0].clientX*0.01 : e.clientX*0.01;
   }
   onTouchMove(e) {
     if (!this.isDown) return;
-    const x = e.touches ? e.touches[0].clientX : e.clientX;
-    const distance = (this.start - x) * 0.05;
-    this.scroll.target = this.scroll.position + distance;
+    const x = e.touches ? e.touches[0].clientX*0.01 : e.clientX*0.01;
+    const distance = (this.start - x) * 0.0005;
+    this.scroll.target = (this.scroll.position + distance) * 0.001;
+    console.log("hbuhvbbv")
   }
   onTouchUp() {
     this.isDown = false;

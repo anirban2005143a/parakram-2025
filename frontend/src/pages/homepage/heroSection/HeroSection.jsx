@@ -1,10 +1,10 @@
 import React from 'react'
-import Slider from './heroSection/slider';
+import Slider from './slider';
 
 const HeroSection = () => {
     return (
         // <div id='landing-page-carousel' className=' h-screen  overflow-x-hidden items-center '>
-        <section id="heroSection" className={`relative w-full overflow-x-hidden p-2`} style={{ height: `${window.innerHeight - 50}px` }} data-carousel="slide">
+        <section id="heroSection" className={`relative w-full overflow-x-hidden translate-y-[60px] min-h-[400px] p-2`} style={{ height: `${window.innerHeight - 50}px` }} data-carousel="slide">
 
             {/* slider  */}
             <Slider/>

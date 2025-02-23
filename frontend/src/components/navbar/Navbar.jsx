@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
     return (
 
-        <nav className={`border-gray-200 h-[50px] overflow-visible z-50 relative w-full`} >
+        <nav className={`border-gray-200 h-[50px] overflow-visible z-50 fixed w-full`} >
             <div className=" relative md:flex  md:items-center md:justify-between mx-auto p-4">
                 <div className=' logo '>
                 </div>
@@ -12,7 +12,7 @@ const Navbar = () => {
                     className=" absolute end-6 top-2 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400  dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
                     <span className="sr-only">Open main menu</span>
                     <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
                     </svg>
                 </button>
                 <div className="hidden md:relative md:top-0 md:end-0 absolute top-10 end-6 w-[70%] md:block md:w-auto px-4" id="navbar-default">

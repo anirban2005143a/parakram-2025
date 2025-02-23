@@ -21,13 +21,13 @@ export const HeroParallax = ({
   const translateX = useSpring(useTransform(scrollYProgress, [0, 1], [0, 1000]), springConfig);
   const translateXReverse = useSpring(useTransform(scrollYProgress, [0, 1], [0, -1000]), springConfig);
   const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.2], [15, 0]), springConfig);
-  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.2], [0.2, 1]), springConfig);
+  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.3], [0.1, 1]), springConfig);
   const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.2], [20, 0]), springConfig);
-  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-700, 500]), springConfig);
+  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-700, 200]), springConfig);
   return (
     (<div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
+      className="h-auto py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
       <Header />
       <motion.div
         style={{
@@ -61,13 +61,11 @@ export const Header = () => {
   return (
     (<div
       className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> development studio
+      <h1 className="text-4xl md:text-6xl dark:text-white rye-regular" style={{lineHeight: window.innerWidth >= 768 ? '80px' : '50px' }}>
+      A Glimpse Into  <br /> Unforgettable Moments
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
+      <p className=" great-vibes-regular max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 text-white">
+      "Every moment tells a story, and we believe in capturing them just as they are—raw, real, and timeless. From fleeting smiles to heartfelt embraces, our memories hold the essence of life’s most cherished experiences. Relive your special moments through our lens and let them stay with you forever."
       </p>
     </div>)
   );

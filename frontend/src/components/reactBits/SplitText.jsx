@@ -65,18 +65,17 @@ const SplitText = ({
             const index = words
               .slice(0, wordIndex)
               .reduce((acc, w) => acc + w.length, 0) + letterIndex;
-
             return (
               <animated.span
                 key={index}
                 style={springs[index]}
-                className="inline-block transform transition-opacity will-change-transform"
+                className="inline-block transform transition-opacity will-change-transform sm:text-6xl text-5xl protest-revolution-regular text-white"
               >
-                {letter}
+                {letter === ' '? "&nbsp" : letter}
               </animated.span>
             );
           })}
-          <span style={{ display: 'inline-block', width: '0.3em' }}>&nbsp;</span>
+          <div style={{ display: 'inline-block', width: '20px' }}></div>
         </span>
       ))}
     </p>

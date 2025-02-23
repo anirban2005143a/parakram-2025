@@ -1,108 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import GalleryHeading from './GalleryHeading';
-import CircularGallery from '../../components/reactBits/circularGallery'
-import { PinContainer } from '../../components/aceternity/3dpin';
-import { HeroParallax } from '../../components/aceternity/parallax';
-import { Timeline } from '../../components/aceternity/timeline';
-import { SparklesCore } from '../../components/aceternity/sparkles';
+import CircularGallery from '../../../components/reactBits/circularGallery'
+import { PinContainer } from '../../../components/aceternity/3dpin';
+import { Timeline } from '../../../components/aceternity/timeline';
+import { SparklesCore } from '../../../components/aceternity/sparkles';
+import MemorySection from '../memories/MemorySection';
 
 const Introduction = () => {
 
-    const products = [
-        {
-            title: "Moonbeam",
-            link: "https://gomoonbeam.com",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
-        },
-        {
-            title: "Cursor",
-            link: "https://cursor.so",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/cursor.png",
-        },
-        {
-            title: "Rogue",
-            link: "https://userogue.com",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-        },
-
-        {
-            title: "Editorially",
-            link: "https://editorially.org",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/editorially.png",
-        },
-        {
-            title: "Editrix AI",
-            link: "https://editrix.ai",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/editrix.png",
-        },
-        {
-            title: "Pixel Perfect",
-            link: "https://app.pixelperfect.quest",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
-        },
-
-        {
-            title: "Algochurn",
-            link: "https://algochurn.com",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
-        },
-        {
-            title: "Aceternity UI",
-            link: "https://ui.aceternity.com",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
-        },
-        {
-            title: "Tailwind Master Kit",
-            link: "https://tailwindmasterkit.com",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
-        },
-        {
-            title: "SmartBridge",
-            link: "https://smartbridgetech.com",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
-        },
-        {
-            title: "Renderwork Studio",
-            link: "https://renderwork.studio",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
-        },
-
-        {
-            title: "Creme Digital",
-            link: "https://cremedigital.com",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
-        },
-        {
-            title: "Golden Bells Academy",
-            link: "https://goldenbellsacademy.com",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
-        },
-        {
-            title: "Invoker Labs",
-            link: "https://invoker.lol",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/invoker.png",
-        },
-        {
-            title: "E Free Invoice",
-            link: "https://efreeinvoice.com",
-            thumbnail:
-                "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
-        },
-    ];
 
     const data = [
         {
@@ -252,8 +157,38 @@ const Introduction = () => {
     return (
         <div id='gallery' className=' py-20'>
             <GalleryHeading />
-            <div className=' h-[600px] relative overflow-visible  my-10' >
+            <div className=' h-[500px] relative overflow-visible ' >
                 <CircularGallery bend={4} textColor="#ffffff" borderRadius={0.05} />
+
+                <div className="flex items-center justify-center my-10">
+                    <div className="relative group">
+                        <button
+                            className="relative inline-block p-px font-semibold leading-6 text-white bg-neutral-900 shadow-2xl cursor-pointer rounded-2xl shadow-emerald-900 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 hover:shadow-emerald-600"
+                        >
+                            <span
+                                className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500 via-cyan-500 to-sky-600 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                            ></span>
+                            <span className="relative z-10 block px-6 py-3 rounded-2xl bg-neutral-950">
+                                <div className="relative z-10 flex items-center space-x-3">
+                                    <span
+                                        className="transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-emerald-300"
+                                    > Explore Events</span >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        className="w-7 h-7 transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-emerald-300"
+                                    >
+                                        <path
+                                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
             <div className="h-[40rem] w-full flex items-center justify-center ">
                 <PinContainer
@@ -274,7 +209,7 @@ const Introduction = () => {
                 </PinContainer>
             </div>
 
-            <HeroParallax products={products} />;
+            <MemorySection />
 
 
             <div className="w-full">

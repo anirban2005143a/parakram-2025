@@ -96,10 +96,10 @@ const GalleryHeading = () => {
                 <div ref={lineTopRef} className="line w-full h-1 border-b-[1px] border-white "></div>
 
                 {/* Text Content */}
-                <div className="flex items-center space-x-4 px-4">
-                    <div ref={lettersLeftRef} className=" text-4xl font-extralight font-serif text-white">PARAKRAM</div>
-                    <div ref={ampersandRef} className=" text-6xl font-bold  font-serif text-white">&</div>
-                    <div ref={lettersRightRef} className=" text-4xl font-extralight font-serif text-white">2025</div>
+                <div className="flex md:flex-row flex-col justify-center items-center md:space-x-4 px-4">
+                    <div ref={lettersLeftRef} className=" md:text-4xl text-4xl font-extralight font-serif text-white nosifer-regular">Event </div>
+                    <div ref={ampersandRef} className=" md:text-6xl text-6xl font-extrabold  font-serif text-white px-2 ">!</div>
+                    <div ref={lettersRightRef} className=" md:text-4xl text-4xl font-extralight font-serif text-white nosifer-regular">Lineup</div>
                 </div>
 
                 {/* Bottom Line */}

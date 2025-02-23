@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from './slider';
+import Slider from './Slider';
 
 const HeroSection = () => {
     return (

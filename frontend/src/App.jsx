@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Home from './pages/homepage/Home'
-import Team from './pages/team/team'
+import Home from './pages/homepage/Home.jsx'
+import Team from './pages/team/team.jsx'
 
 const App = () => {
   return (

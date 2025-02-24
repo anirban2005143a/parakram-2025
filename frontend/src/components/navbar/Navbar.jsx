@@ -1,47 +1,71 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+"use client";
+import React, { useState } from "react";
+import { HoveredLink, Menu, MenuItem, ProductItem } from "../aceternity/Navbar-item.jsx";
+import { cn } from "../../lib/utils.js";
 
-const Navbar = () => {
-    return (
-
-        <nav className={`border-gray-200 h-[50px] overflow-visible z-50 fixed w-full`} >
-            <div className=" relative md:flex  md:items-center md:justify-between mx-auto p-4">
-                <div className=' logo '>
-                </div>
-                <button data-collapse-toggle="navbar-default" type="button"
-                    className=" absolute end-6 top-2 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400  dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                    <span className="sr-only">Open main menu</span>
-                    <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-                <div className="hidden md:relative md:top-0 md:end-0 absolute top-10 end-6 w-[70%] md:block md:w-auto px-4" id="navbar-default">
-                    <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-500 md:backdrop-blur-none backdrop-blur-sm rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent bg-[#0000007a] dark:border-gray-700">
-
-                        <li>
-                            <Link to="/" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/events' ? " text-blue-500 " : ""}`}>Events</Link>
-                        </li>
-                        <li>
-                            <Link to="/" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/marchandise' ? " text-blue-500 " : ""}`}>Marchandise</Link>
-                        </li>
-                        <li>
-                            <Link to="/" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/accomodation' ? " text-blue-500 " : ""}`}>Accomodation</Link>
-                        </li>
-                        <li>
-                            <Link to="/team" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/team' ? " text-blue-500 " : ""}`}>Team</Link>
-                        </li>
-                        <li>
-                            <Link to="/" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/about' ? " text-blue-500 " : ""}`}>About Us</Link>
-                        </li>
-                        <li>
-                            <Link to="/" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/sponsor' ? " text-blue-500 " : ""}`}>Sponsors</Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-    )
+export default function NavbarDemo() {
+  return (
+    <div className="relative w-full flex items-center justify-center m-3">
+      <Navbar className="top-2" />
+      <p className="text-black dark:text-white">
+        {/* The Navbar will show on top of the page */}
+      </p>
+    </div>
+  );
 }
 
-export default Navbar
+function Navbar({ className }) {
+  const [active, setActive] = useState(null);
+  return (
+    <div
+      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+    >
+      <Menu setActive={setActive}>
+        <MenuItem setActive={setActive} active={active} item="Services">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/web-dev">Web Development</HoveredLink>
+            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
+            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
+            <HoveredLink href="/branding">Branding</HoveredLink>
+          </div>
+        </MenuItem>
+        <MenuItem setActive={setActive} active={active} item="Products">
+          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+            <ProductItem
+              title="Algochurn"
+              href="https://algochurn.com"
+              src="https://assets.aceternity.com/demos/algochurn.webp"
+              description="Prepare for tech interviews like never before."
+            />
+            <ProductItem
+              title="Tailwind Master Kit"
+              href="https://tailwindmasterkit.com"
+              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+              description="Production ready Tailwind css components for your next project"
+            />
+            <ProductItem
+              title="Moonbeam"
+              href="https://gomoonbeam.com"
+              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+              description="Never write from scratch again. Go from idea to blog in minutes."
+            />
+            <ProductItem
+              title="Rogue"
+              href="https://userogue.com"
+              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+            />
+          </div>
+        </MenuItem>
+        <MenuItem setActive={setActive} active={active} item="Pricing">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/hobby">Hobby</HoveredLink>
+            <HoveredLink href="/individual">Individual</HoveredLink>
+            <HoveredLink href="/team">Team</HoveredLink>
+            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+          </div>
+        </MenuItem>
+      </Menu>
+    </div>
+  );
+}

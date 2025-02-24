@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
     return (
 
-        <nav className={`border-gray-200 h-[50px] overflow-visible z-50 fixed w-full`} >
+        <nav className={`border-gray-200 h-[50px] overflow-visible z-50 fixed w-full mb-8`} >
             <div className=" relative md:flex  md:items-center md:justify-between mx-auto p-4">
                 <div className=' logo '>
                 </div>
@@ -22,7 +22,7 @@ const Navbar = () => {
                             <Link to="/events" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/events' ? " text-blue-500 " : ""}`}>Events</Link>
                         </li>
                         <li>
-                            <Link to="/" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/marchandise' ? " text-blue-500 " : ""}`}>Marchandise</Link>
+                            <Link to="/Merchandise" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/Merchandise' ? " text-blue-500 " : ""}`}>Marchandise</Link>
                         </li>
                         <li>
                             <Link to="/" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/accomodation' ? " text-blue-500 " : ""}`}>Accomodation</Link>

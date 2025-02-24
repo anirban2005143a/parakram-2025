@@ -1,6 +1,5 @@
 import React from "react";
 import { gsap } from "gsap";
-import './flowingMenu.css'
 
 function FlowingMenu({ items = [] }) {
   return (

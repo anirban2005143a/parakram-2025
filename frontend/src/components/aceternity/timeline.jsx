@@ -1,6 +1,9 @@
 
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import BlurText from "../reactBits/BlurText";
+import SplitText from "../reactBits/SplitText";
+import gsap from "gsap";
 
 export const Timeline = ({
   data
@@ -8,6 +11,7 @@ export const Timeline = ({
   const ref = useRef(null);
   const containerRef = useRef(null);
   const [height, setHeight] = useState(0);
+  const paragraphRef = useRef(null)
 
   useEffect(() => {
     if (ref.current) {
@@ -15,6 +19,20 @@ export const Timeline = ({
       setHeight(rect.height);
     }
   }, [ref]);
+
+  useEffect(() => {
+    gsap.fromTo(paragraphRef.current , {
+      x:-100,
+      opacity:0
+    },{
+      x:0,
+      opacity:1,
+      duration:2,
+      delay:1,
+      ease:"power3.out"
+    })
+  }, [paragraphRef.current])
+  
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -26,19 +44,32 @@ export const Timeline = ({
 
   return (
     (<div
-      className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
+      className="w-full font-sans md:px-10"
       ref={containerRef}>
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          Changelog from my journey
-        </h2>
+      <div className="max-w-7xl mx-auto pt-20 md:pb-0 pb-20  px-4 md:px-8 lg:px-10">
+        {/* <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+          Where Legends Rise – Join the Thrill of Sports Fest 2025!
+        </h2> */}
+        <SplitText
+          text="Where Legends Rise – Join the Thrill of PARAKRAM '25!"
+          className="text-sm font-semibold text-center "
+          delay={20}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing="easeOutCubic"
+          threshold={0.2}
+          fontStyle=' macondo-swash-caps-regular '
+          fontSize=' text-3xl '
+          SmFontSize=' sm:text-4xl '
+          rootMargin="-50px"
+        />
         <p
-          className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
-          a timeline of my journey.
+          ref={paragraphRef}
+          className="text-neutral-700 great-vibes-regular dark:text-neutral-300 text-lg md:text-xl  my-10">
+          Get ready to witness the ultimate showdown of skill, passion, and teamwork at [Your College Name] Sports Fest 2025! 🏅 From adrenaline-pumping races to intense team battles, this fest brings together athletes from all disciplines to compete, celebrate, and create unforgettable memories. Whether you're a fierce competitor or an enthusiastic supporter, join us in the spirit of sportsmanship and unity. Let the games begin! 🎉🔥
         </p>
       </div>
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 md:-translate-y-10">
         {data.map((item, index) => (
           <div key={index} className="flex justify-start pt-10 md:pt-40 md:gap-10">
             <div

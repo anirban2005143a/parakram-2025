@@ -1,11 +1,13 @@
-import React from 'react'
-import { Timeline } from '../../../components/aceternity/timeline';
-import img1 from '../../../assets/bg1.webp'
-import img2 from '../../../assets/bg2.jpg'
-import img3 from '../../../assets/bg3.jpg'
+import React, { useEffect } from 'react'
+import { Timeline } from '../../components/aceternity/timeline'
+import img1 from '../../assets/bg1.webp'
+import img2 from '../../assets/bg2.jpg'
+import img3 from '../../assets/bg3.jpg'
+import Navbar from '../../components/navbar/Navbar'
 
-const SportsInParakram = () => {
-    
+
+const Event = () => {
+
     const data = [
         {
             title: "Football",
@@ -527,16 +529,26 @@ const SportsInParakram = () => {
                 </div>
             ),
         },
-       
+
     ];
 
-  return (
-    <section id='SportsInParakram'>
-         <div className="w-full">
-                <Timeline data={data} />
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    return (
+        <div id='sports-in-parakram' className=' relative'>
+            <div className=" fixed top-0 left-0 w-screen h-screen z-0 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+            <Navbar />
+            <div className=' relative z-10 bg-transparent'>
+                <section id='SportsInParakram'>
+                    <div className="w-full">
+                        <Timeline data={data} />
+                    </div>
+                </section>
             </div>
-    </section>
-  )
+        </div>
+    )
 }
 
-export default SportsInParakram
+export default Event

@@ -73,7 +73,10 @@ const Content = () => {
                     animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
                     easing="easeOutCubic"
                     threshold={0.2}
+                    fontStyle='protest-revolution-regular'
                     rootMargin="-50px"
+                    fontSize=' text-4xl '
+                    SmFontSize=' sm:text-6xl'
                 // onLetterAnimationComplete={handleAnimationComplete}
                 />
                 <p ref={paragraphRef} className='great-vibes-regular text-gray-300 font-light text-xl pb-5'>
@@ -83,7 +86,7 @@ const Content = () => {
 
                 <div ref={buttonRef} className="flex items-center justify-start ">
                     <div className="relative group">
-                        <a href='#events'>
+                        <Link to='/events'>
                             <button
                                 className="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800   cursor-pointer rounded-xl   transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
                             >
@@ -113,7 +116,7 @@ const Content = () => {
                                     </div>
                                 </span>
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

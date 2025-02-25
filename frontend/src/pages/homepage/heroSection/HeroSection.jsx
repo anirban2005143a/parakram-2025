@@ -1,13 +1,13 @@
 import React from 'react'
 import Slider from './Slider';
 
-const HeroSection = () => {
+const HeroSection = ({setisLoaded}) => {
     return (
         // <div id='landing-page-carousel' className=' h-screen  overflow-x-hidden items-center '>
         <section id="heroSection" className={`relative w-full overflow-x-hidden translate-y-[60px] min-h-[400px] p-2`} style={{ height: `${window.innerHeight - 50}px` }} data-carousel="slide">
 
             {/* slider  */}
-            <Slider/>
+            <Slider setisLoaded={setisLoaded} />
             {/* bottom button  */}
             <div className="absolute z-30 flex -translate-x-1/2 bottom-10 left-1/2 space-x-3 rtl:space-x-reverse">
                 <button type="button" className="w-3 h-3 hover:bg-white bg-gray-400 cursor-pointer rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>

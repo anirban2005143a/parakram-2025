@@ -6,7 +6,8 @@ const Navbar = () => {
 
         <nav className={`border-gray-200 h-[50px] overflow-visible z-50 fixed w-full mb-8`} >
             <div className=" relative md:flex  md:items-center md:justify-between mx-auto p-4">
-                <div className=' logo '>
+                <div className=' logo text-white'>
+                    <Link to='/'>Home</Link>
                 </div>
                 <button data-collapse-toggle="navbar-default" type="button"
                     className=" absolute end-6 top-2 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400  dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">

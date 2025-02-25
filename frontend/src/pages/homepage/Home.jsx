@@ -2,9 +2,10 @@ import React from "react";
 import HeroSection from "./heroSection/HeroSection";
 import NavbarDemo from "../../components/navbar/Navbar1.jsx";
 import MemorySection from "./memories/MemorySection";
-import EventsCarousel from "./gallery/EventsCarousel";
+import EventsCarousel from "./EventGallery/EventsCarousel";
 import Sponsers from "./sponsers/Sponsers";
 import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <EventsCarousel />
         <MemorySection />
         <Sponsers />
+        <Footer/>
       </div>
     </>
   );

@@ -2,7 +2,7 @@
 import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 // import Image from "next/image";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const HeroParallax = ({
   products
@@ -61,11 +61,11 @@ export const Header = () => {
   return (
     (<div
       className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-4xl md:text-6xl dark:text-white rye-regular" style={{lineHeight: window.innerWidth >= 768 ? '80px' : '50px' }}>
-      A Glimpse Into  <br /> Unforgettable Moments
+      <h1 className="text-4xl md:text-6xl bg-gradient-to-r from-gray-300 to-gray-600 bg-clip-text text-transparent rye-regular" style={{ lineHeight: window.innerWidth >= 768 ? '80px' : '50px' }}>
+        A Glimpse Into  <br /> Unforgettable Moments
       </h1>
-      <p className=" great-vibes-regular max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 text-white">
-      "Every moment tells a story, and we believe in capturing them just as they are—raw, real, and timeless. From fleeting smiles to heartfelt embraces, our memories hold the essence of life’s most cherished experiences. Relive your special moments through our lens and let them stay with you forever."
+      <p className=" md:w-9/12 w-full text-sm md:text-base font-light mt-8 italic dark:text-neutral-200 text-white">
+        "Every moment tells a story, and we believe in capturing them just as they are—raw, real, and timeless. From fleeting smiles to heartfelt embraces, our memories hold the essence of life’s most cherished experiences. Relive your special moments through our lens and let them stay with you forever."
       </p>
     </div>)
   );
@@ -93,12 +93,12 @@ export const ProductCard = ({
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title} />
       </Link>
-      <div
-        className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2
+      {/* <div
+        className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div> */}
+      {/* <h2
         className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
-      </h2>
+      </h2> */}
     </motion.div>)
   );
 };

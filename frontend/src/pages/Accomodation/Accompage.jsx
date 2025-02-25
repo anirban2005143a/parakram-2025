@@ -8,9 +8,7 @@ function Accompage() {
   let Name = [];
   let url = ["111", "222", "3333", "3333", "333", "333"];
   // complete the url of but this pack
-  const handleAnimationComplete = () => {
-    console.log("vaibhav");
-  };
+
   Name[0] =
     "For those who want to stay in the IIT-ISM campus A registration fee of Rs. 1949/- (Non-Refundable)";
   Name[1] =
@@ -24,37 +22,29 @@ function Accompage() {
   Name[5] =
     "For those who want to stay in the IIT-ISM campus A registration fee of Rs. 399/- (Non-Refundable)";
   return (
-    <div id="homePage" className="overflow-x-hidden relative">
-      <div className="fixed -z-10 top-0 left-0 w-screen h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+    <div id="accomodation" className="overflow-x-hidden relative">
+      <div className="fixed z-0 top-0 left-0 w-screen h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
       <Navbar />
 
-      <div className="mt-9 h-5"></div>
-      <div className="mt-9 h-5"></div>
-      <div className="flex justify-center h-6 text-amber-100 sm:text-7xl xl:text-5xl mb-3">
-        <DecryptedText
-          text="Where Would You Like to Stay?"
-          speed={100}
-          maxIterations={15}
-          characters="!@#$%^&*()_+{}|"
-          className="revealed"
-          parentClassName="all-letters"
-          encryptedClassName="encrypted"
-        />
+      <div className=" relative z-10 pt-[80px]">
+        <div className="flex justify-center text-amber-100 sm:text-7xl xl:text-5xl  py-5">
+          <DecryptedText
+            text="Where Would You Like to Stay?"
+            speed={100}
+            maxIterations={15}
+            characters="!@#$%^&*()_+{}|"
+            className="revealed macondo-swash-caps-regular"
+            parentClassName="all-letters"
+            encryptedClassName="encrypted"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-10">
+          {Array.from({ length: 6 }, (_, i) => (
+            <Card key={i} i={i + 1} data={Name[i]} url={url[i]} />
+          ))}
+        </div>
       </div>
-      <div className="mt-9 h-5"></div>
-      <div className="mt-9 h-5"></div>
-
-      <div className="mt-9 h-5"></div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {Array.from({ length: 6 }, (_, i) => (
-          <Card key={i} i={i + 1} data={Name[i]} url={url[i]} />
-        ))}
-      </div>
-
-      <div className="mt-9 h-5"></div>
-      <div className="mt-9 h-5"></div>
-
       <FooterT />
     </div>
   );

@@ -8,9 +8,20 @@ import {
   Program,
   Texture,
 } from 'ogl';
-import img1 from '../../assets/bg1.webp'
-import img2 from '../../assets/bg2.jpg'
-import img3 from '../../assets/bg3.jpg'
+import footballImg from '/sports/football1.jpg'
+import cricketImg from '/sports/cricket1.jpg'
+import squashImg from '/sports/squash1.jpg'
+import powerliftingImg from '/sports/powerliftting1.jpg'
+import chessImg from '/sports/chess1.jpg'
+import tableTenisImg from '/sports/tableTenis1.jpg'
+import badmintonImg from '/sports/badminton1.jpg'
+import athleticsImg from '/sports/athletics1.jpg'
+import kabaddiImg from '/sports/kabaddi1.jpg'
+import basketBallImg from '/sports/basketBall1.jpg'
+import volleyBallImg from '/sports/volleyBall1.jpg'
+import hockeyImg from '/sports/hockey1.jpg'
+import tenisImg from '/sports/tenis1.jpg'
+
 
 function debounce(func, wait) {
   let timeout;
@@ -332,18 +343,19 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: img1, text: 'Waterfall' },
-      { image: img2, text: 'Bridge' },
-      { image: img3, text: 'Desk Setup' },
-      { image: img1, text: 'Strawberries' },
-      { image: img2, text: 'Deep Diving' },
-      { image: img3, text: 'Train Track' },
-      { image: img1, text: 'Blurry Lights' },
-      { image: img2, text: 'Santorini' },
-      { image: img3, text: 'New York' },
-      { image: img1, text: 'Good Boy' },
-      { image: img2, text: 'Coastline' },
-      { image: img3, text: "Palm Trees" }
+      { image: footballImg, text: 'Football' },
+      { image: chessImg, text: 'Chess' },
+      { image: squashImg, text: 'Squash' },
+      { image: tableTenisImg, text: 'Table Tenis' },
+      { image: badmintonImg, text: 'Badminton' },
+      { image: athleticsImg, text: 'Athletics' },
+      { image: kabaddiImg, text: 'Kabaddi' },
+      { image: basketBallImg, text: 'Basket Ball' },
+      { image: volleyBallImg, text: 'Volley Ball' },
+      { image: hockeyImg, text: 'Hockey' },
+      { image: powerliftingImg, text: 'Power Lifting' },
+      { image: tenisImg, text: "Tenis" },
+      { image: cricketImg, text: "Cricket" }
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);

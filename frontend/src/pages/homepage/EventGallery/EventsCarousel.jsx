@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import GalleryHeading from './GalleryHeading';
 import CircularGallery from '../../../components/reactBits/circularGallery'
-import { PinContainer } from '../../../components/aceternity/3dpin';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 gsap.registerPlugin(ScrollTrigger)
 
 const EventsCarousel = () => {
@@ -24,8 +23,8 @@ const EventsCarousel = () => {
             scrollTrigger: {
                 trigger: circularGelleryRef.current,
                 scroller: document.body,
-                start: "top 80%",
-                end: "top 40%",
+                start: "top 90%",
+                end: "top 65%",
                 scrub: 2,
             }
         })
@@ -35,6 +34,7 @@ const EventsCarousel = () => {
     return (
         <section id='events' className=' pt-[200px] pb-20'>
             <GalleryHeading />
+
             <div ref={circularGelleryRef} className=' h-[500px] relative overflow-visible ' >
                 <CircularGallery bend={4} textColor="#ffffff" borderRadius={0.05} />
             </div>

@@ -27,6 +27,10 @@ function MenuItem({ link, text, image }) {
   };
 
   const handleMouseEnter = (ev) => {
+    if (ev.type === 'touchstart') {
+      ev.preventDefault(); // Prevent default touch behavior
+    }
+    
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current)
       return;
     const rect = itemRef.current.getBoundingClientRect();
@@ -45,6 +49,11 @@ function MenuItem({ link, text, image }) {
   };
 
   const handleMouseLeave = (ev) => {
+
+    if (ev.type === 'touchend') {
+      ev.preventDefault(); // Prevent default touch behavior
+    }
+
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current)
       return;
     const rect = itemRef.current.getBoundingClientRect();
@@ -60,6 +69,7 @@ function MenuItem({ link, text, image }) {
       .to(marqueeRef.current, { y: edge === "top" ? "-101%" : "101%" })
       .to(marqueeInnerRef.current, { y: edge === "top" ? "101%" : "-101%" });
   };
+
 
   const repeatedMarqueeContent = Array.from({ length: 8 }).map((_, idx) => (
     <React.Fragment key={idx}>
@@ -82,6 +92,8 @@ function MenuItem({ link, text, image }) {
         className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-white text-[4vh] hover:text-[#060606] focus:text-white focus-visible:text-[#060606]"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onTouchStart={handleMouseEnter}
+        onTouchEnd={handleMouseLeave}
       >
         {text}
       </a>

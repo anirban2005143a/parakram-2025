@@ -58,14 +58,14 @@ export const Timeline = ({
           animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
           easing="easeOutCubic"
           threshold={0.2}
-          fontStyle=' macondo-swash-caps-regular '
+          fontStyle=' nosifer-regular '
           fontSize=' text-3xl '
           SmFontSize=' sm:text-4xl '
           rootMargin="-50px"
         />
         <p
           ref={paragraphRef}
-          className="text-neutral-700 great-vibes-regular dark:text-neutral-300 text-lg md:text-xl  my-10">
+          className="text-neutral-700  dark:text-neutral-300 text-sm italic font-light md:text-base  my-10">
           Get ready to witness the ultimate showdown of skill, passion, and teamwork at [Your College Name] Sports Fest 2025! 🏅 From adrenaline-pumping races to intense team battles, this fest brings together athletes from all disciplines to compete, celebrate, and create unforgettable memories. Whether you're a fierce competitor or an enthusiastic supporter, join us in the spirit of sportsmanship and unity. Let the games begin! 🎉🔥
         </p>
       </div>

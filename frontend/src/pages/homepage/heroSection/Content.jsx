@@ -62,7 +62,7 @@ const Content = () => {
 
 
     return (
-        <div id='landing-page-content' className=' absolute w-full h-full left-0 md:translate-y-20 flex  md:justify-start md:items-start justify-center items-center z-20 overflow-hidden'>
+        <div id='landing-page-content' className=' absolute w-full h-full left-0 md:-translate-y-10 flex  md:justify-start md:items-center justify-center items-center z-20 overflow-hidden'>
             <div className=' md:p-4 p-2 md:text-start rounded-lg overflow-hidden md:w-7/12 sm:w-10/12 w-[97%] '>
                 {/* <h1 className=' text-6xl font-bold text-white py-5'>Parakram</h1> */}
                 <SplitText
@@ -76,10 +76,10 @@ const Content = () => {
                     fontStyle='protest-revolution-regular'
                     rootMargin="-50px"
                     fontSize=' text-4xl '
-                    SmFontSize=' sm:text-6xl'
+                    SmFontSize=' md:text-6xl'
                 // onLetterAnimationComplete={handleAnimationComplete}
                 />
-                <p ref={paragraphRef} className='great-vibes-regular text-gray-300 font-light text-xl pb-5'>
+                <p ref={paragraphRef} className=' text-gray-300 font-light md:text-lg text-base pb-5'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus numquam libero Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus numquam libero
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus numquam libero Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus numquam libero
                 </p>

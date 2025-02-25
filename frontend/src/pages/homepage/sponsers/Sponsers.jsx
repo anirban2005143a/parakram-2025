@@ -40,7 +40,7 @@ const Sponsers = () => {
                     <div className="absolute inset-0 w-full h-full  [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
                 </div>
             </div> */}
-            <div style={{ height: '600px', position: 'relative' }}>
+            <div style={{ height: '400px', position: 'relative' }}>
                 <FlowingMenu items={demoItems} />
             </div>
 

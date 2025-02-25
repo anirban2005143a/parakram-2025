@@ -5,9 +5,7 @@ import FooterT from "../../components/Footer/Footer.jsx";
 import { Link } from "react-router-dom";
 import BlurText from "../../components/reactBits/BlurText.jsx";
 const Merchpage = () => {
-  const handleAnimationComplete = () => {
-    console.log("vaibhav");
-  };
+ 
   return (
     <>
       <div id="homePage" className=" overflow-x-hidden relative">
@@ -21,13 +19,12 @@ const Merchpage = () => {
             delay={180}
             animateBy="words"
             direction="top"
-            onAnimationComplete={handleAnimationComplete}
-            className="text-7xl mb-8 text-white"
+            className="lg:text-6xl md:text-4xl text-2xl mb-8 text-white macondo-swash-caps-regular"
           />
         </div>
         <Carousel />
 
-        <div className="mt-6 h-4 flex justify-center">
+        <div className="my-10 h-4 flex justify-center">
           <Link to="/events">
             <button
               className="relative inline-block p-px font-semibold leading-6 text-white bg-neutral-900 shadow-2xl cursor-pointer rounded-2xl shadow-emerald-900 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 hover:shadow-emerald-600"
@@ -54,7 +51,7 @@ const Merchpage = () => {
           </Link>
         </div>
 
-        <div className="mt-9 h-5"></div>
+        <div className="mt-20 h-5 "></div>
         <FooterT />
       </div>
     </>

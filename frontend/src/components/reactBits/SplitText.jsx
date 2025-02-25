@@ -72,7 +72,7 @@ const SplitText = ({
               <animated.span
                 key={index}
                 style={springs[index]}
-                className={`inline-block transform transition-opacity will-change-transform ${word.join('')==="PARAKRAM" ? ' sm:text-5xl ': SmFontSize}  ${fontSize} ${word.join('')==="PARAKRAM" ? ' nosifer-regular ' : fontStyle} text-white `}
+                className={`inline-block transform transition-opacity will-change-transform ${word.join('')==="PARAKRAM" ?SmFontSize : ' sm:text-5xl ' }  ${fontSize} ${word.join('')==="PARAKRAM" ? ' nosifer-regular ' : fontStyle} text-white `}
               >
                 {letter === ' ' ? "&nbsp" : letter}
               </animated.span>

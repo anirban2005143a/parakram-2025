@@ -1,8 +1,8 @@
 import React from "react";
 
-const FooterT = () => {
+const Footer = () => {
   return (
-    <div className="bg-[#1a1310] text-white py-12 px-6 md:px-16">
+    <footer className=" bg-gradient-to-b from-[#272e374d] to-[#00000079] backdrop-blur-sm text-white py-12 px-3 md:px-8 m-3 rounded-2xl relative z-30">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Left Section */}
         <div className="text-center md:text-left">
@@ -25,24 +25,28 @@ const FooterT = () => {
 
         {/* Middle Section - Contact */}
         <div className="text-center md:text-left">
-          <h2 className="text-lg font-semibold">For any queries:</h2>
-          <p className="text-[#D1A001] mt-2">parakram@iitism.ac.in</p>
-          <p className="text-gray-400 mt-1">9963981308</p>
-          <p className="text-gray-400 mt-1">
-            Indian Institute of Technology (ISM), Dhanbad - 826004, Jharkhand, India
-          </p>
+          <div className="w-fit mx-auto">
+            <h2 className="text-lg font-semibold">For any queries:</h2>
+            <p className="text-[#D1A001] mt-2">parakram@iitism.ac.in</p>
+            <p className="text-gray-400 mt-1">9963981308</p>
+            <p className="text-gray-400 mt-1">
+              Indian Institute of Technology (ISM), Dhanbad - 826004, Jharkhand, India
+            </p>
+          </div>
         </div>
 
         {/* Right Section - Navigation */}
         <div className="text-center md:text-left">
-          <h2 className="text-lg font-semibold">Quick Links</h2>
-          <ul className="text-gray-400 mt-2 space-y-1">
-            <li>Home</li>
-            <li>Events</li>
-            <li>Merchandise</li>
-            <li>Sponsors</li>
-            <li>Accommodation</li>
-          </ul>
+          <div className=" w-fit mx-auto">
+            <h2 className="text-lg font-semibold">Quick Links</h2>
+            <ul className="text-gray-400 mt-2 space-y-1">
+              <li>Home</li>
+              <li>Events</li>
+              <li>Merchandise</li>
+              <li>Sponsors</li>
+              <li>Accommodation</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -51,8 +55,8 @@ const FooterT = () => {
         <a href="#" className="text-2xl">&#xf09a;</a> {/* Facebook Icon */}
         <a href="#" className="text-2xl">&#xf16d;</a> {/* Instagram Icon */}
       </div>
-    </div>
+    </footer>
   );
 };
 
-export default FooterT;
+export default Footer;

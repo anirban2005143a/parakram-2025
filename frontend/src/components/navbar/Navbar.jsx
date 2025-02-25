@@ -25,7 +25,7 @@ const Navbar = () => {
                             <Link to="/Merchandise" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/Merchandise' ? " text-blue-500 " : ""}`}>Marchandise</Link>
                         </li>
                         <li>
-                            <Link to="/" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/accomodation' ? " text-blue-500 " : ""}`}>Accomodation</Link>
+                            <Link to="/Accomodation" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/Accomodation' ? " text-blue-500 " : ""}`}>Accomodation</Link>
                         </li>
                         <li>
                             <Link to="/team" className={`block py-2 px-3 text-gray-300 rounded-sm  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white  ${window.location.pathname === '/team' ? " text-blue-500 " : ""}`}>Team</Link>

@@ -1,0 +1,225 @@
+.card {
+  overflow: visible;
+  width: 100%; /* Make width responsive */
+  max-width: 290px; /* Set a maximum width */
+  height: auto; /* Make height adjust based on content */
+  aspect-ratio: 290 / 304; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center the card */
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 10px 1px #170b0bee;
+  border-radius: 15px;
+}
+
+.front,
+.back {
+  background-color: #000000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.back::before {
+  position: absolute;
+  content: ' ';
+  display: block;
+  width: 160px;
+  height: 160%;
+  background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+  animation: rotation_481 5000ms infinite linear;
+}
+
+.back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background: linear-gradient(to right, rgb(15, 12, 41), rgb(48, 43, 99), rgb(36, 36, 62));
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.front {
+  transform: rotateY(180deg);
+  color: white;
+}
+
+.front .front-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.front-content .badge {
+  background-color: #00000055;
+  padding: 2px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  width: fit-content;
+}
+
+.description {
+  box-shadow: 0px 0px 10px 5px #00000088;
+  width: 100%;
+  padding: 10px;
+  background-color: #00000099;
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 11px;
+  max-width: 100%;
+}
+
+.title p {
+  width: 100%;
+}
+
+.card-footer {
+  color: #ffffff88;
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+.front .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ffbb66;
+  position: relative;
+  filter: blur(15px);
+  animation: floating 2600ms infinite linear;
+}
+
+#bottom {
+  background-color: #ff8866;
+  left: 50px;
+  top: 0px;
+  width: 150px;
+  height: 150px;
+  animation-delay: -800ms;
+}
+
+#right {
+  background-color: #ff2233;
+  left: 160px;
+  top: -80px;
+  width: 30px;
+  height: 30px;
+  animation-delay: -1800ms;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .card {
+    max-width: 250px; /* Adjust for smaller screens */
+  }
+
+  .back-content {
+    gap: 20px; /* Reduce gap for smaller screens */
+  }
+
+  .front .front-content .description .title .title {
+    font-size: 10px; /* Adjust badge font size */
+  }
+
+  .description {
+    padding: 8px; /* Adjust padding */
+  }
+
+  .title {
+    font-size: 10px; /* Adjust title font size */
+  }
+
+  .card-footer {
+    font-size: 7px; /* Adjust footer font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 200px; /* Further adjust for mobile screens */
+  }
+  .back-content {
+    gap: 15px; /* Further reduce gap */
+  }
+
+  .front-content .badge {
+    font-size: 8px; /* Further adjust badge font size */
+  }
+
+  .description {
+    padding: 5px; /* Further adjust padding */
+  }
+
+  .title {
+    font-size: 9px; /* Further adjust title font size */
+  }
+
+  .card-footer {
+    font-size: 6px; /* Further adjust footer font size */
+  }
+}

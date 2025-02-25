@@ -4,7 +4,7 @@ import Slider from './Slider';
 const HeroSection = ({setisLoaded}) => {
     return (
         // <div id='landing-page-carousel' className=' h-screen  overflow-x-hidden items-center '>
-        <section id="heroSection" className={`relative w-full overflow-x-hidden translate-y-[60px] min-h-[400px] p-2`} style={{ height: `${window.innerHeight - 50}px` }} data-carousel="slide">
+        <section  className={`relative w-full overflow-x-hidden translate-y-[60px] min-h-[400px] p-2`} style={{ height: `${window.innerHeight - 50}px` }} data-carousel="slide">
 
             {/* slider  */}
             <Slider setisLoaded={setisLoaded} />

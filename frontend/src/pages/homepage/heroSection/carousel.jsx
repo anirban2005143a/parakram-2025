@@ -53,7 +53,7 @@ const AutoSlidingCarousel = () => {
 
     return (
         <>
-            <div className=' w-screen relative lg:p-8 md:p-4 p-2 overflow-hidden rounded-lg md:translate-y-[40px] translate-y-[50px]'>
+            <section id='herosection' className=' w-screen relative lg:p-8 md:p-4 p-2 overflow-hidden rounded-lg md:translate-y-[40px] translate-y-[50px]'>
 
                 <div className="relative overflow-hidden rounded-lg" style={{ height: `${window.innerHeight - 80}px` }} >
                     {/* content  */}
@@ -71,7 +71,7 @@ const AutoSlidingCarousel = () => {
                                     alt={slide.title}
                                     className="w-full h-full object-center object-cover  overflow-hidden"
                                 />
-                                <div className="overlayer absolute w-full h-full top-0 left-0 bg-[#0000007c]"></div>
+                                <div className="overlayer pointer-events-none absolute w-full h-full top-0 left-0 bg-[#0000007c]"></div>
                             </div>
                         ))}
                     </div>
@@ -87,7 +87,7 @@ const AutoSlidingCarousel = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 };

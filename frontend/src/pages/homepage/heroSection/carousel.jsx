@@ -53,7 +53,7 @@ const AutoSlidingCarousel = () => {
 
     return (
         <>
-            <section id='herosection' className=' w-screen relative lg:p-8 md:p-4 p-2 overflow-hidden rounded-lg md:translate-y-[40px] translate-y-[50px]'>
+            <section id='herosection' className=' w-screen relative lg:p-8 md:p-4 p-2 overflow-hidden rounded-lg my-10'>
 
                 <div className="relative overflow-hidden rounded-lg" style={{ height: `${window.innerHeight - 80}px` }} >
                     {/* content  */}

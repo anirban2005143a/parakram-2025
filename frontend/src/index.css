@@ -4,36 +4,12 @@
 
 /* @custom-variant dark (&:is(.dark *)); */
 
-.great-vibes-regular {
-    font-family: "Great Vibes", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.protest-revolution-regular {
-    font-family: "Protest Revolution", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.rye-regular {
-    font-family: "Rye", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.nosifer-regular {
-    font-family: "Nosifer", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.macondo-swash-caps-regular {
-    font-family: "Macondo Swash Caps", serif;
+* {
+    font-family: "Bruno Ace", serif;
     font-weight: 400;
     font-style: normal;
   }
-
+  
 body {
     background-color: black;
 }

@@ -17,10 +17,9 @@ import tenisImg from '/sports/tenis1.jpg'
 const Slider = ({setisLoaded}) => {
 
     return (
-        <div className="relative h-full overflow-hidden">
+        <div className="relative h-full overflow-hidden" >
 
-            {/* content  */}
-            <Content />
+          
 
             <div  className=' relative z-10 h-full  overflow-hidden rounded-lg'>
                 <div className="hidden duration-700 ease-in-out h-full rounded-lg overflow-hidden" data-carousel-item>

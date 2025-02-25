@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./card.jsx";
+import Card from "./Card.jsx";
 import Navbar from "../../components/navbar/Navbar.jsx";
 import FooterT from "../../components/Footer/Footer.jsx";
 import DecryptedText from "../../components/reactBits/DecodeX.jsx";

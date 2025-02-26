@@ -61,7 +61,7 @@ export const Header = () => {
   return (
     (<div
       className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-4xl md:text-6xl bg-gradient-to-r from-gray-300 to-gray-600 bg-clip-text text-transparent rye-regular" style={{ lineHeight: window.innerWidth >= 768 ? '80px' : '50px' }}>
+      <h1 className="text-4xl md:text-6xl bg-gradient-to-r from-gray-50 to-gray-200 bg-clip-text text-transparent rye-regular" style={{ lineHeight: window.innerWidth >= 768 ? '80px' : '50px' }}>
         A Glimpse Into  <br /> Unforgettable Moments
       </h1>
       <p className=" md:w-9/12 w-full text-sm md:text-base font-light mt-8 italic dark:text-neutral-200 text-white">

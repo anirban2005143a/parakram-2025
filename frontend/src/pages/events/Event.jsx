@@ -72,7 +72,7 @@ function Event() {
       </div>
       {/* Grid Layout for Cards */}
       <div className="flex justify-center items-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-44 gap-y-9 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-6 sm:gap-x-10 md:gap-x-16 lg:gap-x-20 gap-y-9 px-4">
           {events.map((event, index) => (
             <GameCard key={index} gameName={event.name} image={event.image} />
           ))}

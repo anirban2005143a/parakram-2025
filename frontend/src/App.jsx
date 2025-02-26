@@ -10,7 +10,7 @@ import Eventpage from './pages/events/Eventpage.jsx'
 const App = () => {
   return (
     <>
-      <div className=' fixed w-screen h-screen top-0 bg-[#00000099] bg-blend-darken  bg-no-repeat bg-cover bg-center ' style={{ backgroundImage: `url(${bgImg})` }}>
+      <div className=' fixed w-screen h-screen top-0 bg-[#000000be] bg-blend-darken  bg-no-repeat bg-cover bg-center ' style={{ backgroundImage: `url(${bgImg})` }}>
       </div>
       <BrowserRouter>
         <Routes>

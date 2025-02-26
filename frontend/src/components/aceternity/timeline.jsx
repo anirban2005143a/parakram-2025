@@ -118,7 +118,7 @@ export const EventTimeline = () => {
           className="w-full font-sans pt-[100px] md:px-10  "
           ref={containerRef}>
 
-          <div ref={ref} className="relative max-w-7xl mx-auto pb-20 md:-translate-y-10 bg-gradient-to-b from-[#6161615b] to-[#00000093] backdrop-blur-xl rounded-xl">
+          <div ref={ref} className="relative max-w-7xl mx-auto pb-20 md:-translate-y-10 bg-gradient-to-b from-[#79797942] to-[#0000006d] backdrop-blur-sm rounded-xl">
             {data.map((item, index) => (
               <div key={index} className="flex justify-start pt-9 md:gap-10">
                 <div

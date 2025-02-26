@@ -22,8 +22,7 @@ function Accompage() {
   Name[5] =
     "For those who want to stay in the IIT-ISM campus A registration fee of Rs. 399/- (Non-Refundable)";
   return (
-    <div id="accomodation" className="overflow-x-hidden relative">
-      <div className="fixed z-0 top-0 left-0 w-screen h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+    <>
       <Navbar />
 
       <div className=" relative z-10 pt-[80px]">
@@ -46,7 +45,7 @@ function Accompage() {
         </div>
       </div>
       <FooterT />
-    </div>
+    </>
   );
 }
 

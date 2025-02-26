@@ -1,397 +1,166 @@
-import React, { useEffect } from 'react'
-import img1 from '../../assets/bg1.webp'
-import img2 from '../../assets/bg2.jpg'
-import img3 from '../../assets/bg3.jpg'
-import Navbar from '../../components/navbar/Navbar'
+import React from "react";
+import { PinContainer } from "../../components/aceternity/Event-card.jsx";
+import { TextGenerateEffect } from "../../components/aceternity/Textgenerate.jsx";
+function Event() {
+  return (
+    <>
+      <div className="mb-12 h-5 text-white">{/* feff */}</div>
 
-import footballImg from '/sports/football1.jpg'
-import footbal2Img from '/sports/football2.jpg'
-import cricket1Img from '/sports/cricket1.jpg'
-import cricket2Img from '/sports/cricket2.jpg'
-import squash1Img from '/sports/squash1.jpg'
-import squash2Img from '/sports/squash2.jpg'
-import powerlifting1Img from '/sports/powerliftting1.jpg'
-import powerlifting2Img from '/sports/powerliftting2.jpg'
-import chess1Img from '/sports/chess1.jpg'
-import chess2Img from '/sports/chess2.jpg'
-import tableTenis1Img from '/sports/tableTenis1.jpg'
-import tableTenis2Img from '/sports/tableTenis2.jpg'
-import badminton1Img from '/sports/badminton1.jpg'
-import badminton2Img from '/sports/badminton2.jpg'
-import athletics1Img from '/sports/athletics1.jpg'
-import athletics2Img from '/sports/athletics2.jpg'
-import kabaddi2Img from '/sports/kabaddi1.jpg'
-import kabaddi1Img from '/sports/kabaddi2.jpg'
-import basketBall2Img from '/sports/basketBall1.jpg'
-import basketBall1Img from '/sports/basketBall2.jpg'
-import volleyBall2Img from '/sports/volleyBall1.jpg'
-import volleyBall1Img from '/sports/volleyBall2.webp'
-import hockey2Img from '/sports/hockey1.jpg'
-import hockey1Img from '/sports/hockey2.avif'
-import tenis2Img from '/sports/tenis1.jpg'
-import tenis1Img from '/sports/tenis2.jpg'
+      <div className="h-5 w-full text-center">
+        <TextGenerateEffect words={"Exciting Parakram Events"} />;
+      </div>
+      <div className="mb-12 h-5 text-white">{/* feff */}</div>
+      <div className="mb-12 h-5 text-white">{/* feff */}</div>
 
-
-const Event = () => {
-
-    const data = [
-        {
-            title: "Football",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-light italic mb-8">
-                        "Football is not just a game; it's an emotion that unites, inspires, and defines the spirit of never giving up." ⚽🔥
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={footballImg}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className=" object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={footbal2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className=" object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Chess",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={chess1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={chess2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Squash",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={squash1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={squash2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Table Tanis",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={tableTenis1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={tableTenis2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Badminton",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={badminton1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={badminton2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Athletics",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={athletics1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={athletics2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Kabaddi",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={kabaddi1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={kabaddi2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "basketball",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={basketBall1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={basketBall2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Volley Ball",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={volleyBall1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={volleyBall2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Hockey",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={hockey1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={hockey2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Power Lifting",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={powerlifting1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={powerlifting2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Tenis",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={tenis1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={tenis2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Cricket",
-            content: (
-                <div>
-                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                        Built and launched Aceternity UI and Aceternity UI Pro from scratch
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <img
-                            src={cricket1Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                        <img
-                            src={cricket2Img}
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="object-center rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                        />
-                    </div>
-                </div>
-            ),
-        },
-
-    ];
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
-
-    return (
-        <div id='sports-in-parakram' className=' relative'>
-            {/* <div className=" fixed top-0 left-0 w-screen h-screen z-0 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
-            <Navbar />
-            <div className=' relative z-10 bg-transparent'>
-                <div className="w-full">
-                    <Timeline data={data} />
-                </div>
-            </div> */}
-        </div>
-    )
+      <div className="grid sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-25 p-2 ">
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Athletics
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXRobGV0aWN8ZW58MHx8MHx8fDA%3D"
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Badminton
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://images.unsplash.com/photo-1623998021722-b934f73081df?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEJhZG1pbnRvbnxlbnwwfHwwfHx8MA%3D%3D"
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Basketball
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://images.pexels.com/photos/69773/uss-nimitz-basketball-silhouettes-sea-69773.jpeg?auto=compress&cs=tinysrgb&w=600"
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Chess
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2hlc3N8ZW58MHx8MHx8fDA%3Dhttps://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2hlc3N8ZW58MHx8MHx8fDA%3D"
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Cricket
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://media.istockphoto.com/id/641186582/photo/batsman-on-the-stadium-in-action.webp?a=1&b=1&s=612x612&w=0&k=20&c=VVUv7TFlghQVpEdDqzh3YcLHI_gnATQyVr3oOtM4xSw="
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Football
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://media.istockphoto.com/id/860880772/photo/determined-bicycle-kick-on-a-soccer-match.webp?a=1&b=1&s=612x612&w=0&k=20&c=BMlbLztq5r4LqRBMRInsJ-DOsdBRJcVAGPmHNeb7OQ4="
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Hockey
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://images.unsplash.com/photo-1554539484-e4fab56d4a5c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEhvY2tleXxlbnwwfHwwfHx8MA%3D%3D"
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Powerlifting
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://plus.unsplash.com/premium_photo-1664298367434-0408974ab0bb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG93ZXJsaWZ0aW5nfGVufDB8fDB8fHww"
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Squash
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://images.unsplash.com/photo-1554290813-ec6a2a72e5c7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3F1YXNoJTIwc3BvcnR8ZW58MHx8MHx8fDA%3D"
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Table Tennis
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://media.istockphoto.com/id/1417521713/photo/man-serving-ping-pong-ball.webp?a=1&b=1&s=612x612&w=0&k=20&c=ApaZcwsFizP4dRDwCH-Cq9dZ0e8bmaKMBdc_HcNz_jU="
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Volleyball
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://images.unsplash.com/photo-1728971121667-80d6513f83e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHZvbGxleWJhbGwlMjBzbWFzaHxlbnwwfHwwfHx8MA%3D%3D"
+            />
+          </div>
+        </PinContainer>
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              WeightLifting
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://plus.unsplash.com/premium_photo-1722556828905-51b00497fa2b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2VpZ2h0bGlmdGlibmd8ZW58MHx8MHx8fDA%3D"
+            />
+          </div>
+        </PinContainer>
+      </div>
+      <div className="mt-20 h-5 text-white">{/* feff */}</div>
+      <div className="flex justify-center items-center">
+        <PinContainer title="See More" href="#">
+          <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">
+              Tennis
+            </h3>
+            <img
+              className="flex flex-1 w-full rounded-lg mt-4 object-cover"
+              src="https://media.istockphoto.com/id/481280181/photo/tennis-sport.webp?a=1&b=1&s=612x612&w=0&k=20&c=EvmnCaL5k11Nw2V2RvvajOfGANoUf9dBGnojoOcdFhk="
+            />
+          </div>
+        </PinContainer>
+      </div>
+    </>
+  );
 }
-
-export default Event
+export default Event;

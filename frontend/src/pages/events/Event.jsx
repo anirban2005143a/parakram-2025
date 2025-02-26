@@ -12,7 +12,7 @@ function Event() {
       <div className="mb-12 h-5 text-white">{/* feff */}</div>
       <div className="mb-12 h-5 text-white">{/* feff */}</div>
 
-      <div className="grid sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-25 p-2 ">
+      <div className="grid sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-6 p-2 ">
         <PinContainer title="See More" href="#">
           <div className="flex basis-full flex-col p-4 tracking-tight text-violet-500/50 sm:basis-1/2 w-[20rem] h-[20rem] text-center">
             <h3 className="max-w-xs !pb-2 !m-0 font-bold text-4xl text-violet-500 ">

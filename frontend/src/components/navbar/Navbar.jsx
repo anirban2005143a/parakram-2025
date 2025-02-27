@@ -24,6 +24,18 @@ const Navbar = () => {
                 { x: '100%', opacity: 0 },
                 { x: '0%', opacity: 1, duration: 0.5 }
             );
+
+            gsap.fromTo(document.querySelectorAll('.nav-menu-mobile'), {
+                x: 100,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                duration: 0.5,
+                stagger: 0.2,
+                delay: 0.2,
+
+            })
         } else {
             // Slide out the menu to the right
             gsap.to(menuRef.current, {
@@ -47,13 +59,13 @@ const Navbar = () => {
         gsap.fromTo(
             [leftTopBorderRef.current, leftBottomBorderRef.current],
             { scaleX: 0 },
-            { scaleX: 1, duration: 1, ease: 'power3.out', delay: 0.5 }
+            { scaleX: 1, duration: 1, ease: 'power3.out', delay: 0.2 }
         );
         // Animate the right borders
         gsap.fromTo(
             [rightTopBorderRef.current, rightBottomBorderRef.current],
             { scaleX: 0 },
-            { scaleX: 1, duration: 1, ease: 'power3.out', delay: 0.5 }
+            { scaleX: 1, duration: 1, ease: 'power3.out', delay: 0.2 }
         );
 
         // Animate the menu items
@@ -73,7 +85,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="fixed w-full z-50 pt-2 backdrop-blur-sm">
+        <nav className="fixed w-full z-50 pt-2 ">
             <div className="container mx-auto px-4 ">
                 {/* Desktop Navbar */}
                 <div className="hidden md:flex  justify-center items-center relative">
@@ -139,9 +151,10 @@ const Navbar = () => {
                     <button
                         ref={toggleButtonRef}
                         onClick={() => {
+                            console.log(menuRef.current)
                             setIsMenuOpen(!isMenuOpen)
                         }}
-                        className="text-white focus:outline-none"
+                        className="text-white cursor-pointer focus:outline-none"
                     >
                         <svg
                             className="w-10 h-10"
@@ -163,15 +176,14 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 <div
                     ref={menuRef}
-                    className={`md:hidden fixed top-0 right-0 h-screen w-screen  bg-[#000000a4] backdrop-blur-sm shadow-lg transform transition-transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-                        }`}
+                    className={`${isMenuOpen ? "" : "hidden "} md:hidden fixed top-0 right-0 h-screen w-screen  bg-[#00000084] backdrop-blur-sm shadow-lg `}
                 >
-                    <div className="p-4 h-full">
+                    <div className="px-10 pt-[50px] h-full">
                         <button
                             onClick={() => {
                                 setIsMenuOpen(false)
                             }}
-                            className="text-white focus:outline-none m-4"
+                            className="text-white cursor-pointer focus:outline-none"
                         >
                             <svg
                                 className="w-10 h-10"
@@ -188,11 +200,13 @@ const Navbar = () => {
                                 />
                             </svg>
                         </button>
-                        <div className=' flex flex-col gap-10  pt-[50px] px-10 text-white'>
-                            <Link to='/' className="block  py-2">Home</Link>
-                            <Link to='/About' className="block  py-2">About</Link>
-                            <Link to='/Events' className="block  py-2">Events</Link>
-                            <Link to='/Contact' className="block  py-2">Contact</Link>
+                        <div className=' flex flex-col items-start gap-10  pt-[20px] text-white'>
+                            <Link to='/events' className="text-white hover:underline hover:underline-offset-4  nav-menu-mobile">Events</Link>
+                            <Link to='/Accomodation' className="text-white hover:underline hover:underline-offset-4  nav-menu-mobile">Accomodation</Link>
+                            <Link to='/team' className="text-white hover:underline hover:underline-offset-4  nav-menu-mobile">Team</Link>
+                            <Link to='/Merchandise' className="text-white hover:underline hover:underline-offset-4  nav-menu-mobile">Merchandise</Link>
+                            <Link to='/Sponsors' className="text-white hover:underline hover:underline-offset-4  nav-menu-mobile">Sponsors</Link>
+                            <Link to='/About' className="text-white hover:underline hover:underline-offset-4  nav-menu-mobile">About</Link>
                         </div>
                     </div>
                 </div>

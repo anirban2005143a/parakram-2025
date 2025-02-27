@@ -173,6 +173,16 @@ body {
         filter: drop-shadow(0 0 3px rgb(255, 250, 200));
     }
 }
+@keyframes marquee {
+
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(-40%);
+    }
+}
 
 .animate-glow {
     animation: glow 2s infinite;

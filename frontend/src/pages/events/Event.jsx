@@ -80,7 +80,7 @@ function Event() {
 
   useEffect(() => {
     // GSAP Animation with ScrollTrigger
-    cardRefs.current.forEach((card, index) => {
+    document.querySelectorAll('.event-card-group').forEach((card, index) => {
       gsap.from(card, {
         opacity: 0,
         y: 50,
@@ -90,7 +90,6 @@ function Event() {
           trigger: card, // Trigger animation when the card enters the viewport
           start: 'top 80%', // Start animation when the top of the card is 80% in view
           end: 'bottom 20%', // End animation when the bottom of the card is 20% in view
-          toggleActions: 'play none none none', // Play animation once
         },
       });
     });
@@ -111,7 +110,6 @@ function Event() {
         {events.map((event, index) => (
           <div
             key={index}
-            ref={(el) => (cardRefs.current[index] = el)} // Assign ref to each card
           >
             <GameCard gameName={event.name} image={event.image} />
           </div>

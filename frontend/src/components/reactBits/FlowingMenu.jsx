@@ -105,7 +105,7 @@ function MenuItem({ link, text, image }) {
           className="h-full w-[4800px] flex" // Set width to 200%
           ref={marqueeInnerRef}
           style={{
-            animation: "marquee 15s linear infinite",
+            animation: "marquee 10s linear infinite",
           }}
         >
           <div className="flex items-center relative gap-10 h-full w-full">

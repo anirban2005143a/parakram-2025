@@ -40,3 +40,4 @@ const HeroSection = ({ setisLoaded }) => {
 };
 
 export default HeroSection;
+

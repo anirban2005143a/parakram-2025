@@ -85,7 +85,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="fixed w-full z-50 pt-2 ">
+        <nav className="fixed w-full z-50 py-2 ">
             <div className="container mx-auto px-4 ">
                 {/* Desktop Navbar */}
                 <div className="hidden md:flex  justify-center items-center relative">
@@ -105,20 +105,20 @@ const Navbar = () => {
                     </div>
 
                     {/* Centered Logo with Circular Border */}
-                    <div className=" p-4 mx-4 relative">
-                        <div
-                            ref={logoBorderRef}
-                            className="absolute inset-0 border-[1px]  border-white rounded-full transform "
-                        />
-                        <Link to='/'>
+                    <Link to='/'>
+                        <div className="h-15 w-15 p-3 mx-4 relative flex items-center justify-center">
+                            <div
+                                ref={logoBorderRef}
+                                className="absolute inset-0 border-[1px] w-full h-full border-white rounded-full transform "
+                            />
                             <img
                                 ref={logoImgRef}
                                 src={logoImg}
                                 alt="Logo"
-                                className="h-10 relative z-10"
+                                className="w-full h-full relative z-10 "
                             />
-                        </Link>
-                    </div>
+                        </div>
+                    </Link>
 
                     {/* Right Menu with Upper and Lower Borders */}
                     <div className="flex w-1/2 justify-between gap-5 relative px-4">
@@ -139,14 +139,15 @@ const Navbar = () => {
                 {/* Mobile Navbar */}
                 <div className="md:hidden flex justify-between items-center py-4">
                     {/* Logo on the left */}
-                    <div className="flex-shrink-0">
-                        <img
-                            src={logoImg}
-                            alt="Logo"
-                            className="h-10"
-                        />
-                    </div>
-
+                    <Link to='/'>
+                        <div className="flex-shrink-0">
+                            <img
+                                src={logoImg}
+                                alt="Logo"
+                                className="h-10"
+                            />
+                        </div>
+                    </Link>
                     {/* Toggle Button */}
                     <button
                         ref={toggleButtonRef}

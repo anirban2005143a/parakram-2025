@@ -5,8 +5,9 @@ import Team from './pages/team/team.jsx'
 import Merchpage from './pages/Merchandise/Merchpage.jsx'
 import Accompage from './pages/Accomodation/Accompage.jsx'
 
-import bgImg from '/sports/bgimg.jpeg'
+import bgImg from '/bgimg.jpeg'
 import Eventpage from './pages/events/Eventpage.jsx'
+import AboutUsPage from './pages/About/About.jsx'
 const App = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/about' element={<AboutUsPage />} />
           <Route path='/team' element={<Team />} />
           <Route path='/events' element={<Eventpage />} />
           <Route path='/Merchandise' element={<Merchpage />} />

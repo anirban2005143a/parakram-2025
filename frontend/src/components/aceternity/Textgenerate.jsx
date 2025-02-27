@@ -17,7 +17,7 @@ export const TextGenerateEffect = ({
       filter: filter ? "blur(0px)" : "none",
     }, {
       duration: duration ? duration : 1,
-      delay: stagger(0.2),
+      delay: stagger(0.4),
     });
   }, [scope.current]);
 
@@ -28,7 +28,7 @@ export const TextGenerateEffect = ({
           return (
             (<motion.span
               key={word + idx}
-              className="dark:text-purple-300 text-black text-5xl opacity-0"
+              className="dark:text-white text-black text-5xl opacity-0"
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}>

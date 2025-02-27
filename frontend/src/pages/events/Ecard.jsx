@@ -13,7 +13,7 @@ const GameCard = ({ gameName, image }) => {
   return (
     <div className="max-w-xs w-full p-4 border-amber-100">
       <div
-        className="relative bg-cover rotate-5 hover:rotate-0 bg-center rounded-xl shadow-2xl overflow-hidden transition-all duration-500 transform group"
+        className="relative bg-cover rotate-1  bg-center rounded-xl shadow-2xl overflow-hidden transition-all duration-500 transform group"
         style={{
           backgroundImage: `url('${image}')`,
           height: "500px",

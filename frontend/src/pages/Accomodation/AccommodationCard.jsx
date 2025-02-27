@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AccommodationCard = ({
   title,
@@ -8,15 +12,90 @@ const AccommodationCard = ({
   buttonText = "Choose Plan",
   discount,
 }) => {
+  // Refs for GSAP animations
+  const cardRef = useRef(null);
+  const titleRef = useRef(null);
+  const priceRef = useRef(null);
+  const featuresRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    const card = cardRef.current;
+
+    if (card) {
+      gsap.from(card, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      gsap.from(titleRef.current, {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        delay: 0.3,
+        ease: "power3.out",
+      });
+
+      gsap.from(priceRef.current, {
+        scale: 0.8,
+        opacity: 0,
+        duration: 1,
+        delay: 0.5,
+        ease: "elastic.out(1, 0.5)",
+      });
+
+      gsap.from(featuresRef.current.children, {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 0.7,
+        ease: "power3.out",
+      });
+
+      gsap.from(buttonRef.current, {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        delay: 1,
+        ease: "power3.out",
+      });
+
+      // Hover Effect
+      gsap.set(card, { scale: 1 });
+
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, { scale: 1.02, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", duration: 0.3 });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, { scale: 1, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", duration: 0.3 });
+      });
+    }
+  }, []);
+
   return (
-    <div className="max-w-sm w-full bg-white dark:bg-black rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-300 dark:border-neutral-700 z-40">
+    <div
+      ref={cardRef}
+      className="max-w-sm w-full bg-white dark:bg-black rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-300 dark:border-neutral-700 z-40"
+    >
       <div className="p-6 bg-black">
-        <h2 className="text-2xl font-bold text-white">{title}</h2>
+        <h2 ref={titleRef} className="text-2xl font-bold text-white">
+          {title}
+        </h2>
         <p className="text-sm text-white/80 mt-2">{description}</p>
       </div>
 
       <div className="p-6">
-        <div className="flex items-end">
+        <div ref={priceRef} className="flex items-end">
           <span className="text-4xl font-bold text-black dark:text-white">
             {price}
           </span>
@@ -32,7 +111,7 @@ const AccommodationCard = ({
       </div>
 
       <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
-        <ul className="space-y-3">
+        <ul ref={featuresRef} className="space-y-3">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center">
               <svg
@@ -58,7 +137,10 @@ const AccommodationCard = ({
       </div>
 
       <div className="p-6">
-        <button className="w-full py-3 bg-white text-black cursor-pointer rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+        <button
+          ref={buttonRef}
+          className="w-full py-3 bg-white text-black cursor-pointer rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+        >
           {buttonText}
         </button>
       </div>

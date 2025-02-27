@@ -28,7 +28,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
               />
               <button
                 onClick={onClose}
-                className="absolute top-2 right-2 p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 transition-colors"
+                className="absolute top-2 right-2 p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 transition-colors cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -61,13 +61,13 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
               <div className="flex gap-4">
                 <button
                   onClick={onClose}
-                  className="flex-1 py-2 px-4 bg-gray-200 dark:bg-neutral-800 text-black dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-neutral-700 transition-colors"
+                  className="flex-1 py-2 px-4 bg-gray-200 dark:bg-neutral-800 text-black dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-neutral-700 transition-colors cursor-pointer "
                 >
                   Cancel
                 </button>
                 <button
                   onClick={() => alert("Registered!")}
-                  className="flex-1 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex-1 py-2 px-4 bg-[#238636] text-white rounded-lg hover:bg-[#243822]  transition-colors cursor-pointer"
                 >
                   Register
                 </button>

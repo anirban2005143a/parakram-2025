@@ -30,12 +30,10 @@ const GameCard = ({ gameName, image }) => {
             className="bg-white text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300 cursor-pointer"
             onClick={() => setIsDialogOpen(true)} // Open the dialog on click
           >
-            Stream now
+            View More
           </button>
         </div>
       </div>
-
-      {/* GameDialog Component */}
       <GameDialog
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}

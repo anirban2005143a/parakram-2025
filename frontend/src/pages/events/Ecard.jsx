@@ -1,41 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 
 const GameCard = ({ gameName, image }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleToggle = () => {
-    setIsHovered(!isHovered);
+  const run = () => {
+    console.log("hogaya");
   };
 
   return (
-    <div className="max-w-xs w-full p-4">
+    <div className="max-w-xs w-full p-4 border-amber-100">
       <div
-        className={`relative bg-gradient-to-br from-purple-600 to-blue-500 rounded-xl shadow-2xl overflow-hidden transition-all duration-500 transform ${
-          isHovered ? "scale-105 shadow-3xl rotate-1" : ""
-        } group`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={handleToggle} // Works for mobile
+        className="relative bg-cover rotate-5 hover:rotate-0 bg-center rounded-xl shadow-2xl overflow-hidden transition-all duration-500 transform group"
+        style={{
+          backgroundImage: `url('${image}')`,
+          height: "500px",
+        }}
       >
-        <img
-          src={image}
-          alt={gameName}
-          className="w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-          <h2 className="text-2xl font-bold text-white drop-shadow-lg transition-all duration-500 group-hover:text-3xl">
+        {/* Only covering the bottom half so button is clickable */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+        <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+          <h2 className="text-3xl mt-0 text-center font-bold mb-64 drop-shadow-lg">
             {gameName}
           </h2>
+          <button
+            className="bg-white text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300 cursor-pointer"
+            onClick={run}
+          >
+            Stream now
+          </button>
         </div>
-        {/* Show "View Details" on hover or click (mobile) */}
-        {isHovered && (
-          <div className="absolute inset-0 flex items-center justify-center opacity-100 transition-opacity duration-500">
-            <div className="bg-white/10 backdrop-blur-sm rounded-full p-2">
-              <span className="text-white text-sm font-semibold">View Details</span>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

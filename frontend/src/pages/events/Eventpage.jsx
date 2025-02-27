@@ -7,7 +7,7 @@ function Eventpage() {
   return (
     <div>
       <Navbar/>
-      <div className="mb-12 h-5 text-white">{/* feff */}</div>
+      <div className="mb-36 h-5 text-white">{/* feff */}</div>
       <Event/>
       <div className="mb-12 h-5 text-white">{/* feff */}</div>
       <Footer/>

@@ -1,19 +1,21 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import logoImg from '/logo.png';
+import logoImg from '/logo.svg';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
     const logoImgRef = useRef(null);
+    const logoImgMobileRef = useRef(null);
     const toggleButtonRef = useRef(null);
     const leftBottomBorderRef = useRef(null);
     const rightBottomBorderRef = useRef(null);
     const leftTopBorderRef = useRef(null);
     const rightTopBorderRef = useRef(null);
     const logoBorderRef = useRef(null);
+    const logoBorderMobileRef = useRef(null);
 
     // GSAP animation for mobile menu
     useEffect(() => {
@@ -54,6 +56,11 @@ const Navbar = () => {
             { scale: 0, opacity: 0 },
             { scale: 1, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.5 }
         );
+        gsap.fromTo(
+            logoBorderMobileRef.current,
+            { scale: 0, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.5 }
+        );
 
         // Animate the left 
         gsap.fromTo(
@@ -82,6 +89,11 @@ const Navbar = () => {
             { y: -100, opacity: 0 },
             { y: 0, opacity: 1, duration: 0.8 }
         );
+        gsap.fromTo(
+            logoImgMobileRef.current,
+            { y: -100, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.8 }
+        );
     }, []);
 
     return (
@@ -106,16 +118,16 @@ const Navbar = () => {
 
                     {/* Centered Logo with Circular Border */}
                     <Link to='/'>
-                        <div className="h-15 w-15 p-3 mx-4 relative flex items-center justify-center">
+                        <div className="h-20 w-20  p-2 mx-4 relative flex items-center justify-center">
                             <div
                                 ref={logoBorderRef}
-                                className="absolute inset-0 border-[1px] w-full h-full border-white rounded-full transform "
+                                className="absolute inset-0 border-[1px] w-full h-full bg-white border-white rounded-full transform "
                             />
                             <img
-                                ref={logoImgRef}
+                                ref={logoImgMobileRef}
                                 src={logoImg}
                                 alt="Logo"
-                                className="w-full h-full relative z-10 "
+                                className="w-full h-full relative   "
                             />
                         </div>
                     </Link>
@@ -140,11 +152,16 @@ const Navbar = () => {
                 <div className="md:hidden flex justify-between items-center py-4">
                     {/* Logo on the left */}
                     <Link to='/'>
-                        <div className="flex-shrink-0">
+                        <div className="h-15 w-15  p-1.5 mx-2 relative flex items-center justify-center">
+                            <div
+                                ref={logoBorderMobileRef}
+                                className="absolute inset-0 border-[1px] w-full h-full bg-white border-white rounded-full transform "
+                            />
                             <img
+                                ref={logoImgRef}
                                 src={logoImg}
                                 alt="Logo"
-                                className="h-10"
+                                className="w-full h-full relative   "
                             />
                         </div>
                     </Link>

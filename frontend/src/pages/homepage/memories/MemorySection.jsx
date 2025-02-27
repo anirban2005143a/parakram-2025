@@ -101,7 +101,7 @@ const MemorySection = () => {
 
 
     return (
-        <section id='memories'>
+        <section id='memories' >
             <HeroParallax products={products} />;
         </section>
     )

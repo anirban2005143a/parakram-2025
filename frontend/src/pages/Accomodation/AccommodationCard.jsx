@@ -41,7 +41,7 @@ const AccommodationCard = ({
         y: 20,
         duration: 1,
         delay: 0.3,
-        ease: "power3.out",
+        // ease: "power3.out",
       });
 
       gsap.from(priceRef.current, {
@@ -58,7 +58,7 @@ const AccommodationCard = ({
         duration: 0.5,
         stagger: 0.2,
         delay: 0.7,
-        ease: "power3.out",
+        // ease: "power3.out",
       });
 
       gsap.from(buttonRef.current, {
@@ -66,7 +66,7 @@ const AccommodationCard = ({
         y: 20,
         duration: 1,
         delay: 1,
-        ease: "power3.out",
+        // ease: "power3.out",
       });
 
       // Hover Effect
@@ -85,9 +85,9 @@ const AccommodationCard = ({
   return (
     <div
       ref={cardRef}
-      className="max-w-sm w-full bg-white dark:bg-black rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-300 dark:border-neutral-700 z-40"
+      className="max-w-sm w-full bg-[#ffffff72] dark:bg-[#0000004f] backdrop-blur-xl rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-300 dark:border-neutral-700 z-40"
     >
-      <div className="p-6 bg-black">
+      <div className="p-6 ">
         <h2 ref={titleRef} className="text-2xl font-bold text-white">
           {title}
         </h2>

@@ -7,7 +7,7 @@ export const TextGenerateEffect = ({
   words,
   className,
   filter = true,
-  duration =2
+  duration =1
 }) => {
   const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
@@ -17,7 +17,7 @@ export const TextGenerateEffect = ({
       filter: filter ? "blur(0px)" : "none",
     }, {
       duration: duration ? duration : 1,
-      delay: stagger(0.4),
+      delay: stagger(0.1),
     });
   }, [scope.current]);
 

@@ -86,7 +86,7 @@ const Accompage = () => {
   return (
     <div
       ref={containerRef}
-      className="flex flex-wrap gap-8 sm:gap-12 lg:gap-40 justify-center p-7"
+      className="flex flex-wrap gap-4 sm:gap-8 md:gap-15 justify-center p-4"
     >
       {data.map((item, index) => (
         <div

@@ -12,16 +12,14 @@ const Home = () => {
 
   const [isLoaded, setisLoaded] = useState(true)
 
-
-
   return (
     <>
       {!isLoaded && <Loader />}
       <div id="homePage" className={`overflow-x-hidden relative ${isLoaded ? "" : "hidden"} `}>
         <Navbar />
         <HeroSection />
-        <GalleryHeading />
-        <EventTimeline />
+        {/* <GalleryHeading /> */}
+        {/* <EventTimeline /> */}
         <MemorySection />
         <Sponsers />
         <Footer />

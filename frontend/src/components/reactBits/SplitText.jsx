@@ -5,13 +5,14 @@ const SplitText = ({
   text = '',
   className = '',
   delay = 100,
-  animationFrom = { opacity: 0, transform: 'translate3d(0,40px,0)' },
+  animationFrom = { opacity: 0, transform: 'translate3d(0,20px,0)' },
   animationTo = { opacity: 1, transform: 'translate3d(0,0,0)' },
   easing = 'easeOutCubic',
   threshold = 0.1,
   rootMargin = '-100px',
   textAlign = 'center',
   onLetterAnimationComplete,
+  loop = false, // New parameter for infinite looping
 }) => {
   const words = text.split(' ').map(word => word.split(''));
   const letters = words.flat();
@@ -40,13 +41,21 @@ const SplitText = ({
     letters.map((_, i) => ({
       from: animationFrom,
       to: inView
-        ? async (next) => {
-          await next(animationTo);
-          animatedCount.current += 1;
-          if (animatedCount.current === letters.length && onLetterAnimationComplete) {
-            onLetterAnimationComplete();
+        ? async (next, cancel) => {
+            if (loop) {
+              while (true) { // Infinite loop
+                await next(animationTo); // Animate to final state
+                await new Promise((resolve) => setTimeout(resolve, 5000)); // 2-second gap
+                await next(animationFrom); // Reset to initial state
+              }
+            } else {
+              await next(animationTo); // Single animation
+              animatedCount.current += 1;
+              if (animatedCount.current === letters.length && onLetterAnimationComplete) {
+                onLetterAnimationComplete();
+              }
+            }
           }
-        }
         : animationFrom,
       delay: i * delay,
       config: { easing },

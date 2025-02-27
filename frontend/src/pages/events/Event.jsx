@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
 import GameCard from "./Ecard.jsx";
+gsap.registerPlugin(ScrollTrigger);
 
 function Event() {
+
+
+  const containerRef = useRef(null);
+  const cardRefs = useRef([]);
+
   const events = [
     {
       name: "Athletics",
@@ -70,15 +78,43 @@ function Event() {
     },
   ];
 
+  useEffect(() => {
+    // GSAP Animation with ScrollTrigger
+    cardRefs.current.forEach((card, index) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: card, // Trigger animation when the card enters the viewport
+          start: 'top 80%', // Start animation when the top of the card is 80% in view
+          end: 'bottom 20%', // End animation when the bottom of the card is 20% in view
+          toggleActions: 'play none none none', // Play animation once
+        },
+      });
+    });
+  }, []);
+
   return (
     <>
       <div className="mb-12 text-white text-center text-3xl font-bold">
         Sports Events
       </div>
 
-      <div className="flex justify-center flex-wrap gap-6 sm:gap-10 md:gap-16 lg:gap-40 px-4">
-        {events.map((event, index) => (
+      <div
+        ref={containerRef}
+        className="flex w-full overflow-hidden justify-center flex-wrap gap-3 md:gap-5 lg:gap-8 px-4">
+        {/* {events.map((event, index) => (
           <GameCard key={index} gameName={event.name} image={event.image} />
+        ))} */}
+        {events.map((event, index) => (
+          <div
+            key={index}
+            ref={(el) => (cardRefs.current[index] = el)} // Assign ref to each card
+          >
+            <GameCard gameName={event.name} image={event.image} />
+          </div>
         ))}
       </div>
     </>

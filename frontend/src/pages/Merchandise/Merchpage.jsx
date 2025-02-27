@@ -8,9 +8,8 @@ const Merchpage = () => {
   return (
     <>
       <Navbar />
-      <div className="mt-12 h-5 text-white">{/* feff */}</div>
-      <div className="mt-12 h-5 text-white">{/* feff */}</div>
-      <div className="flex justify-center">
+
+      <div className="flex justify-center pt-[150px]">
         <BlurText
           text="Exclusive | Trendy | Premium | Limited"
           delay={180}
@@ -19,7 +18,10 @@ const Merchpage = () => {
           className="lg:text-6xl md:text-4xl text-2xl mb-8 text-white macondo-swash-caps-regular"
         />
       </div>
-      <Carousel />
+      <div className=" md:m-4 m-2">
+        <Carousel />
+      </div>
+
 
       <div className="my-10 h-4 flex justify-center">
         <Link to="/events">

@@ -11,9 +11,6 @@ const SplitText = ({
   threshold = 0.1,
   rootMargin = '-100px',
   textAlign = 'center',
-  fontStyle = '',
-  SmFontSize = '',
-  fontSize = '',
   onLetterAnimationComplete,
 }) => {
   const words = text.split(' ').map(word => word.split(''));
@@ -59,29 +56,29 @@ const SplitText = ({
   return (
     <p
       ref={ref}
-      className={`split-parent overflow-hidden inline ${className}  `}
+      className={`split-parent overflow-hidden inline ${className}`}
       style={{ textAlign, whiteSpace: 'normal', wordWrap: 'break-word' }}
     >
-      {words.map((word, wordIndex) =>{
-        return (<span key={wordIndex} className=' py-2' style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+      {words.map((word, wordIndex) => (
+        <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
           {word.map((letter, letterIndex) => {
             const index = words
               .slice(0, wordIndex)
               .reduce((acc, w) => acc + w.length, 0) + letterIndex;
+
             return (
               <animated.span
                 key={index}
                 style={springs[index]}
-                className={`inline-block transform transition-opacity will-change-transform ${word.join('')==="PARAKRAM" ?SmFontSize : ' sm:text-5xl ' }  ${fontSize} ${word.join('')==="PARAKRAM" ? ' nosifer-regular ' : fontStyle} text-white `}
+                className="inline-block transform transition-opacity will-change-transform"
               >
-                {letter === ' ' ? "&nbsp" : letter}
+                {letter}
               </animated.span>
             );
           })}
-          <div style={{ display: 'inline-block', width: '20px' }}></div>
-        </span>)
-      } 
-      )}
+          <span style={{ display: 'inline-block', width: '0.3em' }}>&nbsp;</span>
+        </span>
+      ))}
     </p>
   );
 };

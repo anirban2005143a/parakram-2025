@@ -72,6 +72,10 @@ function Event() {
 
   return (
     <>
+      <div className="mb-12 text-white text-center text-3xl font-bold">
+        Sports Events
+      </div>
+
       <div className="flex justify-center flex-wrap gap-6 sm:gap-10 md:gap-16 lg:gap-40 px-4">
         {events.map((event, index) => (
           <GameCard key={index} gameName={event.name} image={event.image} />

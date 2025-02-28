@@ -107,7 +107,7 @@ const AboutUsPage = () => {
                 <div className="w-full min-h-screen  flex flex-col items-center overflow-hidden">
                     <SplitText
                         text="About Us"
-                        className="lg:text-[100px] md:text-[80px] sm:text-7xl text-6xl font-semibold text-center py-10 text-white"
+                        className="lg:text-[90px] md:text-[75px] sm:text-6xl text-5xl font-semibold text-center py-10 text-white"
                         delay={150}
                         animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                         animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -115,7 +115,7 @@ const AboutUsPage = () => {
                         threshold={0.2}
                         rootMargin="-50px"
                     />
-                    <p ref={paragraphRef} className=" lg:w-9/12 md:w-10/12 w-[92%] text-white text-xl font-light text-justify mb-20">
+                    <p ref={paragraphRef} className=" lg:w-9/12 md:w-10/12 w-[92%] text-white md:text-xl text-base font-light text-justify mb-20">
                         The Indian Institute of Technology (Indian School of Mines), i.e., IIT
                         (ISM), is a premier engineering and research institution located in
                         the heart of the mineral-rich region of India in the city of Dhanbad.

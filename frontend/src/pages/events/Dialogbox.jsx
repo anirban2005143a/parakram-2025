@@ -1,9 +1,13 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
   if (!isOpen) return null;
-
+  const navigate = useNavigate();
+  const handlingregister = () => {
+     navigate('/Registration')
+  }
   return (
     <AnimatePresence>
       {isOpen && (
@@ -66,7 +70,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
                   Cancel
                 </button>
                 <button
-                  onClick={() => alert("Registered!")}
+                  onClick={handlingregister}
                   className="flex-1 py-2 px-4 bg-[#238636] text-white rounded-lg hover:bg-[#243822]  transition-colors cursor-pointer"
                 >
                   Register

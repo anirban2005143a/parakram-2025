@@ -2,16 +2,43 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import FileInput from "../../components/flowbite/FileInput";
-
+import { useNavigate } from "react-router-dom";
 
 const RegistrationForm = () => {
+  const navigate = useNavigate();
+  const [type, setType] = useState("");
+  const [money, setMoney] = useState("---");
   const [sportName, setSportName] = useState("Cricket");
   const [players, setPlayers] = useState([
-    { name: "", phoneNumber: "", collegeName: "", email: "", sportName },
+    {
+      name: "",
+      phoneNumber: "",
+      collegeName: "",
+      email: "",
+      idCardLink: "",
+      sportName,
+    },
   ]);
-
+  const sending_data = players.map((player) => ({
+    playername: player.name,
+    price: money,
+  }));
   const handleSportChange = (e) => {
     setSportName(e.target.value);
+  };
+
+  const data = {
+    type_1: "1200",
+    type_2: "1000",
+    type_3: "800",
+    type_4: "600",
+    type_5: "400",
+  };
+
+  const handlingchange = (e) => {
+    const selectedType = e.target.value;
+    setType(selectedType);
+    setMoney(data[selectedType] || "");
   };
 
   const handlePlayerChange = (index, e) => {
@@ -64,7 +91,7 @@ const RegistrationForm = () => {
         theme: "dark",
       });
     }
-  }
+  };
 
   const handleSubmit = async (e) => {
     toast.info("Registering.....");
@@ -76,20 +103,22 @@ const RegistrationForm = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_BACKEND_URL}/api/teams/register`,
+        `https://parakram-backend-git-master-sai-rugveds-projects.vercel.app/api/teams/register`,
         data
       );
       console.log("Response:", response);
-      console.log(response)
+      console.log(response);
       if (response.data.success) {
-        showToast("Registered Successfully", 0)
+        localStorage.setItem("TeamID", response.data.data.team.teamId);
+        showToast("Registered Successfully", 0);
+        navigate("/event/payment", { state: { sending_data } });
       }
     } catch (error) {
-      console.log(error)
-      if (error.response && error.response.data) showToast(error.response.data.message, 1)
-      else showToast(error.message, 1)
+      console.log(error);
+      if (error.response && error.response.data)
+        showToast(error.response.data.message, 1);
+      else showToast(error.message, 1);
     } finally {
-
     }
   };
 
@@ -131,10 +160,7 @@ const RegistrationForm = () => {
 
         {/* Player Details */}
         {players.map((player, index) => (
-          <div
-            key={index}
-            className="my-6 bg-transparent rounded-lg shadow-md"
-          >
+          <div key={index} className="my-6 bg-transparent rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4 text-white">
               Player {index + 1}
             </h2>
@@ -199,9 +225,50 @@ const RegistrationForm = () => {
               />
             </div>
 
+            {/* ID card drive link */}
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
+                ID Card Drive Link
+              </label>
+              <input
+                type="text"
+                name="idCardLink"
+                value={player.idCardLink}
+                onChange={(e) => handlePlayerChange(index, e)}
+                className="w-full p-3 bg-[#0000009d] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            {/* type of payment solution */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
+                Select Sport
+              </label>
+              <select
+                value={type}
+                onChange={handlingchange}
+                className="w-full p-3 bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="selecttype"> select pack type</option>
+                <option value="type_1"> Type 1</option>
+                <option value="type_2"> Type 2</option>
+                <option value="type_3"> Type 3</option>
+                <option value="type_4"> Type 4</option>
+                <option value="type_5"> Type 5</option>
+              </select>
+            </div>
             {/* admin id photo */}
             {/* <FileInput /> */}
-
+            <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
+              {money && (
+                <>
+                  <div className="text-center text-3xl  text-white z-30">
+                    only Rs. <text className="font-extrabold">{money}</text> /-
+                  </div>
+                </>
+              )}
+            </div>
             {/* Remove Player Button */}
             {players.length > 1 && (
               <button
@@ -229,7 +296,7 @@ const RegistrationForm = () => {
           type="submit"
           className="w-full p-3  cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-blue-500 transition-all duration-300"
         >
-          Next
+          Next Payment
         </button>
       </form>
       <ToastContainer />

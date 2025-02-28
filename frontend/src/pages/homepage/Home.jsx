@@ -21,6 +21,8 @@ const Home = () => {
         {/* <GalleryHeading /> */}
         {/* <EventTimeline /> */}
         <MemorySection />
+        <div className="mt-20"></div>
+        <hr/>
         <Sponsers />
         <Footer />
       </div>

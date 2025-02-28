@@ -48,9 +48,10 @@ const HeroSection = ({ setisLoaded }) => {
                         className="relative z-10 w-full object-center object-cover " //animate-glow
                     />
                     {/* <div ref={imgCaptionRef} className=' text-white'>THE SPORTS FEST OF IIT (ISM) DHANBAD</div> */}
+                    <div className='text-center'>
                     <SplitText
                         text="THE SPORTS FEST OF IIT (ISM) DHANBAD"
-                        className=" text-lg font-semibold text-center py-10 text-white"
+                        className=" text-2xl font-semibold text-center py-10 text-white"
                         delay={150}
                         animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                         animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -59,6 +60,8 @@ const HeroSection = ({ setisLoaded }) => {
                         rootMargin="-50px"
                         loop = {true}
                     />
+                    </div>
+                    
                 </div>
 
             </div>

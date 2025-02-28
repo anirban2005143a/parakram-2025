@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
-import GameCard from "./Ecard.jsx";
+import  GameCard from "./Ecard.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 function Event() {

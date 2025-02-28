@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import HeroSection from "./heroSection/HeroSection";
-import MemorySection from "./memories/MemorySection";
-import Sponsers from "./sponsers/Sponsers";
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import Loader from "../../components/loader/Loader";
-import { EventTimeline } from "../../components/aceternity/timeline";
-import GalleryHeading from "./EventGallery/GalleryHeading";
+import HeroSection from "./heroSection/HeroSection.jsx";
+import MemorySection from "./memories/MemorySection.jsx";
+import Sponsers from "./sponsers/Sponsers.jsx";
+import Navbar from "../../components/navbar/Navbar.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
+import Loader from "../../components/loader/Loader.jsx";
+import { EventTimeline } from "../../components/aceternity/timeline.jsx";
+import GalleryHeading from "./EventGallery/GalleryHeading.jsx";
 
 const Home = () => {
 

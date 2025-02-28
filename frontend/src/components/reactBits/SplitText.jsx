@@ -12,7 +12,7 @@ const SplitText = ({
   rootMargin = '-100px',
   textAlign = 'center',
   onLetterAnimationComplete,
-  loop = false, // New parameter for infinite looping
+  loop = false, 
 }) => {
   const words = text.split(' ').map(word => word.split(''));
   const letters = words.flat();

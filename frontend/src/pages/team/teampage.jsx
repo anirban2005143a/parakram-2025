@@ -255,7 +255,7 @@ function Teampage() {
       <div className="text-center">
         <SplitText
           text="LEADERSHIP"
-          className="text-6xl font-semibold text-center py-10 text-white font-serif"
+          className="text-3xl sm:text-2xl lg:text-6xl font-semibold text-center py-10 text-white font-serif"
           delay={150}
           animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
           animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}

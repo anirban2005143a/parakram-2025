@@ -104,7 +104,7 @@ const AboutUsPage = () => {
             <Navbar />
             <div className="min-h-screen relative py-[80px] bg-[#0000003f] " >
                 <img ref={bgImageRef} src={BgImage} alt="bgimage" className="w-screen h-screen fixed top-0 -z-10 overflow-hidden" />
-                <div className="w-full min-h-screen  flex flex-col items-center">
+                <div className="w-full min-h-screen  flex flex-col items-center overflow-hidden">
                     <SplitText
                         text="About Us"
                         className="lg:text-[100px] md:text-[80px] sm:text-7xl text-6xl font-semibold text-center py-10 text-white"

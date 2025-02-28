@@ -9,6 +9,8 @@ import Eventpage from './pages/events/Eventpage.jsx'
 import AboutUsPage from './pages/About/About.jsx'
 import Accomodationpage from './pages/Accomodation/Accomodationpage.jsx'
 import Sponsors from './pages/Sponsors/Sponsors.jsx'
+import Login from './pages/auth/Login.jsx'
+
 const App = () => {
   return (
     <>
@@ -26,6 +28,7 @@ const App = () => {
           <Route path='/Merchandise' element={<Merchpage />} />
           <Route path='/Accomodation' element={<Accomodationpage />} />
           <Route path='/Sponsors' element={<Sponsors />} />
+          <Route path='/Admin/login' element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

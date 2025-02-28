@@ -1,13 +1,84 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState} from 'react';
 import { gsap } from 'gsap';
-import parakramFont from '/parakram font.png';
+import { motion } from "framer-motion"
+import parakramFont from '/logo_para.svg';
 import SplitText from '../../../components/reactBits/SplitText';
 
 const HeroSection = ({ setisLoaded }) => {
     const heroRef = useRef(null);
     const imgRef = useRef(null);
     const imgCaptionRef = useRef(null);
+    const timerRef = useRef(null)
+    const [timeLeft, setTimeLeft] = useState({
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    })
 
+    const targetDate = new Date("2025-03-21T00:00:00")
+    // Timer animation
+    
+  useEffect(() => {
+    // Image animation
+    gsap.fromTo(
+      imgRef.current,
+      {
+        scale: 3,
+        opacity: 0,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 2,
+        ease: "elastic.out(1,0.8)",
+      },
+    )
+
+    // Timer animation
+    gsap.from(timerRef.current, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      delay: 0.3,
+      ease: "power3.out",
+    })
+
+    // Countdown logic
+    const interval = setInterval(() => {
+      const now = new Date().getTime()
+      const distance = targetDate.getTime() - now
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+      setTimeLeft({ days, hours, minutes, seconds })
+
+      if (distance < 0) {
+        clearInterval(interval)
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+      }
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+  
+    const buttonVariants = {
+        hover: {
+          scale: 1.05,
+          boxShadow: "0 0 25px rgba(255,255,255,0.5)",
+          transition: {
+            duration: 0.3,
+            yoyo: Number.POSITIVE_INFINITY,
+          },
+        },
+        tap: {
+          scale: 0.95,
+        },
+      }
+    
     useEffect(() => {
 
         gsap.fromTo(imgRef.current, {
@@ -49,7 +120,7 @@ const HeroSection = ({ setisLoaded }) => {
                     />
                     {/* <div ref={imgCaptionRef} className=' text-white'>THE SPORTS FEST OF IIT (ISM) DHANBAD</div> */}
                     <div className='text-center'>
-                    <SplitText
+                    {/* <SplitText
                         text="THE SPORTS FEST OF IIT (ISM) DHANBAD"
                         className=" text-2xl font-semibold text-center py-10 text-white"
                         delay={150}
@@ -59,8 +130,84 @@ const HeroSection = ({ setisLoaded }) => {
                         threshold={0.2}
                         rootMargin="-50px"
                         loop = {true}
-                    />
+                    /> */}
                     </div>
+
+                     {/* Countdown Timer */}
+          <div ref={timerRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-8 px-4">
+            {[
+              { label: "Days", value: timeLeft.days },
+              { label: "Hours", value: timeLeft.hours },
+              { label: "Minutes", value: timeLeft.minutes },
+              { label: "Seconds", value: timeLeft.seconds },
+            ].map((item, index) => (
+              <div
+                key={item.label}
+                className="relative group bg-black bg-opacity-30 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20"
+              >
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                  {String(item.value).padStart(2, "0")}
+                </div>
+                <div className="text-sm text-gray-300 uppercase tracking-wider">{item.label}</div>
+                {/* Animated corner borders */}
+                <div className="absolute inset-0">
+                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white border-opacity-50 rounded-tl" />
+                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white border-opacity-50 rounded-tr" />
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white border-opacity-50 rounded-bl" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white border-opacity-50 rounded-br" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Registration Button */}
+          <div className="mt-12 text-center">
+            <motion.button
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+              onClick={() => router.push("/event")}
+              className="relative inline-flex items-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-600 to-red-800 rounded-full overflow-hidden group"
+            >
+              <span className="relative z-10">Registration is Live!</span>
+              {/* Animated background effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0, 0.3, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "easeInOut",
+                }}
+              />
+              {/* Sparkle effects */}
+              <div className="absolute inset-0">
+                {[...Array(3)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-1 h-1 bg-white rounded-full"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                    }}
+                    animate={{
+                      scale: [0, 1, 0],
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Number.POSITIVE_INFINITY,
+                      delay: i * 0.5,
+                      ease: "easeInOut",
+                    }}
+                  />
+                ))}
+              </div>
+            </motion.button>
+          </div>
                     
                 </div>
 

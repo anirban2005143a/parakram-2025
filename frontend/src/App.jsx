@@ -7,6 +7,7 @@ import bgImg from "/bgimg.jpeg";
 import Eventpage from "./pages/events/Eventpage.jsx";
 import AboutUsPage from "./pages/About/About.jsx";
 import Accomodationpage from "./pages/Accomodation/Accomodationpage.jsx";
+import RegisterPage from "./pages/Register/RegisterPage.jsx";
 const App = () => {
   return (
     <>
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/events" element={<Eventpage />} />
           <Route path="/Merchandise" element={<Merchpage />} />
           <Route path="/Accomodation" element={<Accomodationpage />} />
+          <Route path="/Registration" element={<RegisterPage />} />
         </Routes>
       </BrowserRouter>
     </>

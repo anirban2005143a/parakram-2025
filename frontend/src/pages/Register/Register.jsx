@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const RegistrationForm = () => {
   const [sportName, setSportName] = useState("Cricket");
@@ -39,6 +39,7 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = async (e) => {
+    toast.info("Registering.....");
     e.preventDefault();
     const data = {
       sportName,
@@ -47,13 +48,17 @@ const RegistrationForm = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        "https://parakram-backend-7jvg.onrender.com/teams/register",
+        "http://localhost:5000/api/teams/register",
         data
       );
-      console.log("Response:", response.data);
+      console.log("Response:", response);
+      console.log(response)
+      if (response.data.success) {
+        toast.success("Registered Successfully");
+      }
     } catch (error) {
       console.error("Error:", error);
-      alert("Registration failed. Please try again.");
+      toast.error("Registration failed. Please try again.");
     }
   };
 
@@ -193,6 +198,7 @@ const RegistrationForm = () => {
           Submit
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

@@ -48,7 +48,7 @@ const RegistrationForm = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/teams/register",
+        "https://parakram-backend-2.onrender.com/api/teams/register",
         data
       );
       console.log("Response:", response);

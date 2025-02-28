@@ -11,6 +11,7 @@ import Sponsors from './pages/Sponsors/Sponsors.jsx'
 import Login from './pages/auth/Login.jsx'
 import RegisterPage from './pages/Register/RegisterPage.jsx'
 import Teampage from './pages/team/teampage.jsx'
+import TeamDetails from './pages/Teamdetails/TeamDetails.jsx'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/Sponsors' element={<Sponsors />} />
           <Route path='/Admin/login' element={<Login />} />
           <Route path='/event/registration' element={<RegisterPage />} />
+          <Route path='/team/details' element={<TeamDetails />} />
         </Routes>
       </BrowserRouter>
     </>

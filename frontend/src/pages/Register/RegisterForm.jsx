@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import FileInput from "../../components/flowbite/FileInput";
-
+import { FaSpinner } from "react-icons/fa6";
 
 const RegistrationForm = () => {
   const [sportName, setSportName] = useState("Cricket");
+  const [isLoading, setisLoading] = useState(false)
+
   const [players, setPlayers] = useState([
     { name: "", phoneNumber: "", collegeName: "", email: "", sportName },
   ]);
@@ -41,7 +43,7 @@ const RegistrationForm = () => {
 
   //function to show alert
   const showToast = (message, err) => {
-    if (err) {
+    if (err == 1) {
       toast.error(message, {
         position: "top-right",
         autoClose: 5000,
@@ -52,8 +54,19 @@ const RegistrationForm = () => {
         progress: undefined,
         theme: "dark",
       });
-    } else {
+    } else if (err == 0) {
       toast.success(message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      toast.info(message, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -67,7 +80,8 @@ const RegistrationForm = () => {
   }
 
   const handleSubmit = async (e) => {
-    toast.info("Registering.....");
+    setisLoading(true)
+    showToast("Registering...", 2);
     e.preventDefault();
     const data = {
       sportName,
@@ -89,7 +103,7 @@ const RegistrationForm = () => {
       if (error.response && error.response.data) showToast(error.response.data.message, 1)
       else showToast(error.message, 1)
     } finally {
-
+      setisLoading(false)
     }
   };
 
@@ -226,10 +240,11 @@ const RegistrationForm = () => {
 
         {/* Submit Button */}
         <button
+          disabled={isLoading}
           type="submit"
-          className="w-full p-3  cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-blue-500 transition-all duration-300"
+          className="w-full p-3 text-center cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-blue-500 transition-all duration-300"
         >
-          Next
+          {isLoading ? <FaSpinner className=" animate-spin mx-auto" /> : "Next"}
         </button>
       </form>
       <ToastContainer />

@@ -11,7 +11,6 @@ import Footer from '../../components/Footer/Footer';
 const Login = () => {
 
   const navigate = useNavigate()// navigate componets
-  //   const userContext = useContext(UserContext) // context api
 
   const [username, setusername] = useState("")
   const [password, setpassword] = useState("")
@@ -56,6 +55,7 @@ const Login = () => {
 
       //store data in local storage
       window.localStorage.setItem("token", res.data.token)
+      navigate("/team/details")
       showToast("Admin login successfully", 0)
     } catch (error) {// handel errors
       console.log(error)

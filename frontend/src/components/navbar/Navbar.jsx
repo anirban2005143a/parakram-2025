@@ -98,7 +98,7 @@ const Navbar = () => {
 
     return (
         <nav className="fixed w-full z-50 py-2 ">
-            <div className="container mx-auto px-4 ">
+            <div className="container mx-auto px-4 max-w-5xl">
                 {/* Desktop Navbar */}
                 <div className="hidden md:flex  justify-center items-center relative">
                     {/* Left Menu with Upper and Lower Borders */}

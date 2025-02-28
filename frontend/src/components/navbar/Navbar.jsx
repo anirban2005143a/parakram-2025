@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import logoImg from '/logo.svg';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +18,23 @@ const Navbar = () => {
     const rightTopBorderRef = useRef(null);
     const logoBorderRef = useRef(null);
     const logoBorderMobileRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(true);
+    let lastScrollY = window.scrollY;
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > lastScrollY) {
+                setIsVisible(false); // Hide on scroll down
+            } else {
+                setIsVisible(true); // Show on scroll up
+            }
+            lastScrollY = window.scrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
 
     // GSAP animation for mobile menu
     useEffect(() => {
@@ -97,7 +116,12 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="fixed w-full z-50 py-2 ">
+        <motion.nav
+            className="fixed w-full z-50 py-2"
+            initial={{ y: 0 }}
+            animate={{ y: isVisible ? 0 : '-100%' }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+        >
             <div className="container mx-auto px-4 ">
                 {/* Desktop Navbar */}
                 <div className="hidden md:flex  justify-center items-center relative">
@@ -229,7 +253,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </nav>
+        </motion.nav>
     );
 };
 

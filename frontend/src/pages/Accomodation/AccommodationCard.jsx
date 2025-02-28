@@ -104,9 +104,9 @@ const AccommodationCard = ({
             <span className="text-4xl font-bold text-black dark:text-white">
               {price}
             </span>
-            <span className="text-lg text-gray-600 dark:text-gray-300 ml-2">
+            {/* <span className="text-lg text-gray-600 dark:text-gray-300 ml-2">
               /month
-            </span>
+            </span> */}
           </div>
           {discount && (
             <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
@@ -141,10 +141,10 @@ const AccommodationCard = ({
           </ul>
         </div>
       </div>
-      <div className="p-6 absolute bottom-2 w-full h-[80px] border-t border-gray-200">
+      <div className="p-6 absolute bottom-2 w-full h-[75px] border-t border-gray-200">
         <button
           ref={buttonRef}
-          className="w-full py-3 bg-white text-black cursor-pointer rounded-lg font-semibold hover:bg-gray-600 hover:text-white transition-colors"
+          className="w-full py-1 bg-white text-black cursor-pointer rounded-lg font-semibold hover:bg-gray-600 hover:text-white transition-colors"
           >
           {buttonText}
         </button>

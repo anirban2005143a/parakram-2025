@@ -142,7 +142,7 @@ const Accompage = () => {
             description="For those who want to stay in the IIT-ISM campus"
             price={item.price}
             features={item.features}
-            discount="No hidden fees"
+            // discount="No hidden fees"
             buttonText="Book Now"
           />
         </div>

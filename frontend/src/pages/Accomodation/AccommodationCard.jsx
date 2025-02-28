@@ -73,11 +73,19 @@ const AccommodationCard = ({
       gsap.set(card, { scale: 1 });
 
       card.addEventListener("mouseenter", () => {
+        gsap.to(card, { scale: 1.02, boxShadow: "0 10px 30px rgba(0, 0, 0, <<<<<<< HEAD
+        gsap.to(card, { scale: 1.02, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", duration: 0.1 });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, { scale: 1, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", duration: 0.1 });
+=======
         gsap.to(card, { scale: 1.02, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", duration: 0.3 });
       });
 
       card.addEventListener("mouseleave", () => {
         gsap.to(card, { scale: 1, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", duration: 0.3 });
+>>>>>>> c7d57187a3a6583a3ff7177f5b1ee003ebac511f
       });
     }
   }, []);
@@ -85,62 +93,63 @@ const AccommodationCard = ({
   return (
     <div
       ref={cardRef}
-      className="max-w-sm w-full bg-[#ffffff72] dark:bg-[#0000004f] backdrop-blur-xl rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-300 dark:border-neutral-700 z-40"
+      className="max-w-sm w-full h-[750px] bg-[#ffffff72] dark:bg-[#0000004f] backdrop-blur-xl rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-300 dark:border-neutral-700 z-40"
     >
-      <div className="p-6 ">
-        <h2 ref={titleRef} className="text-2xl font-bold text-white">
-          {title}
-        </h2>
-        <p className="text-sm text-white/80 mt-2">{description}</p>
-      </div>
-
-      <div className="p-6">
-        <div ref={priceRef} className="flex items-end">
-          <span className="text-4xl font-bold text-black dark:text-white">
-            {price}
-          </span>
-          <span className="text-lg text-gray-600 dark:text-gray-300 ml-2">
-            /month
-          </span>
+      <div className=" pb-[100px] ">
+        <div className="p-6 ">
+          <h2 ref={titleRef} className="text-2xl font-bold text-white">
+            {title}
+          </h2>
+          <p className="text-sm text-white/80 mt-2">{description}</p>
         </div>
-        {discount && (
-          <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
-            {discount}
-          </p>
-        )}
-      </div>
 
-      <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
-        <ul ref={featuresRef} className="space-y-3">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5 text-white mr-2"
-              >
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              <span className="text-gray-700 dark:text-gray-300">
-                {feature}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
+        <div className="p-6">
+          <div ref={priceRef} className="flex items-end">
+            <span className="text-4xl font-bold text-black dark:text-white">
+              {price}
+            </span>
+            <span className="text-lg text-gray-600 dark:text-gray-300 ml-2">
+              /month
+            </span>
+          </div>
+          {discount && (
+            <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
+              {discount}
+            </p>
+          )}
+        </div>
 
-      <div className="p-6">
+        <div className="p-6 border-t  border-gray-200 dark:border-neutral-700">
+          <ul ref={featuresRef} className="space-y-3">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-5 w-5 text-white mr-2"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                <span className="text-gray-700 dark:text-gray-300">
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="p-6 absolute bottom-2 w-full h-[80px] border-t border-gray-200">
         <button
           ref={buttonRef}
-          className="w-full py-3 bg-white text-black cursor-pointer rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-        >
+          className="w-full py-3 bg-white text-black cursor-pointer rounded-lg font-semibold hover:bg-gray-600 hover:text-white transition-colors"
+          >
           {buttonText}
         </button>
       </div>

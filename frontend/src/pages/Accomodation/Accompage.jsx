@@ -7,37 +7,80 @@ import AccommodationCard from "./AccommodationCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const Accompage = () => {
-  const features = [
-    "Access to All Features",
-    "20% discount on backorders",
-    "Domain name Appraisal",
-    "10 Social Profiles",
-  ];
+  
 
   const data = [
     {
-      title: "For those who want to stay in the IIT-ISM campus A",
-      price: "Rs. 1949/-",
+      title: "Option-A",
+      price: "Rs. 2250/-",
+      features : [
+        "Participation fees",
+        "Three meals per day for three days (Breakfast, Lunch and Dinner)",
+        "Accommodation inside campus (For 3 days)",
+        "Transportation to and fro the Railway station to IIT (ISM) Campus",
+        "An attractive welcome kit for each participant",
+        "Pro Nights (EDM night, Band night etc)",
+        "Refreshments in between the matches",
+        "Merchandise (Jacket)",
+      ],
     },
     {
-      title: "For those who want to stay in the IIT-ISM campus B",
-      price: "Rs. 1549/-",
+      title: "Option-B",
+      price: "Rs. 1850/-",
+      features : [
+        "Participation fees",
+        "Three meals per day for three days (Breakfast, Lunch and Dinner)",
+        "Accommodation inside campus (For 3 days)",
+        "Transportation to and fro the Railway station to IIT (ISM) Campus",
+        "An attractive welcome kit for each participant",
+        "Pro Nights (EDM night, Band night etc)",
+        "Refreshments in between the matches",
+        "Merchandise (T-shirt)",
+      ],
     },
     {
-      title: "For those who want to stay in the IIT-ISM campus C",
-      price: "Rs. 1149/-",
+      title: "Option-C",
+      price: "Rs. 1450/-",
+      features : [
+        "Participation fees",
+        "Three meals per day for three days (Breakfast, Lunch and Dinner)",
+        "Accommodation inside campus (For 3 days)",
+        "Transportation to and fro the Railway station to IIT (ISM) Campus",
+        "An attractive welcome kit for each participant",
+        "Pro Nights (EDM night, Band night etc)",
+        "Refreshments in between the matches",
+      ],
     },
     {
-      title: "For those who want to stay in the IIT-ISM campus D",
-      price: "Rs. 1299/-",
+      title: "Option-D",
+      price: "Rs. 1600/-",
+      features : [
+        "Participation fees",
+        "An attractive welcome kit for each participant",
+        "Pro Nights (EDM night, Band night etc)",
+        "Refreshments in between the matches",
+        "Merchandise (Jacket)",
+      ],
     },
     {
-      title: "For those who want to stay in the IIT-ISM campus E",
-      price: "Rs. 899/-",
+      title: "Option-E",
+      price: "Rs. 1200/-",
+      features : [
+        "Participation fees",
+        "An attractive welcome kit for each participant",
+        "Pro Nights (EDM night, Band night etc)",
+        "Refreshments in between the matches",
+        "Merchandise (T-shirt)",
+      ],
     },
     {
-      title: "For those who want to stay in the IIT-ISM campus F",
-      price: "Rs. 399/-",
+      title: "Option-F",
+      price: "Rs. 800/-",
+      features : [
+        "Participation fees",
+        "Pro Nights (EDM night, Band night etc)",
+        "Refreshments in between the matches",
+      ],
     },
   ];
 
@@ -96,9 +139,9 @@ const Accompage = () => {
         >
           <AccommodationCard
             title={item.title}
-            description="Comfortable and affordable stay within the IIT-ISM campus."
+            description="For those who want to stay in the IIT-ISM campus"
             price={item.price}
-            features={features}
+            features={item.features}
             discount="No hidden fees"
             buttonText="Book Now"
           />

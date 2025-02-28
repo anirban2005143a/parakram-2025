@@ -11,7 +11,7 @@ import Sponsors from './pages/Sponsors/Sponsors.jsx'
 import Login from './pages/auth/Login.jsx'
 import RegisterPage from './pages/Register/RegisterPage.jsx'
 import Teampage from './pages/team/teampage.jsx'
-import Payment from '../src/pages/Payment/Paymentpage.jsx'
+
 const App = () => {
   return (
     <>

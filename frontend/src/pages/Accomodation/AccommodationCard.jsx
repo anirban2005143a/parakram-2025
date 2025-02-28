@@ -73,11 +73,19 @@ const AccommodationCard = ({
       gsap.set(card, { scale: 1 });
 
       card.addEventListener("mouseenter", () => {
+        gsap.to(card, { scale: 1.02, boxShadow: "0 10px 30px rgba(0, 0, 0, <<<<<<< HEAD
         gsap.to(card, { scale: 1.02, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", duration: 0.1 });
       });
 
       card.addEventListener("mouseleave", () => {
         gsap.to(card, { scale: 1, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", duration: 0.1 });
+=======
+        gsap.to(card, { scale: 1.02, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", duration: 0.3 });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, { scale: 1, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", duration: 0.3 });
+>>>>>>> c7d57187a3a6583a3ff7177f5b1ee003ebac511f
       });
     }
   }, []);
@@ -141,7 +149,7 @@ const AccommodationCard = ({
         <button
           ref={buttonRef}
           className="w-full py-3 bg-white text-black cursor-pointer rounded-lg font-semibold hover:bg-gray-600 hover:text-white transition-colors"
-        >
+          >
           {buttonText}
         </button>
       </div>

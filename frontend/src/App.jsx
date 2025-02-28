@@ -12,6 +12,8 @@ import Login from './pages/auth/Login.jsx'
 import RegisterPage from './pages/Register/RegisterPage.jsx'
 import Teampage from './pages/team/teampage.jsx'
 
+
+
 const App = () => {
   return (
     <>

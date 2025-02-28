@@ -56,7 +56,7 @@ const Login = () => {
 
       //store data in local storage
       window.localStorage.setItem("token", res.data.token)
-
+      showToast("Admin login successfully", 0)
     } catch (error) {// handel errors
       console.log(error)
       if (error.response && error.response.data) showToast(error.response.data.message, 1)
@@ -109,9 +109,7 @@ const Login = () => {
                   <button disabled={isLoading} type="submit" className="  flex justify-center cursor-pointer w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600">
                     {isLoading ? <FaSpinner className=" animate-spin" /> : "Sign In"}
                   </button>
-                  <p className="text-sm font-light text-gray-300 ">
-                    Don’t have an account yet? <Link to="/signup" className="font-medium text-primary-600 hover:underline text-white">Sign up</Link>
-                  </p>
+                 
                 </form>
               </div>
             </div>

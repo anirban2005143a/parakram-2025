@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import FileInput from "../../components/flowbite/FileInput";
 
 
@@ -41,6 +39,33 @@ const RegistrationForm = () => {
     setPlayers(newPlayers);
   };
 
+  //function to show alert
+  const showToast = (message, err) => {
+    if (err) {
+      toast.error(message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      toast.success(message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  }
+
   const handleSubmit = async (e) => {
     toast.info("Registering.....");
     e.preventDefault();
@@ -51,17 +76,20 @@ const RegistrationForm = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        "https://parakram-backend-2.onrender.com/api/teams/register",
+        `${import.meta.env.VITE_REACT_BACKEND_URL}/api/teams/register`,
         data
       );
       console.log("Response:", response);
       console.log(response)
       if (response.data.success) {
-        toast.success("Registered Successfully");
+        showToast("Registered Successfully", 0)
       }
     } catch (error) {
-      console.error("Error:", error);
-      toast.error("Registration failed. Please try again.");
+      console.log(error)
+      if (error.response && error.response.data) showToast(error.response.data.message, 1)
+      else showToast(error.message, 1)
+    } finally {
+
     }
   };
 
@@ -83,7 +111,7 @@ const RegistrationForm = () => {
           <select
             value={sportName}
             onChange={handleSportChange}
-            className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
           >
             <option value="Cricket">Cricket</option>
             <option value="Football">Football</option>
@@ -121,7 +149,7 @@ const RegistrationForm = () => {
                 name="name"
                 value={player.name}
                 onChange={(e) => handlePlayerChange(index, e)}
-                className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 bg-[#0000009d] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -136,7 +164,7 @@ const RegistrationForm = () => {
                 name="phoneNumber"
                 value={player.phoneNumber}
                 onChange={(e) => handlePlayerChange(index, e)}
-                className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 bg-[#0000009d] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -151,7 +179,7 @@ const RegistrationForm = () => {
                 name="collegeName"
                 value={player.collegeName}
                 onChange={(e) => handlePlayerChange(index, e)}
-                className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 bg-[#0000009d] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -166,13 +194,13 @@ const RegistrationForm = () => {
                 name="email"
                 value={player.email}
                 onChange={(e) => handlePlayerChange(index, e)}
-                className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 bg-[#0000009d] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
 
             {/* admin id photo */}
-            <FileInput/>
+            {/* <FileInput /> */}
 
             {/* Remove Player Button */}
             {players.length > 1 && (
@@ -199,9 +227,9 @@ const RegistrationForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full p-3  cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-green-700 transition-all duration-300"
+          className="w-full p-3  cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-blue-500 transition-all duration-300"
         >
-          Submit
+          Next
         </button>
       </form>
       <ToastContainer />

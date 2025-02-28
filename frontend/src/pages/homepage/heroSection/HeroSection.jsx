@@ -103,7 +103,7 @@ const HeroSection = ({ setisLoaded }) => {
     >
       <div className="relative group flex justify-center items-center w-full h-full overflow-hidden">
         {/* PNG Image with Infinite Glow */}
-        <div className="md:w-8/12 w-11/12 h-auto">
+        <div className="md:w-7/12 w-11/12 h-auto">
           <img
             ref={imgRef}
             src={parakramFont}

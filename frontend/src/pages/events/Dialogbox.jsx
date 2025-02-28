@@ -6,7 +6,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
   if (!isOpen) return null;
   const navigate = useNavigate();
   const handlingregister = () => {
-     navigate('/Registration')
+     navigate('/event/registration')
   }
   return (
     <AnimatePresence>

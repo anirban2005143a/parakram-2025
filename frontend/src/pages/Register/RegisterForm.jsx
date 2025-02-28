@@ -3,6 +3,9 @@ import axios from "axios";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import FileInput from "../../components/flowbite/FileInput";
+
+
 const RegistrationForm = () => {
   const [sportName, setSportName] = useState("Cricket");
   const [players, setPlayers] = useState([
@@ -63,10 +66,10 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-transparent p-4 relative z-20">
+    <div className="min-h-screen md:w-7/12 w-full flex items-center justify-center bg-transparent md:p-4 p-2 relative z-20">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-2xl bg-black p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-gray-800 border border-gray-800"
+        className="w-full max-w-4xl bg-[#0000006e] md:p-8 p-4  rounded-xl shadow-2xl transition-all duration-300 hover:shadow-gray-800 border border-gray-800"
       >
         <h1 className="text-4xl font-extrabold text-center mb-6 text-white tracking-wide">
           Player Registration
@@ -102,7 +105,7 @@ const RegistrationForm = () => {
         {players.map((player, index) => (
           <div
             key={index}
-            className="mb-6 bg-transparent p-4 rounded-lg shadow-md"
+            className="my-6 bg-transparent rounded-lg shadow-md"
           >
             <h2 className="text-xl font-semibold mb-4 text-white">
               Player {index + 1}
@@ -168,12 +171,15 @@ const RegistrationForm = () => {
               />
             </div>
 
+            {/* admin id photo */}
+            <FileInput/>
+
             {/* Remove Player Button */}
             {players.length > 1 && (
               <button
                 type="button"
                 onClick={() => removePlayer(index)}
-                className="w-full p-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300"
+                className="w-full p-3 my-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300"
               >
                 Remove Player
               </button>
@@ -185,7 +191,7 @@ const RegistrationForm = () => {
         <button
           type="button"
           onClick={addPlayer}
-          className="w-full p-3 bg-white cursor-pointer text-black rounded-lg hover:bg-blue-700 font-extrabold transition-all duration-300 mb-6"
+          className="w-full p-3  bg-white cursor-pointer text-black rounded-lg hover:bg-blue-700 font-extrabold transition-all duration-300 mb-6"
         >
           Add Player
         </button>
@@ -193,7 +199,7 @@ const RegistrationForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full p-3 cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-green-700 transition-all duration-300"
+          className="w-full p-3  cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-green-700 transition-all duration-300"
         >
           Submit
         </button>

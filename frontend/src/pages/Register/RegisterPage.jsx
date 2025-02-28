@@ -1,5 +1,5 @@
 import React from "react";
-import RegistrationForm from "./Register.jsx";
+import RegistrationForm from "./RegisterForm.jsx";
 import Navbar from "../../components/navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 

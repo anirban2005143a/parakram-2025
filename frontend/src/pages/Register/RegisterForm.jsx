@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
-  const [type, setType] = useState("");
-  const [money, setMoney] = useState("---");
   const [sportName, setSportName] = useState("Cricket");
   const [players, setPlayers] = useState([
     {
@@ -16,18 +14,23 @@ const RegistrationForm = () => {
       collegeName: "",
       email: "",
       idCardLink: "",
-      sportName,
+      sportName: "Cricket",
+      type: "",
+      money: "---",
     },
   ]);
-  const sending_data = players.map((player) => ({
-    playername: player.name,
-    price: money,
-  }));
+  
   const handleSportChange = (e) => {
-    setSportName(e.target.value);
+    const newSportName = e.target.value;
+    setSportName(newSportName);
+    // Update sportName for all players
+    setPlayers(players.map(player => ({
+      ...player,
+      sportName: newSportName
+    })));
   };
 
-  const data = {
+  const priceData = {
     type_1: "1200",
     type_2: "1000",
     type_3: "800",
@@ -35,10 +38,12 @@ const RegistrationForm = () => {
     type_5: "400",
   };
 
-  const handlingchange = (e) => {
+  const handleTypeChange = (index, e) => {
     const selectedType = e.target.value;
-    setType(selectedType);
-    setMoney(data[selectedType] || "");
+    const newPlayers = [...players];
+    newPlayers[index].type = selectedType;
+    newPlayers[index].money = priceData[selectedType] || "---";
+    setPlayers(newPlayers);
   };
 
   const handlePlayerChange = (index, e) => {
@@ -55,7 +60,10 @@ const RegistrationForm = () => {
         phoneNumber: "",
         collegeName: "",
         email: "",
+        idCardLink: "",
         sportName: sportName,
+        type: "", // Initialize with empty type
+        money: "---", // Initialize with default money value
       },
     ]);
   };
@@ -65,6 +73,12 @@ const RegistrationForm = () => {
     newPlayers.splice(index, 1);
     setPlayers(newPlayers);
   };
+
+  // Prepare data for payment
+  const sending_data = players.map((player) => ({
+    playername: player.name,
+    price: player.money,
+  }));
 
   //function to show alert
   const showToast = (message, err) => {
@@ -96,6 +110,14 @@ const RegistrationForm = () => {
   const handleSubmit = async (e) => {
     toast.info("Registering.....");
     e.preventDefault();
+    
+    // Check if all players have a selected payment type
+    const allPlayersHaveType = players.every(player => player.type !== "");
+    if (!allPlayersHaveType) {
+      showToast("Please select a payment type for all players", 1);
+      return;
+    }
+    
     const data = {
       sportName,
       players,
@@ -240,17 +262,18 @@ const RegistrationForm = () => {
               />
             </div>
 
-            {/* type of payment solution */}
+            {/* Type of payment selection - Each player has their own independent dropdown */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-300 mb-2">
-                Select Sport
+                Select Payment Type
               </label>
               <select
-                value={type}
-                onChange={handlingchange}
+                value={player.type}
+                onChange={(e) => handleTypeChange(index, e)}
                 className="w-full p-3 bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+                required
               >
-                <option value="selecttype"> select pack type</option>
+                <option value=""> select pack type</option>
                 <option value="type_1"> Type 1</option>
                 <option value="type_2"> Type 2</option>
                 <option value="type_3"> Type 3</option>
@@ -258,17 +281,16 @@ const RegistrationForm = () => {
                 <option value="type_5"> Type 5</option>
               </select>
             </div>
-            {/* admin id photo */}
-            {/* <FileInput /> */}
+            
+            {/* Payment amount display */}
             <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
-              {money && (
-                <>
-                  <div className="text-center text-3xl  text-white z-30">
-                    only Rs. <text className="font-extrabold">{money}</text> /-
-                  </div>
-                </>
+              {player.money && player.money !== "---" && (
+                <div className="text-center text-3xl text-white z-30">
+                  only Rs. <text className="font-extrabold">{player.money}</text> /-
+                </div>
               )}
             </div>
+            
             {/* Remove Player Button */}
             {players.length > 1 && (
               <button

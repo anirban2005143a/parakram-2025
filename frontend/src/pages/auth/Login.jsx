@@ -77,48 +77,50 @@ const Login = () => {
 
 
   return (
-    <div className=' min-h-screen' style={{ backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)" }}>
-      <Navbar />
+    <>
       <ToastContainer />
-      <div id='login' className=' py-[150px] relative z-10'>
-        <section >
-          <div className="flex flex-col items-center justify-center px-6 mx-auto lg:py-0">
+      <div className=' min-h-screen' style={{ backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)" }}>
+        <Navbar />
+        <div id='login' className=' py-[150px] relative z-10'>
+          <section >
+            <div className="flex flex-col items-center justify-center px-6 mx-auto lg:py-0">
 
-            <div className="w-full bg-[#45454580] backdrop-blur-xs rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0  ">
-              <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl text-center">
-                  Admin &nbsp;&nbsp; SignIn
-                </h1>
-                <form onSubmit={(e) => {
-                  e.preventDefault()
-                  userLogin()
-                }} className="space-y-4 md:space-y-6" >
-                  <div>
-                    <label htmlFor="username" className="block mb-2 text-sm font-medium text-white ">Username</label>
-                    <input value={username} onChange={(e) => {
-                      setusername(e.target.value)
-                    }} type="text" name="username" id="username" className=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Username" required />
-                  </div>
-                  <div>
-                    <label htmlFor="password" className="block mb-2 text-sm font-medium text-white ">Password</label>
-                    <input value={password} onChange={(e) => {
-                      setpassword(e.target.value)
-                    }} type="password" name="password" id="password" placeholder="••••••••" className=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required />
-                  </div>
+              <div className="w-full bg-[#45454580] backdrop-blur-xs rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0  ">
+                <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                  <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl text-center">
+                    Admin &nbsp;&nbsp; SignIn
+                  </h1>
+                  <form onSubmit={(e) => {
+                    e.preventDefault()
+                    userLogin()
+                  }} className="space-y-4 md:space-y-6" >
+                    <div>
+                      <label htmlFor="username" className="block mb-2 text-sm font-medium text-white ">Username</label>
+                      <input value={username} onChange={(e) => {
+                        setusername(e.target.value)
+                      }} type="text" name="username" id="username" className=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Username" required />
+                    </div>
+                    <div>
+                      <label htmlFor="password" className="block mb-2 text-sm font-medium text-white ">Password</label>
+                      <input value={password} onChange={(e) => {
+                        setpassword(e.target.value)
+                      }} type="password" name="password" id="password" placeholder="••••••••" className=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required />
+                    </div>
 
-                  <button disabled={isLoading} type="submit" className="  flex justify-center cursor-pointer w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600">
-                    {isLoading ? <FaSpinner className=" animate-spin" /> : "Sign In"}
-                  </button>
-                 
-                </form>
+                    <button disabled={isLoading} type="submit" className="  flex justify-center cursor-pointer w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600">
+                      {isLoading ? <FaSpinner className=" animate-spin" /> : "Sign In"}
+                    </button>
+
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
+          </section>
+        </div>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   )
 }
 

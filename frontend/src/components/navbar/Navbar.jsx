@@ -122,7 +122,7 @@ const Navbar = () => {
             animate={{ y: isVisible ? 0 : '-100%' }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
         >
-            <div className="container mx-auto px-4 max-w-6xl">
+            <div className="container mx-auto px-4 ">
                 {/* Desktop Navbar */}
                 <div className="hidden md:flex  justify-center items-center relative">
                     {/* Left Menu with Upper and Lower Borders */}

@@ -5,6 +5,8 @@ import axios from "axios";
 import FileInput from "../../components/flowbite/FileInput";
 import { FaSpinner } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
+import qrImg from './WhatsApp Image 2025-03-01 at 02.04.28_4352447a.jpg'
+import { Flashlight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +27,8 @@ const AccommodationCard = ({
   const [transactionId, setTransactionId] = useState(""); // State for transaction ID
   const [transactionPhoto, setTransactionPhoto] = useState(null); // State for transaction photo
   const [SelectedImage, setSelectedImage] = useState(null);
+  const [isPaymentSuccessful, setisPaymentSuccessful] = useState(false)
+  const [isDownloading, setisDownloading] = useState(false)
 
   const data = {
     type_1: "1200",
@@ -37,7 +41,7 @@ const AccommodationCard = ({
   const showToast = (message, err) => {
     if (err === 1) {
       toast.error(message, {
-        position: "top-left",
+        position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: false,
@@ -83,7 +87,6 @@ const AccommodationCard = ({
   const handleTransactionPhotoChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      console.log("Selected File:", file); // Debugging
       const imageUrl = URL.createObjectURL(file);
       setSelectedImage(imageUrl);
       setTransactionPhoto(file);
@@ -93,7 +96,6 @@ const AccommodationCard = ({
   const handleSubmit = async () => {
     if (!transactionId || !transactionPhoto) {
       showToast("Please enter the transaction ID and upload a photo.", 1);
-      // toast.error("Please enter the transaction ID and upload a photo.");
       return;
     }
     setisLoading(true);
@@ -102,17 +104,17 @@ const AccommodationCard = ({
       0
     );
 
-    const teamid = localStorage.getItem("TeamID");
-
+    const teamid = window.localStorage.getItem("TeamID");
+    console.log(teamid)
     const formData = new FormData();
-    formData.append("teamid", teamid);
+    formData.append("teamId", teamid);
     formData.append("transactionId", transactionId);
     formData.append("paymentScreenshot", transactionPhoto);
     formData.append("amountPaid", totalPrice);
 
     try {
       const response = await axios.post(
-        "https://parakram-backend-updt-kdbq711l4-sai-rugveds-projects.vercel.app/api/payments/process",
+        `${import.meta.env.VITE_REACT_BACKEND_URL}/api/payments/process`,
         formData,
         {
           headers: {
@@ -122,13 +124,63 @@ const AccommodationCard = ({
       );
       console.log("Server Response:", response);
       showToast("Transaction uploaded successfully!", 0);
+      setisPaymentSuccessful(response.data.success)
     } catch (error) {
-      console.error("Error uploading transaction photo:", error);
-      showToast(error.response?.data?.message || "Transaction failed!", 1);
+      console.error(error);
+      // showToast(error.response?.data?.message || "Transaction failed!", 1);
+      if (error.response && error.response.data) showToast(error.response.data.message, 1)
+      else showToast(error.message, 1)
     } finally {
       setisLoading(false);
     }
   };
+
+  const handelDownloadRecipt = async () => {
+    try {
+      setisDownloading(true)
+      const response = await axios.get(`${import.meta.env.VITE_REACT_BACKEND_URL}/api/pdf/download/${window.localStorage.getItem('TeamID')}`, {
+        responseType: 'blob', // Important: Set responseType to 'blob' to handle binary data
+      });
+      console.log(response)
+      // Create a URL for the blob
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+
+      // Create a temporary anchor element to trigger the download
+      const link = document.createElement('a');
+      link.href = url;
+
+      // Extract the filename from the response headers
+      const contentDisposition = response.headers['content-disposition'];
+      let fileName = 'downloaded-file.pdf'; // Default filename
+
+      if (contentDisposition && contentDisposition.includes('filename=')) {
+        fileName = contentDisposition
+          .split('filename=')[1]
+          .split(';')[0]
+          .replace(/['"]/g, ''); // Remove any quotes around the filename
+      }
+
+      // Set the download attribute with the filename
+      link.setAttribute('download', fileName);
+
+      // Append the anchor to the body and trigger the download
+      document.body.appendChild(link);
+      link.click();
+
+      // Clean up by removing the anchor and revoking the blob URL
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+
+      // console.log('File downloaded successfully');
+      showToast('Recipt download succesfully' , 0)
+    } catch (error) {
+      console.log(error)
+      if (error.response && error.response.data) showToast(error.response.data.message, 1)
+      else showToast(error.message, 1)
+    } finally {
+      setisDownloading(false)
+    }
+  }
 
   const totalPrice = sending_data.reduce(
     (sum, item) => sum + Number(item.price || 0),
@@ -139,7 +191,7 @@ const AccommodationCard = ({
     <>
       <div
         ref={cardRef}
-        className="max-w-xl w-full bg-[#ffffff72] dark:bg-[#0000004f] backdrop-blur-xs rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-300 dark:border-neutral-700 z-40 transform hover:scale-105"
+        className="max-w-xl w-full bg-[#ffffff72] dark:bg-[#0000004f] backdrop-blur-xs rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-300 dark:border-neutral-700 z-40 transform hover:scale-101"
       >
         <div className="p-6">
           <h2
@@ -173,7 +225,7 @@ const AccommodationCard = ({
         {/* QR Image */}
         <div className="w-40 h-40 mx-auto my-4 rounded-2xl">
           <img
-            src="https://ik.imagekit.io/ikmedia/Graphics/AI%20Landing%20page/Text%20prompt%20in%20URL.jpg?updatedAt=1726226940145&tr=w-1250"
+            src={qrImg}
             alt="QRS"
             className="w-full h-full object-fill rounded-2xl"
           />
@@ -236,6 +288,24 @@ const AccommodationCard = ({
             )}
           </button>
         </div>
+
+        {/* pdf download btn  */}
+        {isPaymentSuccessful && <div className="download-btn w-full px-3 justify-center flex mb-5">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault()
+              handelDownloadRecipt()
+            }}
+            className="text-white cursor-pointer bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+            {isDownloading ? (
+              <FaSpinner className=" animate-spin mx-auto" />
+            ) : (
+              "Download Recipt"
+            )}
+          </button>
+
+        </div>}
       </div>
       <ToastContainer />
     </>
@@ -243,3 +313,4 @@ const AccommodationCard = ({
 };
 
 export default AccommodationCard;
+

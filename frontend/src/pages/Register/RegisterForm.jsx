@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import FileInput from "../../components/flowbite/FileInput";
-import { useNavigate } from "react-router-dom";
 import { FaSpinner } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
@@ -21,7 +20,6 @@ const RegistrationForm = () => {
       money: "---",
     },
   ]);
-
   const handleSportChange = (e) => {
     const newSportName = e.target.value;
     setSportName(newSportName);
@@ -143,7 +141,7 @@ const RegistrationForm = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        `https://parakram-backend-updt.vercel.app/api/teams/register`,
+        `${import.meta.env.VITE_REACT_BACKEND_URL}/api/teams/register`,
         data
       );
       console.log("Response:", response);
@@ -292,12 +290,13 @@ const RegistrationForm = () => {
                 className="w-full p-3 bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
                 required
               >
-                <option value=""> select pack type</option>
-                <option value="type_1"> Type 1</option>
-                <option value="type_2"> Type 2</option>
-                <option value="type_3"> Type 3</option>
-                <option value="type_4"> Type 4</option>
-                <option value="type_5"> Type 5</option>
+                <option value="selecttype"> select pack type</option>
+                <option value="type_1"> Type 1 Rs.1200</option>
+                <option value="type_2"> Type 2 Rs.1000</option>
+                <option value="type_3"> Type 3 Rs.800</option>
+                <option value="type_4"> Type 4 Rs.800</option>
+                <option value="type_5"> Type 5 Rs.600</option>
+                <option value="type_6"> Type 6 Rs.400</option>
               </select>
             </div>
 
@@ -310,7 +309,6 @@ const RegistrationForm = () => {
                 </div>
               )}
             </div>
-
             {/* Remove Player Button */}
             {players.length > 1 && (
               <button

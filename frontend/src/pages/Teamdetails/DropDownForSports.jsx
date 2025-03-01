@@ -41,7 +41,7 @@ const DropdownBtnForSports = ({ options, setselectedSports }) => {
 
                 {/* Dropdown Menu */}
                 {isOpen && (
-                    <div className="origin-top-right absolute h-45 overflow-y-auto right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="origin-top-right h-45 overflow-y-auto right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
                             {options.map((option, index) => (
                                 <button

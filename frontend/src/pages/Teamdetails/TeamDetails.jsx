@@ -34,7 +34,7 @@ const TeamDetails = () => {
     return (
         <>
             <Navbar />
-            <div className="pt-[120px] relative z-10 min-h-screen">
+            <div className="pt-[120px] relative z-10 mb-8">
                 <div className="text-center md:px-6 px-2 my-6 text-xl">
                     <TextGenerateEffect words={"Team Details"} />
                 </div>
@@ -44,7 +44,7 @@ const TeamDetails = () => {
                 {selectedCategory === "Team wise" && <TeamWiseDetails />}
                 {selectedCategory === "Sport wise" && (
                     <>
-                        <div className=' w-full flex justify-center mb-5'>
+                        <div className=' w-full flex justify-center py-5'>
                             <DropdownBtnForSports options={sports} setselectedSports={setselectedSports} />
                         </div>
                         {selectedSports && <SportsWiseDetails  selectedSports={selectedSports} />}

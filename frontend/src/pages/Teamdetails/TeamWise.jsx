@@ -2,15 +2,17 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import Loader from "../../components/loader/Loader";
 
 const TeamWiseDetails = () => {
   const dropdownRefs = useRef([]);
 
   const [AllTeamDetails, setAllTeamDetails] = useState(null)
+  const [isLoading, setisLoading] = useState(false)
 
   const toggleDropdown = (index) => {
     const dropdown = dropdownRefs.current[index];
-    const arrow = dropdown.previousElementSibling.querySelector("span");
+    const arrow = dropdown.previousElementSibling.querySelectorAll("span");
 
 
     if (dropdown.style.display === "block") {
@@ -70,6 +72,7 @@ const TeamWiseDetails = () => {
   // console.log(window.localStorage.getItem("token"))
   const getAllTeams = async () => {
     try {
+      setisLoading(true)
       const res = await axios.get(`${import.meta.env.VITE_REACT_BACKEND_URL}/api/admin/teams`, {
         headers: {
           authorization: `Bearer ${window.localStorage.getItem("token")}`
@@ -83,25 +86,10 @@ const TeamWiseDetails = () => {
       console.log(error)
       if (error.response && error.response.data) showToast(error.response.data.message, 1)
       else showToast(error.message, 1)
+    }finally{
+      setisLoading(false)
     }
   }
-  const getAllPlayers = async () => {
-    try {
-      const res = await axios.get(`${import.meta.env.VITE_REACT_BACKEND_URL}/api/admin/players`, {
-        headers: {
-          authorization: `Bearer ${window.localStorage.getItem("token")}`
-        }
-      })
-
-      console.log(res.data)
-      showToast("Get team details successfully", 0)
-    } catch (error) {
-      console.log(error)
-      if (error.response && error.response.data) showToast(error.response.data.message, 1)
-      else showToast(error.message, 1)
-    }
-  }
-
 
   useEffect(() => {
     getAllTeams()
@@ -111,7 +99,9 @@ const TeamWiseDetails = () => {
   return (
     <>
       <ToastContainer />
-      {AllTeamDetails && <div className="p-4 max-w-3xl mx-auto bg-[#00000070] text-white">
+
+      {isLoading && <Loader/>}
+      {AllTeamDetails && !isLoading && <div className="p-4 my-5 max-w-3xl mx-auto bg-[#00000070] text-white">
         {AllTeamDetails.map((team, index) => (
           <div
             key={index}

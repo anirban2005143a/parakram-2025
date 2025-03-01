@@ -319,12 +319,12 @@ const RegistrationForm = () => {
                 required
               >
                 <option value="selecttype"> select pack type</option>
-                <option value="Type1"> Type 1 Rs.1200</option>
-                <option value="Type2"> Type 2 Rs.1000</option>
-                <option value="Type3"> Type 3 Rs.800</option>
-                <option value="Type4"> Type 4 Rs.800</option>
-                <option value="Type5"> Type 5 Rs.600</option>
-                <option value="Type6"> Type 6 Rs.400</option>
+                <option value="Type1"> Type 1 Rs.2250</option>
+                <option value="Type2"> Type 2 Rs.1850</option>
+                <option value="Type3"> Type 3 Rs.1450</option>
+                <option value="Type4"> Type 4 Rs.1600</option>
+                <option value="Type5"> Type 5 Rs.1200</option>
+                <option value="Type6"> Type 6 Rs.800</option>
               </select>
             </div>
 

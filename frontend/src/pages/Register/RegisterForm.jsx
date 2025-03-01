@@ -3,10 +3,12 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import FileInput from "../../components/flowbite/FileInput";
 import { useNavigate } from "react-router-dom";
+import { FaSpinner } from "react-icons/fa6";
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
   const [sportName, setSportName] = useState("Cricket");
+  const [isLoading, setisLoading] = useState(false);
   const [players, setPlayers] = useState([
     {
       name: "",
@@ -19,23 +21,26 @@ const RegistrationForm = () => {
       money: "---",
     },
   ]);
-  
+
   const handleSportChange = (e) => {
     const newSportName = e.target.value;
     setSportName(newSportName);
     // Update sportName for all players
-    setPlayers(players.map(player => ({
-      ...player,
-      sportName: newSportName
-    })));
+    setPlayers(
+      players.map((player) => ({
+        ...player,
+        sportName: newSportName,
+      }))
+    );
   };
 
   const priceData = {
     type_1: "1200",
     type_2: "1000",
     type_3: "800",
-    type_4: "600",
-    type_5: "400",
+    type_4: "800",
+    type_5: "600",
+    type_6: "400",
   };
 
   const handleTypeChange = (index, e) => {
@@ -81,8 +86,9 @@ const RegistrationForm = () => {
   }));
 
   //function to show alert
+  //function to show alert
   const showToast = (message, err) => {
-    if (err) {
+    if (err === 1) {
       toast.error(message, {
         position: "top-right",
         autoClose: 5000,
@@ -93,8 +99,19 @@ const RegistrationForm = () => {
         progress: undefined,
         theme: "dark",
       });
-    } else {
+    } else if (err === 0) {
       toast.success(message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      toast.info(message, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -108,16 +125,17 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    toast.info("Registering.....");
+    showToast("Registering.....", 2);
+    setisLoading(true);
     e.preventDefault();
-    
+
     // Check if all players have a selected payment type
-    const allPlayersHaveType = players.every(player => player.type !== "");
+    const allPlayersHaveType = players.every((player) => player.type !== "");
     if (!allPlayersHaveType) {
       showToast("Please select a payment type for all players", 1);
       return;
     }
-    
+
     const data = {
       sportName,
       players,
@@ -141,11 +159,12 @@ const RegistrationForm = () => {
         showToast(error.response.data.message, 1);
       else showToast(error.message, 1);
     } finally {
+      setisLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen md:w-7/12 w-full flex items-center justify-center bg-transparent md:p-4 p-2 relative z-20">
+    <div className="min-h-screen md:w-7/12 w-full flex items-center justify-center bg-transparent  md:p-4 p-2 relative z-20">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-4xl bg-[#0000006e] md:p-8 p-4  rounded-xl shadow-2xl transition-all duration-300 hover:shadow-gray-800 border border-gray-800"
@@ -281,16 +300,17 @@ const RegistrationForm = () => {
                 <option value="type_5"> Type 5</option>
               </select>
             </div>
-            
+
             {/* Payment amount display */}
             <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
               {player.money && player.money !== "---" && (
                 <div className="text-center text-3xl text-white z-30">
-                  only Rs. <text className="font-extrabold">{player.money}</text> /-
+                  only Rs.{" "}
+                  <text className="font-extrabold">{player.money}</text> /-
                 </div>
               )}
             </div>
-            
+
             {/* Remove Player Button */}
             {players.length > 1 && (
               <button
@@ -317,8 +337,13 @@ const RegistrationForm = () => {
         <button
           type="submit"
           className="w-full p-3  cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-blue-500 transition-all duration-300"
+          disabled={isLoading}
         >
-          Next Payment
+          {isLoading ? (
+            <FaSpinner className=" animate-spin mx-auto" />
+          ) : (
+            "Next Payment"
+          )}
         </button>
       </form>
       <ToastContainer />

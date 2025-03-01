@@ -18,7 +18,7 @@ function RegisterPage() {
     <>
       <Navbar />
       <div className="mb-36 h-5 text-white">{/* feff */}</div>
-      <div className="flex-grow flex items-center justify-center relative z-10 p-7">
+      <div className="flex-grow flex items-center justify-center relative z-10 md:p-5 p-2">
         <AccommodationCard
           title={"Fast Payment"}
           description="Scan Qr code and submigt the datials folloeing   "

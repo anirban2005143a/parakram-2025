@@ -9,6 +9,7 @@ const selectAccommodation = async (req, res) => {
     // Validate team exists
     const team = await Team.findOne({ teamId });
     if (!team) {
+
       return res.status(404).json({
         success: false,
         message: 'Team not found'

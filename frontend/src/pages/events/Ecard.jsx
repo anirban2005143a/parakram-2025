@@ -7,7 +7,7 @@ const GameCard = ({ gameName, image }) => {
   const gameInfo = {
     title: gameName,
     description:
-      "Embark on an epic journey through mystical lands. Battle fierce monsters, solve ancient puzzles, and uncover hidden treasures.",
+      "Compete at the highest level and showcase your skills. Experience the thrill of the game, push your limits, and strive for victory in an arena where passion meets determination.",
   };
 
   return (

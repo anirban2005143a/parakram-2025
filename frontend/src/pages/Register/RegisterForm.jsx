@@ -1,19 +1,51 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import FileInput from "../../components/flowbite/FileInput";
 import { FaSpinner } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationForm = () => {
+  const navigate = useNavigate();
   const [sportName, setSportName] = useState("Cricket");
   const [isLoading, setisLoading] = useState(false)
-
   const [players, setPlayers] = useState([
-    { name: "", phoneNumber: "", collegeName: "", email: "", sportName },
+    {
+      name: "",
+      phoneNumber: "",
+      collegeName: "",
+      email: "",
+      idCardLink: "",
+      sportName: "Cricket",
+      type: "",
+      money: "---",
+    },
   ]);
 
   const handleSportChange = (e) => {
-    setSportName(e.target.value);
+    const newSportName = e.target.value;
+    setSportName(newSportName);
+    // Update sportName for all players
+    setPlayers(players.map(player => ({
+      ...player,
+      sportName: newSportName
+    })));
+  };
+
+  const priceData = {
+    type_1: "1200",
+    type_2: "1000",
+    type_3: "800",
+    type_4: "800",
+    type_5: "600",
+    type_6: "400",
+  };
+
+  const handleTypeChange = (index, e) => {
+    const selectedType = e.target.value;
+    const newPlayers = [...players];
+    newPlayers[index].type = selectedType;
+    newPlayers[index].money = priceData[selectedType] || "---";
+    setPlayers(newPlayers);
   };
 
   const handlePlayerChange = (index, e) => {
@@ -30,7 +62,10 @@ const RegistrationForm = () => {
         phoneNumber: "",
         collegeName: "",
         email: "",
+        idCardLink: "",
         sportName: sportName,
+        type: "", // Initialize with empty type
+        money: "---", // Initialize with default money value
       },
     ]);
   };
@@ -41,9 +76,15 @@ const RegistrationForm = () => {
     setPlayers(newPlayers);
   };
 
+  // Prepare data for payment
+  const sending_data = players.map((player) => ({
+    playername: player.name,
+    price: player.money,
+  }));
+
   //function to show alert
   const showToast = (message, err) => {
-    if (err == 1) {
+    if (err === 1) {
       toast.error(message, {
         position: "top-right",
         autoClose: 5000,
@@ -54,7 +95,7 @@ const RegistrationForm = () => {
         progress: undefined,
         theme: "dark",
       });
-    } else if (err == 0) {
+    } else if (err === 0) {
       toast.success(message, {
         position: "top-right",
         autoClose: 5000,
@@ -77,12 +118,21 @@ const RegistrationForm = () => {
         theme: "dark",
       });
     }
-  }
+  };
 
   const handleSubmit = async (e) => {
-    setisLoading(true)
-    showToast("Registering...", 2);
+
     e.preventDefault();
+    showToast("Registering.....", 2);
+    setisLoading(true)
+
+    // Check if all players have a selected payment type
+    const allPlayersHaveType = players.every(player => player.type !== "");
+    if (!allPlayersHaveType) {
+      showToast("Please select a payment type for all players", 1);
+      return;
+    }
+
     const data = {
       sportName,
       players,
@@ -90,18 +140,21 @@ const RegistrationForm = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_BACKEND_URL}/api/teams/register`,
+        `https://parakram-backend-git-master-sai-rugveds-projects.vercel.app/api/teams/register`,
         data
       );
       console.log("Response:", response);
-      console.log(response)
+      console.log(response);
       if (response.data.success) {
-        showToast("Registered Successfully", 0)
+        localStorage.setItem("TeamID", response.data.data.team.teamId);
+        showToast("Registered Successfully", 0);
+        navigate("/event/payment", { state: { sending_data } });
       }
     } catch (error) {
-      console.log(error)
-      if (error.response && error.response.data) showToast(error.response.data.message, 1)
-      else showToast(error.message, 1)
+      console.log(error);
+      if (error.response && error.response.data)
+        showToast(error.response.data.message, 1);
+      else showToast(error.message, 1);
     } finally {
       setisLoading(false)
     }
@@ -145,10 +198,7 @@ const RegistrationForm = () => {
 
         {/* Player Details */}
         {players.map((player, index) => (
-          <div
-            key={index}
-            className="my-6 bg-transparent rounded-lg shadow-md"
-          >
+          <div key={index} className="my-6 bg-transparent rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4 text-white">
               Player {index + 1}
             </h2>
@@ -213,8 +263,50 @@ const RegistrationForm = () => {
               />
             </div>
 
-            {/* admin id photo */}
-            {/* <FileInput /> */}
+            {/* ID card drive link */}
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
+                ID Card Drive Link
+              </label>
+              <input
+                type="text"
+                name="idCardLink"
+                value={player.idCardLink}
+                onChange={(e) => handlePlayerChange(index, e)}
+                className="w-full p-3 bg-[#0000009d] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            {/* Type of payment selection - Each player has their own independent dropdown */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
+                Select Payment Type
+              </label>
+              <select
+                value={player.type}
+                onChange={(e) => handleTypeChange(index, e)}
+                className="w-full p-3 bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
+                required
+              >
+                <option value=""> select pack type</option>
+                <option value="type_1"> Type 1 <span className=" ">Rs: 1200</span></option>
+                <option value="type_2"> Type 2 <span className=" ">Rs: 1000</span> </option>
+                <option value="type_3"> Type 3 <span className=" ">Rs: 800</span> </option>
+                <option value="type_4"> Type 4 <span className=" ">Rs: 800</span> </option>
+                <option value="type_5"> Type 5 <span className=" ">Rs: 600</span> </option>
+                <option value="type_6"> Type 6 <span className=" ">Rs: 400</span> </option>
+              </select>
+            </div>
+
+            {/* Payment amount display */}
+            <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
+              {player.money && player.money !== "---" && (
+                <div className="text-center text-3xl text-white z-30">
+                  only Rs. <text className="font-extrabold">{player.money}</text> /-
+                </div>
+              )}
+            </div>
 
             {/* Remove Player Button */}
             {players.length > 1 && (
@@ -240,11 +332,11 @@ const RegistrationForm = () => {
 
         {/* Submit Button */}
         <button
-          disabled={isLoading}
           type="submit"
+          disabled={isLoading}
           className="w-full p-3 text-center cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-blue-500 transition-all duration-300"
         >
-          {isLoading ? <FaSpinner className=" animate-spin mx-auto" /> : "Next"}
+          {isLoading ? <FaSpinner className=" animate-spin mx-auto" /> : "Next Payment"}
         </button>
       </form>
       <ToastContainer />

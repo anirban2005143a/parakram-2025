@@ -15,7 +15,7 @@ const DropdownBtn = ({ options, setselectedCategory }) => {
     };
 
     return (
-        <div className="relative inline-block text-left my-10">
+        <div className="relative inline-block text-left">
             {/* Dropdown Button */}
             <div>
                 <button
@@ -41,7 +41,7 @@ const DropdownBtn = ({ options, setselectedCategory }) => {
 
                 {/* Dropdown Menu */}
                 {isOpen && (
-                    <div className="origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="origin-top-right  mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
                             {options.map((option, index) => (
                                 <button

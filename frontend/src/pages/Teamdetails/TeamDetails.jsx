@@ -44,7 +44,7 @@ const TeamDetails = () => {
                 {selectedCategory === "Team wise" && <TeamWiseDetails />}
                 {selectedCategory === "Sport wise" && (
                     <>
-                        <div className=' w-full flex justify-center mb-5'>
+                        <div className=' w-full flex justify-center py-5'>
                             <DropdownBtnForSports options={sports} setselectedSports={setselectedSports} />
                         </div>
                         {selectedSports && <SportsWiseDetails  selectedSports={selectedSports} />}

@@ -12,6 +12,7 @@ import Login from './pages/auth/Login.jsx'
 import RegisterPage from './pages/Register/RegisterPage.jsx'
 import Teampage from './pages/team/teampage.jsx'
 import TeamDetails from './pages/Teamdetails/TeamDetails.jsx'
+import Payment from "./pages/Payment/Paymentpage.jsx";
 
 const App = () => {
   return (
@@ -30,7 +31,8 @@ const App = () => {
           <Route path='/Accomodation' element={<Accomodationpage />} />
           <Route path='/Sponsors' element={<Sponsors />} />
           <Route path='/Admin/login' element={<Login />} />
-          <Route path='/event/registration' element={<RegisterPage />} />
+          <Route path="/event/registration" element={<RegisterPage />} />
+          <Route path="/event/payment" element={<Payment />} />
           <Route path='/team/details' element={<TeamDetails />} />
         </Routes>
       </BrowserRouter>

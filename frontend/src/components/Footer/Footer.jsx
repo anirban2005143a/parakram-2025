@@ -11,12 +11,12 @@ const Footer = () => {
             Defy odds, define legacy EAST INDIA'S LARGEST SPORTS FESTIVAL, IIT (ISM), DHANBAD
           </p>
           <div className="flex justify-center md:justify-start mt-4 space-x-3">
-            <button className="bg-[#D1C5A1] text-black px-2 py-2 w-[150px] justify-center md:text-base text-sm rounded-lg flex items-center">
+            <a href="https://drive.google.com/file/d/1CpHGoGXqassZXuHrEPl2Le0GAkxlqfLH/view?usp=sharing" className="bg-[#D1C5A1] text-black px-2 py-2 w-[150px] justify-center md:text-base text-sm rounded-lg cursor-pointer flex items-center text-center">
               ⭳ Events Brochure
-            </button>
-            <button className="bg-[#D1C5A1] text-black px-2 py-2 w-[150px] justify-center md:text-base text-sm rounded-lg flex items-center">
+            </a>
+            <a href="https://drive.google.com/file/d/13uWFyEYI6jw96XwfNwziW6NlrTzFaygj/view?usp=sharing" className="bg-[#D1C5A1] text-black px-2 py-2 w-[150px] justify-center md:text-base text-sm rounded-lg flex items-center">
               ⭳ Rulebook
-            </button>
+            </a>
             <button className="bg-[#D1C5A1] text-black px-2 py-2 w-[150px] justify-center md:text-base text-sm rounded-lg flex items-center">
               ⭳ NOC'24
             </button>

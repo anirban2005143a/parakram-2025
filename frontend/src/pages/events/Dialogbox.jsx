@@ -24,11 +24,11 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
             className="bg-neutral-900 rounded-xl shadow-2xl overflow-hidden max-w-md w-full mx-4"
           >
             {/* Image Section */}
-            <div className="relative h-48 w-full">
+            <div className="relative h-98 w-full">
               <img
                 src={imageUrl}
                 alt="Game"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fill"
               />
               <button
                 onClick={onClose}

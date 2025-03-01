@@ -1,95 +1,80 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
-import  GameCard from "./Ecard.jsx";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
+import GameCard from "./Ecard.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 function Event() {
-
-
   const containerRef = useRef(null);
   const cardRefs = useRef([]);
 
   const events = [
     {
       name: "Athletics",
-      image:
-        "/sports/9.png",
+      image: "/sports/9.png",
     },
     {
       name: "Badminton",
-      image:
-        "/sports/8.png",
+      image: "/sports/8.png",
     },
     {
       name: "Basketball",
-      image:
-        "/sports/6.png",
+      image: "/sports/6.png",
     },
     {
       name: "Chess",
-      image:
-        "/sports/10.png",
+      image: "/sports/10.png",
     },
     {
       name: "Cricket",
-      image:
-        "/sports/7.png",
+      image: "/sports/7.png",
     },
     {
       name: "Football",
-      image:
-        "/sports/5.png",
+      image: "/sports/5.png",
     },
     {
       name: "Hockey",
-      image:
-        "/sports/3.png",
+      image: "/sports/3.png",
     },
     {
       name: "Powerlifting",
-      image:
-        "/sports/2.png",
+      image: "/sports/2.png",
     },
     {
       name: "Squash",
-      image:
-        "/sports/9.png",
+      image: "/sports/Squashv.jpg",
     },
     {
       name: "Table Tennis",
-      image:
-        "/sports/9.png",
+      image: "https://images.pexels.com/photos/18511482/pexels-photo-18511482/free-photo-of-ping-pong-ball-and-rackets.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
       name: "Volleyball",
-      image:
-        "/sports/4.png",
+      image: "/sports/4.png",
     },
     {
       name: "WeightLifting",
-      image:
-        "https://plus.unsplash.com/premium_photo-1722556828905-51b00497fa2b?w=600&auto=format&fit=crop&q=60",
+      image: "/sports/wl.jpg",
     },
     {
       name: "Tennis",
-      image:
-        "/sports/1.png",
+      image: "/sports/tt.jpg",
     },
   ];
 
   useEffect(() => {
     // GSAP Animation with ScrollTrigger
-    document.querySelectorAll('.event-card-group').forEach((card, index) => {
+    document.querySelectorAll(".event-card-group").forEach((card, index) => {
       gsap.from(card, {
         opacity: 0,
         y: 50,
         duration: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
         scrollTrigger: {
           trigger: card, // Trigger animation when the card enters the viewport
-          start: 'top 80%', // Start animation when the top of the card is 80% in view
-          end: 'bottom 20%', // End animation when the bottom of the card is 20% in view
+          start: "top 80%", // Start animation when the top of the card is 80% in view
+          end: "bottom 20%", // End animation when the bottom of the card is 20% in view
         },
       });
     });
@@ -103,14 +88,13 @@ function Event() {
 
       <div
         ref={containerRef}
-        className="flex w-full overflow-hidden justify-center flex-wrap gap-3 md:gap-5 lg:gap-8 px-4">
+        className="flex w-full overflow-hidden justify-center flex-wrap gap-3 md:gap-5 lg:gap-8 px-4"
+      >
         {/* {events.map((event, index) => (
           <GameCard key={index} gameName={event.name} image={event.image} />
         ))} */}
         {events.map((event, index) => (
-          <div
-            key={index}
-          >
+          <div key={index}>
             <GameCard gameName={event.name} image={event.image} />
           </div>
         ))}

@@ -85,7 +85,6 @@ const RegistrationForm = () => {
   }));
 
   //function to show alert
-  //function to show alert
   const showToast = (message, err) => {
     if (err === 1) {
       toast.error(message, {
@@ -123,16 +122,34 @@ const RegistrationForm = () => {
     }
   };
 
+  function isPhoneNumber(value) {
+    // Regular expression to match exactly 10 digits
+    const phoneRegex = /^\d{10}$/;
+
+    // Test the value against the regex
+    return phoneRegex.test(value);
+  }
+
   const handleSubmit = async (e) => {
     showToast("Registering.....", 2);
     setisLoading(true);
     e.preventDefault();
 
+
+
     // Check if all players have a selected payment type
     const allPlayersHaveType = players.every((player) => player.type !== "");
     if (!allPlayersHaveType) {
       showToast("Please select a payment type for all players", 1);
+      setisLoading(false);
       return;
+    }
+
+    const allPlayerHaveValidPhoneNumber = players.every((player) => isPhoneNumber(player.phoneNumber))
+    if (!allPlayerHaveValidPhoneNumber) {
+      showToast("Enter Valid Phone number", 1)
+      setisLoading(false);
+      return
     }
 
     const data = {
@@ -235,6 +252,8 @@ const RegistrationForm = () => {
               </label>
               <input
                 type="tel"
+                maxLength={10}
+                minLength={10}
                 name="phoneNumber"
                 value={player.phoneNumber}
                 onChange={(e) => handlePlayerChange(index, e)}
@@ -276,7 +295,7 @@ const RegistrationForm = () => {
             {/* ID card drive link */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-300 mb-2">
-                ID Card Drive Link
+                ID Card Drive Link (Make it public view)
               </label>
               <input
                 type="text"
@@ -310,7 +329,7 @@ const RegistrationForm = () => {
             </div>
 
             {/* Payment amount display */}
-            <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
+            <div className="p-6 border-t border-b border-neutral-700">
               {player.money && player.money !== "---" && (
                 <div className="text-center text-3xl text-white z-30">
                   only Rs.{" "}

@@ -21,7 +21,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
             initial={{ scale: 0.8, y: -50 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.8, y: -50 }}
-            className="bg-white dark:bg-neutral-900 rounded-xl shadow-2xl overflow-hidden max-w-md w-full mx-4"
+            className="bg-neutral-900 rounded-xl shadow-2xl overflow-hidden max-w-md w-full mx-4"
           >
             {/* Image Section */}
             <div className="relative h-48 w-full">
@@ -32,7 +32,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
               />
               <button
                 onClick={onClose}
-                className="absolute top-2 right-2 p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 transition-colors cursor-pointer"
+                className="absolute top-2 right-2 p-2 bg-neutral-800 rounded-full hover:bg-neutral-700 transition-colors cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-4 w-4 text-black dark:text-white"
+                  className="h-4 w-4 text-white"
                 >
                   <path d="M18 6L6 18" />
                   <path d="M6 6l12 12" />
@@ -54,10 +54,10 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
 
             {/* Game Info Section */}
             <div className="p-6">
-              <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
+              <h2 className="text-2xl font-bold text-white mb-4">
                 {gameInfo.title}
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className=" text-gray-300 mb-6">
                 {gameInfo.description}
               </p>
 
@@ -65,7 +65,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
               <div className="flex gap-4">
                 <button
                   onClick={onClose}
-                  className="flex-1 py-2 px-4 bg-gray-200 dark:bg-neutral-800 text-black dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-neutral-700 transition-colors cursor-pointer "
+                  className="flex-1 py-2 px-4 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition-colors cursor-pointer "
                 >
                   Cancel
                 </button>

@@ -29,11 +29,7 @@ const Sponsors = () => {
     const comingSoonRef = useRef(null);
     const textRef = useRef(null);
     const circlesRef = useRef(null);
-    const countdownRef = useRef(null);
     const formRef = useRef(null);
-    
-    const [email, setEmail] = useState('');
-    const [isSubmitted, setIsSubmitted] = useState(false);
 
     // Set to true to show Coming Soon page, false to show Sponsors
     const showComingSoon = true;
@@ -83,7 +79,7 @@ const Sponsors = () => {
             textElements.forEach((el, index) => {
                 const originalText = el.textContent;
                 el.textContent = '';
-                
+
                 gsap.to(el, {
                     duration: 2,
                     text: originalText,
@@ -151,22 +147,21 @@ const Sponsors = () => {
         return () => clearInterval(timer);
     }, [showComingSoon]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (email) {
-            // Here you would typically send the email to your backend
-            console.log("Email submitted:", email);
-            setIsSubmitted(true);
-            
-            // Animation for successful submission
-            gsap.to(formRef.current.querySelector('.form-success'), {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-                ease: "power2.out"
-            });
-        }
-    };
+    //     e.preventDefault();
+    //     if (email) {
+    //         // Here you would typically send the email to your backend
+    //         console.log("Email submitted:", email);
+    //         setIsSubmitted(true);
+
+    //         // Animation for successful submission
+    //         gsap.to(formRef.current.querySelector('.form-success'), {
+    //             opacity: 1,
+    //             y: 0,
+    //             duration: 0.5,
+    //             ease: "power2.out"
+    //         });
+    //     }
+    // };
 
     const images = [
         tata, cairn, SBI, vodafone, dominos, lensfit, pepsi, Indian_oil, pantaloons, ntpc, Reliance, ojas, gail, american_swan, volvo, shell, canara_bank
@@ -174,12 +169,12 @@ const Sponsors = () => {
 
     return (
         <>
-            <Navbar/>
-            
+            <Navbar />
+
             {/* Coming Soon Page */}
             {showComingSoon && (
-                <section 
-                    ref={comingSoonRef} 
+                <section
+                    ref={comingSoonRef}
                     className="min-h-screen bg-gradient-to-br from-[#272e374d] to-[#00000079] flex flex-col items-center justify-center px-4 overflow-hidden relative"
                 >
                     {/* Decorative circles */}
@@ -190,7 +185,7 @@ const Sponsors = () => {
                         <div className="circle absolute top-[20%] left-[60%] w-24 h-24 rounded-full bg-blue-500 opacity-20"></div>
                         <div className="circle absolute top-[85%] left-[75%] w-36 h-36 rounded-full bg-indigo-300 opacity-20"></div>
                     </div>
-                    
+
                     {/* Main content */}
                     <div className="container mx-auto z-10 text-center">
                         <div ref={textRef} className="mb-12">
@@ -201,10 +196,10 @@ const Sponsors = () => {
                                 <span className="typing-text">We're working on something amazing. Stay tuned for the Sponsors!</span>
                             </p>
                         </div>
-                        
-                       
+
+
                     </div>
-                    
+
                     {/* Bottom wave */}
                     <div className="absolute bottom-0 left-0 w-full">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
@@ -213,7 +208,7 @@ const Sponsors = () => {
                     </div>
                 </section>
             )}
-            
+
             {/* I have kept this hidden for now */}
             {!showComingSoon && (
                 <section id='sponsors' ref={galleryRef} className="container mx-auto px-4 pt-[100px] py-12">

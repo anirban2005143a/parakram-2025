@@ -71,6 +71,9 @@ const PlayersAccordion = ({ data }) => {
                                                     <div className="text-sm text-gray-300">
                                                         <span className="font-medium">Email:</span> {player.email}
                                                     </div>
+                                                    <div className="text-sm text-gray-300">
+                                                        <span className="font-medium">AccommodationType :</span> {player.accommodationType || "none"} {player.accommodationType? player.accommodationPrice : ""}
+                                                    </div>
                                                 </div>
 
                                                 {/* Right Section: ID Card Image */}

@@ -16,14 +16,16 @@ const TeamDetails = () => {
         'Basketball',
         "Tennis",
         "Athletics",
-        "Table Tennis",
+        "TableTennis",
         "Volleyboll",
         "Chess",
         "Squash",
         "Weightlifting",
         "PowerLifting",
         "Hockey",
-        "Badminton"
+        "Badminton",
+        "Karate",
+        "Kabaddi"
     ]
 
     const [selectedCategory, setselectedCategory] = useState(null)

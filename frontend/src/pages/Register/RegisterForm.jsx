@@ -33,12 +33,12 @@ const RegistrationForm = () => {
   };
 
   const priceData = {
-    Type1: "1200",
-    Type2: "1000",
-    Type3: "800",
-    Type4: "800",
-    Type5: "600",
-    Type6: "400",
+    Type1: "2250",
+    Type2: "1850",
+    Type3: "1450",
+    Type4: "1600",
+    Type5: "1200",
+    Type6: "800",
   };
 
   const handleTypeChange = (index, e) => {

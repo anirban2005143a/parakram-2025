@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Loader from "../../components/loader/Loader";
+import { Link } from "react-router-dom";
 
 const TeamWiseDetails = () => {
   const dropdownRefs = useRef([]);
@@ -118,6 +119,9 @@ const TeamWiseDetails = () => {
                 <div className="font-medium  text-gray-100">
                   {team.sportName}
                 </div>
+                <a href={team.payment?.paymentScreenshot?.url || "#"} target="_blank" className="font-medium  text-gray-100">
+                  Check
+                </a>
               </div>
               <span className="transform transition-transform duration-200 text-gray-300">
                 ▼
@@ -164,11 +168,13 @@ const TeamWiseDetails = () => {
                         {/* Right Section: ID Card Image */}
                         <div className="flex-1">
                           {player.idCardPicture ? (
-                            <img
-                              src={player.idCardPicture}
-                              alt="College ID Card"
+                            <a
+                              href={player.idCardPicture || "#"}
+                              target="_blank"
                               className="w-full h-auto rounded-lg border border-gray-200 dark:border-gray-600"
-                            />
+                            >
+                              Check Player id card
+                            </a>
                           ) : (
                             <div className="text-sm text-gray-500 dark:text-gray-400">
                               No ID card picture available.

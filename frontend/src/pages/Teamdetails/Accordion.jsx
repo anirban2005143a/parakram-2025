@@ -79,11 +79,11 @@ const PlayersAccordion = ({ data }) => {
                                                 {/* Right Section: ID Card Image */}
                                                 <div className="flex-1">
                                                     {player.idCardPicture ? (
-                                                        <img
-                                                            src={player.idCardPicture}
-                                                            alt="College ID Card"
+                                                        <a
+                                                            href={player.idCardPicture || "#"}
+                                                            target="_blank"
                                                             className="w-full h-auto rounded-lg border border-gray-200 dark:border-gray-600"
-                                                        />
+                                                        >Check player id card</a>
                                                     ) : (
                                                         <div className="text-sm text-gray-500 dark:text-gray-400">
                                                             No ID card picture available.

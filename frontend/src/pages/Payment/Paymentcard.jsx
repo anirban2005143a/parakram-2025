@@ -7,6 +7,7 @@ import { FaSpinner } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
 import qrImg from './WhatsApp Image 2025-03-01 at 02.04.28_4352447a.jpg'
 import { Flashlight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 

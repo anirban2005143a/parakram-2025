@@ -3,7 +3,7 @@ import Navbar from "../../components/navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import AccommodationCard from "./Paymentcard.jsx";
 import { useLocation } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 function RegisterPage() {
   const location = useLocation();
   const { sending_data } = location.state || { sending_data: [] };

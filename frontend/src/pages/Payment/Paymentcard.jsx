@@ -5,8 +5,7 @@ import axios from "axios";
 import FileInput from "../../components/flowbite/FileInput";
 import { FaSpinner } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
-import qrImg from './WhatsApp Image 2025-03-01 at 02.04.28_4352447a.jpg'
-import { Flashlight } from "lucide-react";
+import qrImg from '/paymentQR.jpg'
 import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -79,17 +78,17 @@ const AccommodationCard = ({
     accomodation_handling();
   }, []);
   const data = {
-    type_1: "1200",
-    type_2: "1000",
-    type_3: "800",
-    type_4: "800",
-    type_5: "600",
-    type_6: "400",
+    type_1: "2250",
+    type_2: "1850",
+    type_3: "1450",
+    type_4: "1600",
+    type_5: "1200",
+    type_6: "800",
   };
 
   const navigate = useNavigate()
 
-  
+
   const showToast = (message, err) => {
     if (err === 1) {
       toast.error(message, {
@@ -166,7 +165,7 @@ const AccommodationCard = ({
 
     try {
       const response = await axios.post(
-        `https://parakram-backend-updt.onrender.com/api/payments/process`,
+        `${import.meta.env.VITE_REACT_BACKEND_URL}/api/payments/process`,
         formData,
         {
           headers: {
@@ -177,23 +176,24 @@ const AccommodationCard = ({
       console.log("Server Response:", response);
       showToast("Transaction uploaded successfully!", 0);
       setisPaymentSuccessful(response.data.success)
+      handelDownloadRecipt()
+
     } catch (error) {
       console.error(error);
       // showToast(error.response?.data?.message || "Transaction failed!", 1);
       if (error.response && error.response.data)
         showToast(error.response.data.message, 1);
       else showToast(error.message, 1);
-    } finally {
+
       setisLoading(false);
-    }
+    } 
   };
 
   const handelDownloadRecipt = async () => {
     try {
       setisDownloading(true);
       const response = await axios.get(
-        `${
-          import.meta.env.VITE_REACT_BACKEND_URL
+        `${import.meta.env.VITE_REACT_BACKEND_URL
         }/api/pdf/download/${window.localStorage.getItem("TeamID")}`,
         {
           responseType: "blob",
@@ -208,7 +208,7 @@ const AccommodationCard = ({
 
       // Extract the filename from the response headers
       const contentDisposition = response.headers['content-disposition'];
-      let fileName = 'downloaded-file.pdf'; // Default filename
+      let fileName = `${window.localStorage.getItem("TeamID") ? window.localStorage.getItem("TeamID") : "Recipt"}.pdf`; // Default filename
 
       if (contentDisposition && contentDisposition.includes("filename=")) {
         fileName = contentDisposition
@@ -229,7 +229,8 @@ const AccommodationCard = ({
       window.URL.revokeObjectURL(url);
 
       // console.log('File downloaded successfully');
-      showToast('Recipt download succesfully' , 0)
+      showToast('Recipt download succesfully', 0)
+      navigate("/")
     } catch (error) {
       console.log(error);
       if (error.response && error.response.data)
@@ -281,11 +282,11 @@ const AccommodationCard = ({
         </div>
 
         {/* QR Image */}
-        <div className="w-40 h-40 mx-auto my-4 rounded-2xl">
+        <div className="w-50 h-50 mx-auto my-4 p-3 bg-[#29293b84] rounded-lg">
           <img
             src={qrImg}
             alt="QRS"
-            className="w-full h-full object-fill rounded-2xl"
+            className="w-full h-full object-contain "
           />
         </div>
 
@@ -324,7 +325,7 @@ const AccommodationCard = ({
               <img
                 src={SelectedImage}
                 alt="Selected"
-                className="max-w-full h-auto rounded-lg mx-auto"
+                className="max-w-full h-auto mx-auto"
                 style={{ maxHeight: "300px" }}
               />
             </div>
@@ -348,7 +349,7 @@ const AccommodationCard = ({
         </div>
 
         {/* pdf download btn  */}
-        {isPaymentSuccessful && <div className="download-btn w-full px-3 justify-center flex mb-5">
+        {/* {isPaymentSuccessful && <div className="download-btn w-full px-3 justify-center flex mb-5">
           <button
             type="button"
             onClick={(e) => {
@@ -363,7 +364,7 @@ const AccommodationCard = ({
             )}
           </button>
 
-        </div>}
+        </div>} */}
       </div>
       <ToastContainer />
     </>

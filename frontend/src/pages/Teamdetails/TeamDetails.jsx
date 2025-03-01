@@ -23,7 +23,10 @@ const TeamDetails = () => {
         "Weightlifting",
         "PowerLifting",
         "Hockey",
-        "Badminton"
+        "Badminton",
+        "Lawn Tennis",
+        "Karate",
+        "Kabaddi"
     ]
 
     const [selectedCategory, setselectedCategory] = useState(null)

@@ -33,12 +33,12 @@ const RegistrationForm = () => {
   };
 
   const priceData = {
-    Type1: "1200",
-    Type2: "1000",
-    Type3: "800",
-    Type4: "800",
-    Type5: "600",
-    Type6: "400",
+    Type1: "2250",
+    Type2: "1850",
+    Type3: "1450",
+    Type4: "1600",
+    Type5: "1200",
+    Type6: "800",
   };
 
   const handleTypeChange = (index, e) => {
@@ -220,6 +220,9 @@ const RegistrationForm = () => {
             <option value="PowerLifting">PowerLifting</option>
             <option value="Hockey">Hockey</option>
             <option value="Badminton">Badminton</option>
+            <option value="Lawn-Tennis">Lawn Tennis</option>
+            <option value="Karate">Karate</option>
+            <option value="Kabaddi">Kabaddi</option>
           </select>
         </div>
 
@@ -255,6 +258,7 @@ const RegistrationForm = () => {
                 maxLength={10}
                 minLength={10}
                 name="phoneNumber"
+                placeholder="123456789"
                 value={player.phoneNumber}
                 onChange={(e) => handlePlayerChange(index, e)}
                 className="w-full p-3 bg-[#0000009d] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
@@ -319,12 +323,12 @@ const RegistrationForm = () => {
                 required
               >
                 <option value="selecttype"> select pack type</option>
-                <option value="Type1"> Type 1 Rs.1200</option>
-                <option value="Type2"> Type 2 Rs.1000</option>
-                <option value="Type3"> Type 3 Rs.800</option>
-                <option value="Type4"> Type 4 Rs.800</option>
-                <option value="Type5"> Type 5 Rs.600</option>
-                <option value="Type6"> Type 6 Rs.400</option>
+                <option value="Type1"> Type 1 &nbsp;-&nbsp; Rs.2250</option>
+                <option value="Type2"> Type 2 &nbsp;-&nbsp; Rs.1850</option>
+                <option value="Type3"> Type 3 &nbsp;-&nbsp; Rs.1450</option>
+                <option value="Type4"> Type 4 &nbsp;-&nbsp; Rs.1600</option>
+                <option value="Type5"> Type 5 &nbsp;-&nbsp; Rs.1200</option>
+                <option value="Type6"> Type 6 &nbsp;-&nbsp; Rs.800</option>
               </select>
             </div>
 

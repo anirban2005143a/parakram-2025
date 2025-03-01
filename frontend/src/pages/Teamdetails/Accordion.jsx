@@ -24,7 +24,7 @@ const PlayersAccordion = ({ data }) => {
     };
 
     return (
-        <div className="bg-[#3837404b] text-white min-h-screen p-4 rounded-lg">
+        <div className="bg-[#3837404b] text-white p-4 rounded-lg">
             <h1 className="text-2xl font-bold mb-4">Teams and Players</h1>
             {Object.values(teams).map((team) => (
                 <div key={team.teamId} className="mb-2">

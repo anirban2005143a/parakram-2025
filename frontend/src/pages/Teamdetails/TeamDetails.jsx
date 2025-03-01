@@ -34,7 +34,7 @@ const TeamDetails = () => {
     return (
         <>
             <Navbar />
-            <div className="pt-[120px] relative z-10 min-h-screen">
+            <div className="pt-[120px] relative z-10 my-8">
                 <div className="text-center md:px-6 px-2 my-6 text-xl">
                     <TextGenerateEffect words={"Team Details"} />
                 </div>

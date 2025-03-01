@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { motion } from 'framer-motion';
 import parakramFont from '/logo_para.svg';
-import SplitText from '../../../components/reactBits/SplitText';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = ({ setisLoaded }) => {
   const heroRef = useRef(null);
@@ -17,6 +17,8 @@ const HeroSection = ({ setisLoaded }) => {
   });
 
   const targetDate = new Date('2025-03-21T00:00:00');
+
+  const navigate = useNavigate()
 
   // Floating animation for the logo
   useEffect(() => {
@@ -169,7 +171,7 @@ const HeroSection = ({ setisLoaded }) => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              onClick={() => router.push('/event')}
+              onClick={() => navigate('/events')}
               className="relative inline-flex items-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-blue-400 to-slate-700 rounded-full overflow-hidden group"
             >
               <span className="relative z-10">Registration is Live!</span>

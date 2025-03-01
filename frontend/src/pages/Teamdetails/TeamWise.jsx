@@ -101,7 +101,7 @@ const TeamWiseDetails = () => {
       <ToastContainer />
 
       {isLoading && <Loader/>}
-      {AllTeamDetails && !isLoading && <div className="p-4 max-w-3xl mx-auto bg-[#00000070] text-white">
+      {AllTeamDetails && !isLoading && <div className="p-4 my-5 max-w-3xl mx-auto bg-[#00000070] text-white">
         {AllTeamDetails.map((team, index) => (
           <div
             key={index}

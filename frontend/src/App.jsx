@@ -4,7 +4,6 @@ import ScrollToTop from "./components/ScrollToTop.jsx"; // Moved to a separate f
 import bgImg from "/bgimg.jpeg"; // Ensure the correct path
 import Home from './pages/homepage/Home.jsx'
 import Merchpage from './pages/Merchandise/Merchpage.jsx'
-import bgImg from '/bgimg.jpeg'
 import Eventpage from './pages/events/Eventpage.jsx'
 import AboutUsPage from './pages/About/About.jsx'
 import Accomodationpage from './pages/Accomodation/Accomodationpage.jsx'

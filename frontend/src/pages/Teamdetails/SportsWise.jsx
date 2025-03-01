@@ -70,7 +70,7 @@ const SportsWiseDetails = ({ selectedSports }) => {
     <>
       <ToastContainer />
       {isLoading && <Loader />}
-      {AllPlayers && !isLoading && <div className="md:p-4 p-2 rounded-lg max-w-3xl mx-auto bg-[#1d1d1d93] text-white">
+      {AllPlayers && !isLoading && <div className="md:p-4 p-2 my-5 rounded-lg max-w-3xl mx-auto bg-[#1d1d1d93] text-white">
 
         <div className="dark">
           <PlayersAccordion data={AllPlayers} />

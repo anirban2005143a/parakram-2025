@@ -20,10 +20,10 @@ const RegistrationForm = () => {
       money: "---",
     },
   ]);
-  const sending_data = players.map((player) => ({
-    playername: player.name,
-    price: money,
-  }));
+  // const sending_data = players.map((player) => ({
+  //   playername: player.name,
+  //   price: money,
+  // }));
   const handleSportChange = (e) => {
     const newSportName = e.target.value;
     setSportName(newSportName);

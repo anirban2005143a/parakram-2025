@@ -156,7 +156,7 @@ const AccommodationCard = ({
 
       // Extract the filename from the response headers
       const contentDisposition = response.headers['content-disposition'];
-      let fileName = 'downloaded-file.pdf'; // Default filename
+      let fileName = `${window.localStorage.getItem("TeamID")?window.localStorage.getItem("TeamID") : "Recipt" }.pdf`; // Default filename
 
       if (contentDisposition && contentDisposition.includes('filename=')) {
         fileName = contentDisposition

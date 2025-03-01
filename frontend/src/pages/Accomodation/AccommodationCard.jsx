@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,8 @@ const AccommodationCard = ({
   const priceRef = useRef(null);
   const featuresRef = useRef(null);
   const buttonRef = useRef(null);
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const card = cardRef.current;
@@ -104,7 +107,7 @@ const AccommodationCard = ({
             <span className="text-4xl font-bold  text-white">
               {price}
             </span>
-            
+
           </div>
           {discount && (
             <p className="text-sm text-gray-300 mt-2">
@@ -141,9 +144,13 @@ const AccommodationCard = ({
       </div>
       <div className="p-6 absolute bottom-2 w-full h-[75px] border-t border-gray-200">
         <button
+          onClick={(e) => {
+            e.preventDefault()
+            navigate("/events")
+          }}
           ref={buttonRef}
           className="w-full py-1 bg-white text-black cursor-pointer rounded-lg font-semibold hover:bg-gray-600 hover:text-white transition-colors"
-          >
+        >
           {buttonText}
         </button>
       </div>

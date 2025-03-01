@@ -6,6 +6,7 @@ import FileInput from "../../components/flowbite/FileInput";
 import { FaSpinner } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
 import qrImg from '/paymentQR.jpg'
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,6 +38,10 @@ const AccommodationCard = ({
     type_5: "600",
     type_6: "400",
   };
+
+  const navigate = useNavigate()
+
+  
   const showToast = (message, err) => {
     if (err === 1) {
       toast.error(message, {
@@ -124,6 +129,7 @@ const AccommodationCard = ({
       console.log("Server Response:", response);
       showToast("Transaction uploaded successfully!", 0);
       setisPaymentSuccessful(response.data.success)
+      handelDownloadRecipt()
     } catch (error) {
       console.error(error);
       // showToast(error.response?.data?.message || "Transaction failed!", 1);
@@ -172,6 +178,7 @@ const AccommodationCard = ({
 
       // console.log('File downloaded successfully');
       showToast('Recipt download succesfully' , 0)
+      navigate("/")
     } catch (error) {
       console.log(error)
       if (error.response && error.response.data) showToast(error.response.data.message, 1)
@@ -289,7 +296,7 @@ const AccommodationCard = ({
         </div>
 
         {/* pdf download btn  */}
-        {isPaymentSuccessful && <div className="download-btn w-full px-3 justify-center flex mb-5">
+        {/* {isPaymentSuccessful && <div className="download-btn w-full px-3 justify-center flex mb-5">
           <button
             type="button"
             onClick={(e) => {
@@ -304,7 +311,7 @@ const AccommodationCard = ({
             )}
           </button>
 
-        </div>}
+        </div>} */}
       </div>
       <ToastContainer />
     </>

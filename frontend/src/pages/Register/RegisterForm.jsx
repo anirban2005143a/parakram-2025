@@ -33,12 +33,12 @@ const RegistrationForm = () => {
   };
 
   const priceData = {
-    type_1: "1200",
-    type_2: "1000",
-    type_3: "800",
-    type_4: "800",
-    type_5: "600",
-    type_6: "400",
+    type_1: "2250",
+    type_2: "1850",
+    type_3: "1450",
+    type_4: "1600",
+    type_5: "1200",
+    type_6: "800",
   };
 
   const handleTypeChange = (index, e) => {
@@ -267,7 +267,7 @@ const RegistrationForm = () => {
             {/* ID card drive link */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-300 mb-2">
-                ID Card Drive Link
+                ID Card Drive Link (Make it public view)
               </label>
               <input
                 type="text"
@@ -291,12 +291,12 @@ const RegistrationForm = () => {
                 required
               >
                 <option value="selecttype"> select pack type</option>
-                <option value="type_1"> Type 1 Rs.1200</option>
-                <option value="type_2"> Type 2 Rs.1000</option>
-                <option value="type_3"> Type 3 Rs.800</option>
-                <option value="type_4"> Type 4 Rs.800</option>
-                <option value="type_5"> Type 5 Rs.600</option>
-                <option value="type_6"> Type 6 Rs.400</option>
+                <option value="type_1"> Type 1 &nbsp;-&nbsp; Rs.2250</option>
+                <option value="type_2"> Type 2 &nbsp;-&nbsp; Rs.1850</option>
+                <option value="type_3"> Type 3 &nbsp;-&nbsp; Rs.1450</option>
+                <option value="type_4"> Type 4 &nbsp;-&nbsp; Rs.1600</option>
+                <option value="type_5"> Type 5 &nbsp;-&nbsp; Rs.1200</option>
+                <option value="type_6"> Type 6 &nbsp;-&nbsp; Rs.800</option>
               </select>
             </div>
 

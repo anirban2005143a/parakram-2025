@@ -112,7 +112,7 @@ const AccommodationCard = ({
 
     try {
       const response = await axios.post(
-        "https://parakram-backend-git-master-sai-rugveds-projects.vercel.app/api/payments/process",
+        "https://parakram-backend-updt-kdbq711l4-sai-rugveds-projects.vercel.app/api/payments/process",
         formData,
         {
           headers: {

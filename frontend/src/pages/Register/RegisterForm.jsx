@@ -143,7 +143,7 @@ const RegistrationForm = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        `https://parakram-backend-git-master-sai-rugveds-projects.vercel.app/api/teams/register`,
+        `https://parakram-backend-updt.vercel.app/api/teams/register`,
         data
       );
       console.log("Response:", response);

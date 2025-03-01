@@ -116,7 +116,12 @@ const Navbar = () => {
     }, []);
 
     return (
-        <motion.nav className="fixed w-full z-20 py-2 ">
+        <motion.nav
+            className="fixed w-full z-50 py-2"
+            initial={{ y: 0 }}
+            animate={{ y: isVisible ? 0 : '-100%' }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+        >
             <div className="container mx-auto px-4 ">
                 {/* Desktop Navbar */}
                 <div className="hidden md:flex  justify-center items-center relative">

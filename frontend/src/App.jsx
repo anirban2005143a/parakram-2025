@@ -1,6 +1,7 @@
-
-import React from 'react'
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop.jsx"; // Moved to a separate file
+import bgImg from "/bgimg.jpeg"; // Ensure the correct path
 import Home from './pages/homepage/Home.jsx'
 import Merchpage from './pages/Merchandise/Merchpage.jsx'
 import bgImg from '/bgimg.jpeg'
@@ -18,10 +19,11 @@ const App = () => {
   return (
     <>
       <div
-        className=" fixed w-screen h-screen top-0 bg-[#000000be] bg-blend-darken  bg-no-repeat bg-cover bg-center "
+        className="fixed w-screen h-screen top-0 bg-[#000000be] bg-blend-darken bg-no-repeat bg-cover bg-center"
         style={{ backgroundImage: `url(${bgImg})` }}
       ></div>
       <BrowserRouter>
+        <ScrollToTop /> {/* Ensures scroll reset on route change */}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<AboutUsPage />} />

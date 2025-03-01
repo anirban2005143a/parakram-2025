@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className=" bg-gradient-to-b from-[#272e374d] to-[#00000079] backdrop-blur-sm text-white py-12 px-3 md:px-8 m-3 rounded-2xl relative z-30">
@@ -40,11 +40,11 @@ const Footer = () => {
           <div className=" w-fit mx-auto">
             <h2 className="text-lg font-semibold">Quick Links</h2>
             <ul className="text-gray-400 mt-2 space-y-1">
-              <li>Home</li>
-              <li>Events</li>
-              <li>Merchandise</li>
-              <li>Sponsors</li>
-              <li>Accommodation</li>
+              <Link className="block" to="/">Home</Link>
+              <Link className="block" to="/events">Events</Link>
+              <Link className="block" to="/Merchandise" >Merchandise</Link>
+              <Link className="block" to="/Sponsors">Sponsors</Link>
+              <Link className="block" to="/Accomodation">Accommodation</Link>
             </ul>
           </div>
         </div>

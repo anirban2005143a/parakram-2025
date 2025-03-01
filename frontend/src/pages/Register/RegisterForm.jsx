@@ -20,7 +20,10 @@ const RegistrationForm = () => {
       money: "---",
     },
   ]);
-
+  const sending_data = players.map((player) => ({
+    playername: player.name,
+    price: money,
+  }));
   const handleSportChange = (e) => {
     const newSportName = e.target.value;
     setSportName(newSportName);
@@ -123,16 +126,6 @@ const RegistrationForm = () => {
   const handleSubmit = async (e) => {
 
     e.preventDefault();
-    showToast("Registering.....", 2);
-    setisLoading(true)
-
-    // Check if all players have a selected payment type
-    const allPlayersHaveType = players.every(player => player.type !== "");
-    if (!allPlayersHaveType) {
-      showToast("Please select a payment type for all players", 1);
-      return;
-    }
-
     const data = {
       sportName,
       players,
@@ -289,17 +282,16 @@ const RegistrationForm = () => {
                 className="w-full p-3 bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500"
                 required
               >
-                <option value=""> select pack type</option>
-                <option value="type_1"> Type 1 <span className=" ">Rs: 1200</span></option>
-                <option value="type_2"> Type 2 <span className=" ">Rs: 1000</span> </option>
-                <option value="type_3"> Type 3 <span className=" ">Rs: 800</span> </option>
-                <option value="type_4"> Type 4 <span className=" ">Rs: 800</span> </option>
-                <option value="type_5"> Type 5 <span className=" ">Rs: 600</span> </option>
-                <option value="type_6"> Type 6 <span className=" ">Rs: 400</span> </option>
+                <option value="selecttype"> select pack type</option>
+                <option value="type_1"> Type 1</option>
+                <option value="type_2"> Type 2</option>
+                <option value="type_3"> Type 3</option>
+                <option value="type_4"> Type 4</option>
+                <option value="type_5"> Type 5</option>
               </select>
             </div>
-
-            {/* Payment amount display */}
+            {/* admin id photo */}
+            {/* <FileInput /> */}
             <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
               {player.money && player.money !== "---" && (
                 <div className="text-center text-3xl text-white z-30">
@@ -307,7 +299,6 @@ const RegistrationForm = () => {
                 </div>
               )}
             </div>
-
             {/* Remove Player Button */}
             {players.length > 1 && (
               <button

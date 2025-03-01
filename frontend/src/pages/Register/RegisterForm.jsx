@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const RegistrationForm = () => {
   const navigate = useNavigate();
   const [sportName, setSportName] = useState("Cricket");
-  const [isLoading, setisLoading] = useState(false)
+  const [isLoading, setisLoading] = useState(false);
   const [players, setPlayers] = useState([
     {
       name: "",
@@ -20,18 +20,16 @@ const RegistrationForm = () => {
       money: "---",
     },
   ]);
-  // const sending_data = players.map((player) => ({
-  //   playername: player.name,
-  //   price: money,
-  // }));
   const handleSportChange = (e) => {
     const newSportName = e.target.value;
     setSportName(newSportName);
     // Update sportName for all players
-    setPlayers(players.map(player => ({
-      ...player,
-      sportName: newSportName
-    })));
+    setPlayers(
+      players.map((player) => ({
+        ...player,
+        sportName: newSportName,
+      }))
+    );
   };
 
   const priceData = {
@@ -86,6 +84,7 @@ const RegistrationForm = () => {
   }));
 
   //function to show alert
+  //function to show alert
   const showToast = (message, err) => {
     if (err === 1) {
       toast.error(message, {
@@ -124,8 +123,17 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = async (e) => {
-
+    showToast("Registering.....", 2);
+    setisLoading(true);
     e.preventDefault();
+
+    // Check if all players have a selected payment type
+    const allPlayersHaveType = players.every((player) => player.type !== "");
+    if (!allPlayersHaveType) {
+      showToast("Please select a payment type for all players", 1);
+      return;
+    }
+
     const data = {
       sportName,
       players,
@@ -133,7 +141,7 @@ const RegistrationForm = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        `https://parakram-backend-git-master-sai-rugveds-projects.vercel.app/api/teams/register`,
+        `${import.meta.env.VITE_REACT_BACKEND_URL}/api/teams/register`,
         data
       );
       console.log("Response:", response);
@@ -149,12 +157,12 @@ const RegistrationForm = () => {
         showToast(error.response.data.message, 1);
       else showToast(error.message, 1);
     } finally {
-      setisLoading(false)
+      setisLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen md:w-7/12 w-full flex items-center justify-center bg-transparent md:p-4 p-2 relative z-20">
+    <div className="min-h-screen md:w-7/12 w-full flex items-center justify-center bg-transparent  md:p-4 p-2 relative z-20">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-4xl bg-[#0000006e] md:p-8 p-4  rounded-xl shadow-2xl transition-all duration-300 hover:shadow-gray-800 border border-gray-800"
@@ -283,19 +291,21 @@ const RegistrationForm = () => {
                 required
               >
                 <option value="selecttype"> select pack type</option>
-                <option value="type_1"> Type 1</option>
-                <option value="type_2"> Type 2</option>
-                <option value="type_3"> Type 3</option>
-                <option value="type_4"> Type 4</option>
-                <option value="type_5"> Type 5</option>
+                <option value="type_1"> Type 1 Rs.1200</option>
+                <option value="type_2"> Type 2 Rs.1000</option>
+                <option value="type_3"> Type 3 Rs.800</option>
+                <option value="type_4"> Type 4 Rs.800</option>
+                <option value="type_5"> Type 5 Rs.600</option>
+                <option value="type_6"> Type 6 Rs.400</option>
               </select>
             </div>
-            {/* admin id photo */}
-            {/* <FileInput /> */}
+
+            {/* Payment amount display */}
             <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
               {player.money && player.money !== "---" && (
                 <div className="text-center text-3xl text-white z-30">
-                  only Rs. <text className="font-extrabold">{player.money}</text> /-
+                  only Rs.{" "}
+                  <text className="font-extrabold">{player.money}</text> /-
                 </div>
               )}
             </div>
@@ -324,10 +334,14 @@ const RegistrationForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
+          className="w-full p-3  cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-blue-500 transition-all duration-300"
           disabled={isLoading}
-          className="w-full p-3 text-center cursor-pointer bg-white text-black font-extrabold rounded-lg hover:bg-blue-500 transition-all duration-300"
         >
-          {isLoading ? <FaSpinner className=" animate-spin mx-auto" /> : "Next Payment"}
+          {isLoading ? (
+            <FaSpinner className=" animate-spin mx-auto" />
+          ) : (
+            "Next Payment"
+          )}
         </button>
       </form>
       <ToastContainer />

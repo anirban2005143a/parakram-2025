@@ -1,3 +1,4 @@
+// controllers/accommodationController.js
 const Player = require('../models/player');
 const Accommodation = require('../models/accommodation');
 const Team = require('../models/team');
@@ -9,7 +10,6 @@ const selectAccommodation = async (req, res) => {
     // Validate team exists
     const team = await Team.findOne({ teamId });
     if (!team) {
-
       return res.status(404).json({
         success: false,
         message: 'Team not found'
@@ -47,8 +47,10 @@ const selectAccommodation = async (req, res) => {
       
       await accommodation.save();
       
-      // Update player with accommodation
+      // Update player with accommodation reference and direct accommodation info
       player.accommodation = accommodation._id;
+      player.accommodationType = accommodationType;
+      player.accommodationPrice = price;
       updatePromises.push(player.save());
       
       totalAmount += price;

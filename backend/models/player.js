@@ -1,3 +1,4 @@
+// models/player.js
 const mongoose = require('mongoose');
 
 const playerSchema = new mongoose.Schema({
@@ -33,6 +34,15 @@ const playerSchema = new mongoose.Schema({
   accommodation: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Accommodation'
+  },
+  accommodationType: {
+    type: String,
+    enum: ['Type1', 'Type2', 'Type3', 'Type4', 'Type5', 'Type6'],
+    required: false
+  },
+  accommodationPrice: {
+    type: Number,
+    required: false
   },
   team: {
     type: mongoose.Schema.Types.ObjectId,

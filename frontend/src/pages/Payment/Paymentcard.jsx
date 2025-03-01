@@ -5,8 +5,7 @@ import axios from "axios";
 import FileInput from "../../components/flowbite/FileInput";
 import { FaSpinner } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
-import qrImg from './WhatsApp Image 2025-03-01 at 02.04.28_4352447a.jpg'
-import { Flashlight } from "lucide-react";
+import qrImg from '/paymentQR.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -191,7 +190,7 @@ const AccommodationCard = ({
     <>
       <div
         ref={cardRef}
-        className="max-w-xl w-full bg-[#ffffff72] dark:bg-[#0000004f] backdrop-blur-xs rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-300 dark:border-neutral-700 z-40 transform hover:scale-101"
+        className="max-w-xl w-full bg-[#0000004f] backdrop-blur-xs rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-neutral-700 z-40 transform hover:scale-101"
       >
         <div className="p-6">
           <h2
@@ -216,7 +215,7 @@ const AccommodationCard = ({
           </div>
         ))}
 
-        <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
+        <div className="p-6 border-t border-b border-neutral-700">
           <div className="text-center text-3xl md:text-4xl text-white z-30">
             only Rs. <span className="font-extrabold">{totalPrice}</span> /-
           </div>
@@ -240,7 +239,7 @@ const AccommodationCard = ({
             type="text"
             value={transactionId}
             onChange={handleTransactionIdChange}
-            className="w-full px-3 py-2 bg-white/10 border border-gray-300 dark:border-neutral-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 bg-white/10 border border-neutral-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter your transaction ID"
           />
         </div>
@@ -297,7 +296,7 @@ const AccommodationCard = ({
               e.preventDefault()
               handelDownloadRecipt()
             }}
-            className="text-white cursor-pointer bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+            className="text-white cursor-pointer bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
             {isDownloading ? (
               <FaSpinner className=" animate-spin mx-auto" />
             ) : (

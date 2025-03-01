@@ -141,19 +141,19 @@ const TeamWiseDetails = () => {
                           <div className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                             {player.name}
                           </div>
-                          <div className="text-sm text-gray-600 dark:text-gray-300">
+                          <div className="text-sm text-gray-300">
                             <span className="font-medium">College:</span> {player.collegeName}
                           </div>
-                          <div className="text-sm text-gray-600 dark:text-gray-300">
+                          <div className="text-sm text-gray-300">
                             <span className="font-medium">Player ID:</span> {player.playerId}
                           </div>
-                          <div className="text-sm text-gray-600 dark:text-gray-300">
+                          <div className="text-sm text-gray-300">
                             <span className="font-medium">Phone:</span> {player.phoneNumber}
                           </div>
-                          <div className="text-sm text-gray-600 dark:text-gray-300">
+                          <div className="text-sm text-gray-300">
                             <span className="font-medium">Sport:</span> {player.sportName}
                           </div>
-                          <div className="text-sm text-gray-600 dark:text-gray-300">
+                          <div className="text-sm text-gray-300">
                             <span className="font-medium">Email:</span> {player.email}
                           </div>
                         </div>

@@ -25,7 +25,7 @@ function Teampage() {
     },
     {
       text: "Aceternity.",
-      className: "text-blue-500 dark:text-blue-500",
+      className: "text-blue-500",
     },
   ];
   const Leadershipdata = [
@@ -271,10 +271,10 @@ function Teampage() {
       <div className="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
         {Leadershipdata.map((item, index) => (
           <CardContainer key={index} className="inter-var">
-            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0000008b] dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+            <CardBody className=" relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
-                className="text-3xl font-bold text-neutral-600 dark:text-white"
+                className="text-3xl font-bold text-white"
               >
                 {item.name}
               </CardItem>
@@ -300,14 +300,14 @@ function Teampage() {
                   as={Link}
                   href="https://twitter.com/mannupaaji"
                   target="__blank"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                  className="px-4 py-2 rounded-xl text-xs font-normal text-white"
                 >
                   Try now →
                 </CardItem>
                 <CardItem
                   translateZ={20}
                   as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                  className="px-4 py-2 rounded-xl  bg-white text-black  text-xs font-bold"
                 >
                   Sign up
                 </CardItem>
@@ -337,10 +337,10 @@ function Teampage() {
       <div className="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
         {CoreTeam.map((item, index) => (
           <CardContainer key={index} className="inter-var">
-            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0000008b] dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+            <CardBody className=" relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
-                className="text-3xl font-bold text-neutral-600 dark:text-white"
+                className="text-3xl font-bold text-white"
               >
                 {item.name}
               </CardItem>
@@ -366,14 +366,14 @@ function Teampage() {
                   as={Link}
                   href="https://twitter.com/mannupaaji"
                   target="__blank"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                  className="px-4 py-2 rounded-xl text-xs font-normal text-white"
                 >
                   Try now →
                 </CardItem>
                 <CardItem
                   translateZ={20}
                   as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                  className="px-4 py-2 rounded-xl bg-white text-black  text-xs font-bold"
                 >
                   Sign up
                 </CardItem>
@@ -403,10 +403,10 @@ function Teampage() {
       <div className="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
         {Developers.map((item, index) => (
           <CardContainer key={index} className="inter-var">
-            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+            <CardBody className=" relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-black border-white/[0.2]  w-full h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
-                className="text-3xl font-bold text-neutral-600 dark:text-white"
+                className="text-3xl font-bold text-white"
               >
                 {item.name}
               </CardItem>
@@ -432,14 +432,14 @@ function Teampage() {
                   as={Link}
                   href="https://twitter.com/mannupaaji"
                   target="__blank"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                  className="px-4 py-2 rounded-xl text-xs font-normal text-white"
                 >
                   Try now →
                 </CardItem>
                 <CardItem
                   translateZ={20}
                   as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                  className="px-4 py-2 rounded-xl bg-white text-black  text-xs font-bold"
                 >
                   Sign up
                 </CardItem>

@@ -301,7 +301,7 @@ const RegistrationForm = () => {
             </div>
 
             {/* Payment amount display */}
-            <div className="p-6 border-t border-b border-gray-200 dark:border-neutral-700">
+            <div className="p-6 border-t border-b border-neutral-700">
               {player.money && player.money !== "---" && (
                 <div className="text-center text-3xl text-white z-30">
                   only Rs.{" "}

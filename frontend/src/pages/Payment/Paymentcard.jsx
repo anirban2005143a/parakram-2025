@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import axios from "axios";
 import FileInput from "../../components/flowbite/FileInput";
 import { FaSpinner } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
-import qrImg from './WhatsApp Image 2025-03-01 at 02.04.28_4352447a.jpg'
+import qrImg from "./WhatsApp Image 2025-03-01 at 02.04.28_4352447a.jpg";
 import { Flashlight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -24,12 +24,59 @@ const AccommodationCard = ({
 
   const [type, setType] = useState("");
   const [money, setMoney] = useState("---");
-  const [transactionId, setTransactionId] = useState(""); // State for transaction ID
-  const [transactionPhoto, setTransactionPhoto] = useState(null); // State for transaction photo
+  const [transactionId, setTransactionId] = useState("");
+  const [transactionPhoto, setTransactionPhoto] = useState(null);
   const [SelectedImage, setSelectedImage] = useState(null);
-  const [isPaymentSuccessful, setisPaymentSuccessful] = useState(false)
-  const [isDownloading, setisDownloading] = useState(false)
+  const [isPaymentSuccessful, setisPaymentSuccessful] = useState(false);
+  const [isDownloading, setisDownloading] = useState(false);
 
+  const accomodation_handling = async () => {
+    const storedData = localStorage.getItem("Playersdata");
+    let sending_array = [];
+
+    if (storedData) {
+      const playersArray = JSON.parse(storedData);
+      playersArray.forEach((item) => {
+        sending_array.push({ playerId: item.playerId, name: item.name });
+      });
+
+      console.log("Sending array:", sending_array);
+      console.log("sending data array:", sending_data);
+      let final_array = [];
+      for (let i = 0; i < sending_array.length; i++) {
+        for (let j = 0; j < sending_data.length; j++) {
+          if (sending_array[i].name === sending_data[j].name) {
+            final_array.push({
+              playerId: sending_array[i].playerId,
+              accommodationType: sending_data[j].accomodationtype,
+            });
+            console.log("Match found:", sending_array[i].name);
+            break;
+          }
+        }
+      }
+
+      console.log("Final array:", final_array);
+      if (final_array.length > 0) {
+        try {
+          const response = await axios.post(
+            `${import.meta.env.VITE_REACT_BACKEND_URL}/api/accommodation/select`,
+            {
+              teamId: window.localStorage.getItem("TeamID"),
+              playerAccommodations: final_array,
+            }
+          );
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    }
+  };
+
+  useEffect(() => {
+    accomodation_handling();
+  }, []);
   const data = {
     type_1: "1200",
     type_2: "1000",
@@ -104,17 +151,17 @@ const AccommodationCard = ({
       0
     );
 
-    const teamid = window.localStorage.getItem("TeamID");
-    console.log(teamid)
+    const teamId = window.localStorage.getItem("TeamID");
+    console.log(teamId);
     const formData = new FormData();
-    formData.append("teamId", teamid);
+    formData.append("teamId", teamId);
     formData.append("transactionId", transactionId);
     formData.append("paymentScreenshot", transactionPhoto);
     formData.append("amountPaid", totalPrice);
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_BACKEND_URL}/api/payments/process`,
+        `https://parakram-backend-updt.onrender.com/api/payments/process`,
         formData,
         {
           headers: {
@@ -124,12 +171,13 @@ const AccommodationCard = ({
       );
       console.log("Server Response:", response);
       showToast("Transaction uploaded successfully!", 0);
-      setisPaymentSuccessful(response.data.success)
+      setisPaymentSuccessful(response.data.success);
     } catch (error) {
       console.error(error);
       // showToast(error.response?.data?.message || "Transaction failed!", 1);
-      if (error.response && error.response.data) showToast(error.response.data.message, 1)
-      else showToast(error.message, 1)
+      if (error.response && error.response.data)
+        showToast(error.response.data.message, 1);
+      else showToast(error.message, 1);
     } finally {
       setisLoading(false);
     }
@@ -137,31 +185,35 @@ const AccommodationCard = ({
 
   const handelDownloadRecipt = async () => {
     try {
-      setisDownloading(true)
-      const response = await axios.get(`${import.meta.env.VITE_REACT_BACKEND_URL}/api/pdf/download/${window.localStorage.getItem('TeamID')}`, {
-        responseType: 'blob', // Important: Set responseType to 'blob' to handle binary data
-      });
-      console.log(response)
-      // Create a URL for the blob
+      setisDownloading(true);
+      const response = await axios.get(
+        `${
+          import.meta.env.VITE_REACT_BACKEND_URL
+        }/api/pdf/download/${window.localStorage.getItem("TeamID")}`,
+        {
+          responseType: "blob",
+        }
+      );
+      console.log(response);
       const url = window.URL.createObjectURL(new Blob([response.data]));
 
       // Create a temporary anchor element to trigger the download
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = url;
 
       // Extract the filename from the response headers
-      const contentDisposition = response.headers['content-disposition'];
-      let fileName = 'downloaded-file.pdf'; // Default filename
+      const contentDisposition = response.headers["content-disposition"];
+      let fileName = "downloaded-file.pdf"; // Default filename
 
-      if (contentDisposition && contentDisposition.includes('filename=')) {
+      if (contentDisposition && contentDisposition.includes("filename=")) {
         fileName = contentDisposition
-          .split('filename=')[1]
-          .split(';')[0]
-          .replace(/['"]/g, ''); // Remove any quotes around the filename
+          .split("filename=")[1]
+          .split(";")[0]
+          .replace(/['"]/g, ""); // Remove any quotes around the filename
       }
 
       // Set the download attribute with the filename
-      link.setAttribute('download', fileName);
+      link.setAttribute("download", fileName);
 
       // Append the anchor to the body and trigger the download
       document.body.appendChild(link);
@@ -172,15 +224,16 @@ const AccommodationCard = ({
       window.URL.revokeObjectURL(url);
 
       // console.log('File downloaded successfully');
-      showToast('Recipt download succesfully' , 0)
+      showToast("Recipt download succesfully", 0);
     } catch (error) {
-      console.log(error)
-      if (error.response && error.response.data) showToast(error.response.data.message, 1)
-      else showToast(error.message, 1)
+      console.log(error);
+      if (error.response && error.response.data)
+        showToast(error.response.data.message, 1);
+      else showToast(error.message, 1);
     } finally {
-      setisDownloading(false)
+      setisDownloading(false);
     }
-  }
+  };
 
   const totalPrice = sending_data.reduce(
     (sum, item) => sum + Number(item.price || 0),
@@ -211,7 +264,7 @@ const AccommodationCard = ({
             className="p-2 text-white text-center hover:bg-white/10 transition-colors duration-200"
           >
             <b className="text-xl md:text-2xl">
-              {item.playername} : Rs. {item.price}/-
+              {item.name} : Rs. {item.price}/-
             </b>
           </div>
         ))}
@@ -290,22 +343,24 @@ const AccommodationCard = ({
         </div>
 
         {/* pdf download btn  */}
-        {isPaymentSuccessful && <div className="download-btn w-full px-3 justify-center flex mb-5">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault()
-              handelDownloadRecipt()
-            }}
-            className="text-white cursor-pointer bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-            {isDownloading ? (
-              <FaSpinner className=" animate-spin mx-auto" />
-            ) : (
-              "Download Recipt"
-            )}
-          </button>
-
-        </div>}
+        {isPaymentSuccessful && (
+          <div className="download-btn w-full px-3 justify-center flex mb-5">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                handelDownloadRecipt();
+              }}
+              className="text-white cursor-pointer bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            >
+              {isDownloading ? (
+                <FaSpinner className=" animate-spin mx-auto" />
+              ) : (
+                "Download Recipt"
+              )}
+            </button>
+          </div>
+        )}
       </div>
       <ToastContainer />
     </>
@@ -313,4 +368,3 @@ const AccommodationCard = ({
 };
 
 export default AccommodationCard;
-

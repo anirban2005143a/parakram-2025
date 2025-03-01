@@ -33,12 +33,12 @@ const RegistrationForm = () => {
   };
 
   const priceData = {
-    type_1: "1200",
-    type_2: "1000",
-    type_3: "800",
-    type_4: "800",
-    type_5: "600",
-    type_6: "400",
+    Type1: "1200",
+    Type2: "1000",
+    Type3: "800",
+    Type4: "800",
+    Type5: "600",
+    Type6: "400",
   };
 
   const handleTypeChange = (index, e) => {
@@ -79,8 +79,9 @@ const RegistrationForm = () => {
 
   // Prepare data for payment
   const sending_data = players.map((player) => ({
-    playername: player.name,
+    name: player.name,
     price: player.money,
+    accomodationtype:player.type
   }));
 
   //function to show alert
@@ -148,6 +149,14 @@ const RegistrationForm = () => {
       console.log(response);
       if (response.data.success) {
         localStorage.setItem("TeamID", response.data.data.team.teamId);
+        const playersArray = response.data.data.players;
+        console.log(response.data.data.players);
+        if (Array.isArray(playersArray)) {
+          localStorage.setItem("Playersdata", JSON.stringify(playersArray));
+          console.log("Array saved to localStorage.");
+        } else {
+          console.error("Data is not an array:", playersArray);
+        }
         showToast("Registered Successfully", 0);
         navigate("/event/payment", { state: { sending_data } });
       }
@@ -291,12 +300,12 @@ const RegistrationForm = () => {
                 required
               >
                 <option value="selecttype"> select pack type</option>
-                <option value="type_1"> Type 1 Rs.1200</option>
-                <option value="type_2"> Type 2 Rs.1000</option>
-                <option value="type_3"> Type 3 Rs.800</option>
-                <option value="type_4"> Type 4 Rs.800</option>
-                <option value="type_5"> Type 5 Rs.600</option>
-                <option value="type_6"> Type 6 Rs.400</option>
+                <option value="Type1"> Type 1 Rs.1200</option>
+                <option value="Type2"> Type 2 Rs.1000</option>
+                <option value="Type3"> Type 3 Rs.800</option>
+                <option value="Type4"> Type 4 Rs.800</option>
+                <option value="Type5"> Type 5 Rs.600</option>
+                <option value="Type6"> Type 6 Rs.400</option>
               </select>
             </div>
 

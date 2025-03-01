@@ -16,7 +16,7 @@ const TeamDetails = () => {
         'Basketball',
         "Tennis",
         "Athletics",
-        "Table Tennis",
+        "TableTennis",
         "Volleyboll",
         "Chess",
         "Squash",
@@ -24,7 +24,6 @@ const TeamDetails = () => {
         "PowerLifting",
         "Hockey",
         "Badminton",
-        "Lawn Tennis",
         "Karate",
         "Kabaddi"
     ]

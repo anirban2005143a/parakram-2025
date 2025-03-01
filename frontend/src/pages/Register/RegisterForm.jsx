@@ -212,7 +212,7 @@ const RegistrationForm = () => {
             <option value="Basketball">Basketball</option>
             <option value="Tennis">Tennis</option>
             <option value="Athletics">Athletics</option>
-            <option value="Table Tennis">Table Tennis</option>
+            <option value="TableTennis">Table Tennis</option>
             <option value="Volleyboll">Volleyboll</option>
             <option value="Chess">Chess</option>
             <option value="Squash">Squash</option>
@@ -220,7 +220,6 @@ const RegistrationForm = () => {
             <option value="PowerLifting">PowerLifting</option>
             <option value="Hockey">Hockey</option>
             <option value="Badminton">Badminton</option>
-            <option value="Lawn-Tennis">Lawn Tennis</option>
             <option value="Karate">Karate</option>
             <option value="Kabaddi">Kabaddi</option>
           </select>

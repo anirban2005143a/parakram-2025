@@ -563,10 +563,10 @@ function Teampage() {
 
               return (
                 <CardContainer key={index} className="inter-var sm:w-[380px] w-full  sm:mx-4">
-                  <CardBody className=" relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full h-auto rounded-xl sm:p-6 p-2 border">
+                  <CardBody className=" relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full h-auto rounded-xl p-6 border">
                     <CardItem
                       translateZ="50"
-                      className="text-3xl font-bold text-white"
+                      className="sm:text-3xl text-lg font-bold text-white"
                     >
                       {item.Name}
                     </CardItem>
@@ -621,11 +621,11 @@ function Teampage() {
             {CoreTeam.map((item, index) => {
 
               return (
-                <CardContainer key={index} className="inter-var h-[550px] sm:w-[380px] w-full mx-2">
-                  <CardBody className="h-full relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full  rounded-xl sm:p-6 p-2 border">
+                <CardContainer key={index} className="inter-var h-[480px] sm:w-[380px] w-full mx-2">
+                  <CardBody className="h-full relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full  rounded-xl p-6 border">
                     <CardItem
                       translateZ="50"
-                      className="text-3xl font-bold text-white"
+                      className="sm:text-3xl text-lg font-bold text-white"
                     >
                       {item.Name}
                     </CardItem>
@@ -684,11 +684,11 @@ function Teampage() {
             {Coordinators.map((item, index) => {
 
               return (
-                <CardContainer key={index} className="inter-var w-[380px] mx-4">
+                <CardContainer key={index} className="inter-var  w-[380px] mx-4">
                   <CardBody className=" relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full h-auto rounded-xl p-6 border">
                     <CardItem
                       translateZ="50"
-                      className="text-3xl font-bold text-white"
+                      className="sm:text-3xl text-lg font-bold text-white"
                     >
                       {item.Name}
                     </CardItem>
@@ -747,11 +747,11 @@ function Teampage() {
 
             {Developers.map((person, index) => {
 
-              return (<CardContainer key={index} className="inter-var md:w-[380px] h-[550px] w-full md:mx-4">
+              return (<CardContainer key={index} className="inter-var md:w-[380px] h-[450px] w-full md:mx-4">
                 <CardBody className=" relative group/card hover:shadow-2xl h-full hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full rounded-xl p-6 border">
                   <CardItem
                     translateZ="50"
-                    className="text-3xl font-bold text-white"
+                    className="sm:text-3xl text-lg font-bold text-white"
                   >
                     {person.name}
                   </CardItem>

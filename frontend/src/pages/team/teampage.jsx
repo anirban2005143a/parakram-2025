@@ -382,76 +382,25 @@ function Teampage() {
 
   const Developers = [
     {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
+      "name": "Anirban Das",
+      "admission_number": "23JE0104",
+      "linkedin": "https://www.linkedin.com/in/anirban-das-2014412b9/",
+      "image": "/members/anirban.jpg"
     },
     {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
+      "name": "Mahammad Vaibhav Aryan",
+      "image": "/members/vaibhav.jpg",
+      "admission_number": "23JE1055",
+      "linkedin": "https://www.linkedin.com/in/vaibhav-aryan-00650b287/"
     },
     {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dfczrbv7b/image/upload/v1736708702/tndurhwxcbbttytnmlnr.png",
-      name: "Prof. Vinay Kumar Rajak",
-      Role: "Convenor",
-      Dept: "Dept. of Petroleum Engineering",
-    },
-  ];
+      "name": "Rajdeep Sonkar",
+      "image": "/members/rajdeeep.jpg",
+      "admission_number": "23JE0778",
+      "linkedin": "https://www.linkedin.com/in/rajdeep-sonkar-8b811a287/"
+    }
+  ]
+    ;
 
   // Set to true to show Coming Soon page, false to show Sponsors
   const showComingSoon = false;
@@ -715,7 +664,7 @@ function Teampage() {
           </div>
         </div>
 
-        {/* Coordinators Team Section */}
+        {/*Coordinators  Team Section */}
         <div className=" md:p-6 p-2 rounded-xl border-[1px] border-gray-600 bg-[#100f0f59] backdrop-blur-xs my-10">
           <div className="text-center pt-10">
             <SplitText
@@ -731,7 +680,7 @@ function Teampage() {
             />
           </div>
 
-          <div className="px-5 w-full sm:flex sm:flex-wrap  sm:justify-center items-center ">
+          <div className="md:px-5 w-full sm:flex sm:flex-wrap  sm:justify-center items-center ">
             {Coordinators.map((item, index) => {
 
               return (
@@ -775,6 +724,70 @@ function Teampage() {
                 </CardContainer>
               )
             })}
+          </div>
+        </div>
+
+        {/* developers Team Section */}
+        <div className=" md:p-6 p-2 rounded-xl border-[1px] border-gray-600 bg-[#100f0f59] backdrop-blur-xs my-10">
+          <div className="text-center pt-10">
+            <SplitText
+              text="Developer"
+              className="text-3xl sm:text-4xl lg:text-6xl font-semibold py-10"
+              delay={150}
+              animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
+              animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+              easing="easeOutCubic"
+              threshold={0.2}
+              rootMargin="-50px"
+              loop={true}
+            />
+          </div>
+
+          <div className="md:px-5 w-full sm:flex sm:flex-wrap  sm:justify-center items-center ">
+
+            {Developers.map((person, index) => {
+
+              return (<CardContainer key={index} className="inter-var md:w-[380px] h-[550px] w-full md:mx-4">
+                <CardBody className=" relative group/card hover:shadow-2xl h-full hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full rounded-xl p-6 border">
+                  <CardItem
+                    translateZ="50"
+                    className="text-3xl font-bold text-white"
+                  >
+                    {person.name}
+                  </CardItem>
+                  <a
+                    as="p"
+                    href={person.linkedin}
+                    target="_blank"
+                    translateZ="60"
+                    className="text-blue-500 underline underline-offset-8 text-md max-w-sm mt-2"
+                  >
+                    Linkdin
+                  </a>
+                  <CardItem translateZ="100" className="w-fit mx-auto my-10 shadow-2xl shadow-[#444444c5] rounded-md overflow-hidden">
+                    <img
+                      src={person.image}
+                      className="h-60 w-full object-contain  group-hover/card:shadow-xl"
+                      alt="thumbnail"
+                    />
+                  </CardItem>
+                  <div className="flex absolute bottom-5 w-[80%] justify-between items-end mt-20">
+                    <CardItem
+                      translateZ={20}
+                      className="px-4 py-2 underline underline-offset-4 rounded-xl text-xs font-normal text-white"
+                    >
+                    </CardItem>
+                    <CardItem
+                      translateZ={20}
+                      className="px-4 py-2 underline underline-offset-4 rounded-xl text-xs font-normal text-white"
+                    >
+                      {person.admission_number}
+                    </CardItem>
+                  </div>
+                </CardBody>
+              </CardContainer>)
+            })}
+
           </div>
         </div>
 

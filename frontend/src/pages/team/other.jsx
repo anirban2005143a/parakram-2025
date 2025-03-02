@@ -12,7 +12,7 @@ const OthersDisplay = ({ others }) => {
         <div className=" min-h-screen text-white z-10 relative">
             <div className="space-y-8">
                 {others.map((team, index) => (
-                    <div key={index} className=" md:p-6 p-4 rounded-xl border-[1px] border-gray-600 bg-[#100f0f59] backdrop-blur-xs ">
+                    <div key={index} className=" md:p-6 p-2 rounded-xl border-[1px] border-gray-600 bg-[#100f0f59] backdrop-blur-xs ">
                         {/* Team Name and Role */}
 
                         <div className="text-center pt-10">
@@ -33,11 +33,11 @@ const OthersDisplay = ({ others }) => {
                         {/* Head Section */}
                         <div className="mt-6">
                             <h3 className="sm:text-3xl text-lg underline underline-offset-8 font-semibold text-white text-center ">Head</h3>
-                            <div className="sm:px-5 w-full flex flex-wrap justify-center items-end">
+                            <div className="sm:px-5 w-full sm:flex sm:flex-wrap sm:justify-center sm:items-end">
                                 {Array.isArray(team.Head) ? (
                                     team.Head.map((head, idx) => (
                                         <CardContainer key={idx} className="inter-var h-[460px] sm:w-[380px] w-full sm:mx-2">
-                                            <CardBody className="h-full relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000005c] border-white/[0.2]  w-full  rounded-xl p-6 border">
+                                            <CardBody className="h-full relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000005c] border-white/[0.2]  w-full  rounded-xl p-6  border">
                                                 <CardItem
                                                     translateZ="50"
                                                     className="sm:text-3xl text-lg font-bold text-white"
@@ -131,7 +131,7 @@ const OthersDisplay = ({ others }) => {
                         {team.JointHeads && (
                             <div className="mt-6 w-full">
                                 <h3 className="text-3xl underline underline-offset-8 font-semibold text-white text-center ">Joint Heads</h3>
-                                <div className="sm:px-5 flex w-full  flex-wrap justify-center items-center">
+                                <div className="sm:px-5 sm:flex w-full  sm:flex-wrap sm:justify-center sm:items-center">
                                     {team.JointHeads.map((jointHead, idx) => (
                                         <CardContainer key={idx} className="inter-var h-[460px] w-full sm:w-[380px] sm:mx-2">
                                             <CardBody className="h-full relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000005c] border-white/[0.2]  w-full  rounded-xl p-6 border">

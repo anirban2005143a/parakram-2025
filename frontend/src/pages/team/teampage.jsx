@@ -762,7 +762,7 @@ function Teampage() {
                   <CardItem translateZ="100" className="w-fit mx-auto my-10 shadow-2xl shadow-[#444444c5] rounded-md overflow-hidden">
                     <img
                       src={person.image}
-                      className="h-60 w-full object-contain  group-hover/card:shadow-xl"
+                      className="h-60 w-55 object-cover group-hover/card:shadow-xl"
                       alt="thumbnail"
                     />
                   </CardItem>

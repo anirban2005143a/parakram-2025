@@ -31,6 +31,11 @@ function Teampage() {
       "Name": "Dr. D.N. Acharya",
       "Email": "spo@iitism.ac.in",
       "image": "/members/D N Acharya.jpg"
+    }, {
+      "Position": "Organizing Secretary",
+      "Name": "Mr. Avishek Baisya",
+      "Email": "spo@iitism.ac.in",
+      "image": "/members/demoUser.jpg"
     }
   ];
 
@@ -361,7 +366,7 @@ function Teampage() {
 
   const Developers = [
     {
-      "name": "Anirban Kritika Das",
+      "name": "Anirban Das",
       "admission_number": "23JE0104",
       "linkedin": "https://www.linkedin.com/in/anirban-das-2014412b9/",
       "image": "/members/anirban.jpg"

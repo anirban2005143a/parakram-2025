@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa6";
 
 
 const Footer = () => {
@@ -12,18 +13,20 @@ const Footer = () => {
         <div className="text-center md:text-left">
           <h2 className="text-lg font-semibold">PARAKRAM '25</h2>
           <p className="text-gray-400 mt-2">
-          <p> EVOLVE. CONQUER. REPEAT </p>
-          EAST INDIA'S LARGEST SPORTS FESTIVAL, IIT (ISM), DHANBAD
+            <p> EVOLVE. CONQUER. REPEAT </p>
+            EAST INDIA'S LARGEST SPORTS FESTIVAL, IIT (ISM), DHANBAD
           </p>
-          <div className="flex justify-center md:justify-start mt-4 space-x-3">
-            <a href="https://drive.google.com/file/d/1CpHGoGXqassZXuHrEPl2Le0GAkxlqfLH/view?usp=sharing" className="bg-[#D1C5A1] text-black px-2 py-2 w-[150px] justify-center md:text-base text-sm rounded-lg cursor-pointer flex items-center text-center">
-              ⭳ Events Brochure
+          <div className="flex flex-wrap justify-center md:justify-start mt-4 space-x-3">
+            <a href="https://drive.google.com/file/d/1CpHGoGXqassZXuHrEPl2Le0GAkxlqfLH/view?usp=sharing"
+              className="bg-[#D1C5A1] my-2 text-black px-4 py-2 justify-center md:text-base text-xs rounded-lg cursor-pointer flex items-center text-center">
+              <FaDownload /> Events Brochure
             </a>
-            <a href="https://drive.google.com/file/d/13uWFyEYI6jw96XwfNwziW6NlrTzFaygj/view?usp=sharing" className="bg-[#D1C5A1] text-black px-2 py-2 w-[150px] justify-center md:text-base text-sm rounded-lg flex items-center">
-              ⭳ Rulebook
+            <a href="https://drive.google.com/file/d/13uWFyEYI6jw96XwfNwziW6NlrTzFaygj/view?usp=sharing"
+              className="bg-[#D1C5A1] my-2 text-black px-4 py-2  justify-center md:text-base text-xs rounded-lg flex items-center">
+              <FaDownload /> Rulebook
             </a>
-            <button className="bg-[#D1C5A1] text-black px-2 py-2 w-[150px] justify-center md:text-base text-sm rounded-lg flex items-center">
-              ⭳ NOC'24
+            <button className="bg-[#D1C5A1] my-2 text-black px-4 py-2  justify-center md:text-base text-xs rounded-lg flex items-center">
+              <FaDownload /> NOC'24
             </button>
           </div>
         </div>
@@ -58,8 +61,11 @@ const Footer = () => {
 
       {/* Social Media Section */}
       <div className="mt-8 flex justify-center space-x-6 text-[#D1C5A1]">
-        <a href="#" className="text-2xl"><FaFacebook/></a> {/* Facebook Icon */}
-        <a href="#" className="text-2xl"><FaInstagram/></a> {/* Instagram Icon */}
+        <a href="#" className="text-2xl"><FaFacebook /></a> {/* Facebook Icon */}
+        <a
+          href="https://www.instagram.com/parakram.iitism?igsh=MXgwdTNtMTBrOTZ4Mg=="
+          target="_blank"
+          className="text-2xl"><FaInstagram /></a> {/* Instagram Icon */}
       </div>
     </footer>
   );

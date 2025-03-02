@@ -36,22 +36,13 @@ const GameCard = ({ gameName, image }) => {
         </div>
       </div> */}
         <div
-          className="w-[320px] h-[480px] bg-[#00000060] skew-x-[-5deg] bg-blend-darken bg-cover bg-center rounded-xl shadow-2xl overflow-hidden transition-all duration-500 transform group"
+          className="sm:w-[320px] w-[280px] h-[480px] bg-[#00000060] skew-x-[-4deg] bg-blend-darken bg-cover bg-center rounded-xl shadow-2xl overflow-hidden transition-all duration-500 transform group"
           style={{
             backgroundImage: `url('${image}')`,
             // transform: "skewX(0deg)", // Skew the card to create the rhombus effect
             margin: "0 auto", // Center the card
           }}
         >
-          {/* Only covering the bottom half so button is clickable */}
-          {/* <div
-          className=" inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"
-          style={{
-            transform: "skewX(20deg)", // Counter-skew the gradient to align with the card
-            transformOrigin: "bottom left",
-          }}
-        ></div> */}
-
           <div
             className=" inset-0 flex h-full w-full flex-col justify-end p-6 text-white"
             style={{

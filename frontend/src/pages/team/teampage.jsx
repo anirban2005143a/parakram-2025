@@ -31,11 +31,6 @@ function Teampage() {
       "Name": "Dr. D.N. Acharya",
       "Email": "spo@iitism.ac.in",
       "image": "/members/D N Acharya.jpg"
-    }, {
-      "Position": "Organizing Secretary",
-      "Name": "Mr. Avishek Baisya",
-      "Email": "spo@iitism.ac.in",
-      "image": "/members/demoUser.jpg"
     }
   ];
 
@@ -57,6 +52,11 @@ function Teampage() {
       "Name": "Prof. Pattiapaban Sahu",
       "Email": "pattiapaban@iitism.ac.in",
       "image": "/members/prof patitapaban sahu.jpg"
+    }, {
+      "Position": "Organizing Secretary",
+      "Name": "Mr. Avishek Baisya",
+      "Email": "spo@iitism.ac.in",
+      "image": "/members/demoUser.jpg"
     },
     {
       "Position": "AO(Sports)",
@@ -85,7 +85,8 @@ function Teampage() {
       "Name": "Rishi Raj",
       "Email": "21je0767@iitism.ac.in",
       "Contact": "9508823691",
-      "image": "/members/rishi raj.jpg"
+      "image": "/members/rishi raj.jpg",
+      "linkdin": "https://www.linkedin.com/in/rishi-raj-46a839233/"
     },
     {
       "Position": "Joint Coordinator",
@@ -664,12 +665,12 @@ function Teampage() {
             />
           </div>
 
-          <div className="md:px-5 w-full sm:flex sm:flex-wrap  sm:justify-center items-center ">
+          <div className="md:px-5 w-full sm:flex sm:flex-wrap  sm:justify-center  ">
             {Coordinators.map((item, index) => {
 
               return (
-                <CardContainer key={index} className="inter-var  w-[380px] mx-4">
-                  <CardBody className=" relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full h-auto rounded-xl p-6 border">
+                <CardContainer key={index} className="inter-var h-[500px] sm:w-[380px]  sm:mx-4">
+                  <CardBody className=" h-full relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full rounded-xl p-6 border">
                     <CardItem
                       translateZ="50"
                       className="sm:text-3xl text-lg font-bold text-white"
@@ -683,14 +684,23 @@ function Teampage() {
                     >
                       {item.Position}
                     </CardItem>
+                    {item.linkdin && <a
+                      as="p"
+                      href={item.linkdin}
+                      target="_blank"
+                      translateZ="60"
+                      className="text-blue-500 underline underline-offset-8 text-md max-w-sm mt-2"
+                    >
+                      Linkedin
+                    </a>}
                     <CardItem translateZ="100" className="w-fit mx-auto my-10 shadow-2xl shadow-[#444444c5] rounded-md overflow-hidden">
                       <img
                         src={item.image}
-                        className="h-60 w-full object-contain  group-hover/card:shadow-xl"
+                        className="h-60 w-55 object-cover  group-hover/card:shadow-xl"
                         alt="thumbnail"
                       />
                     </CardItem>
-                    <div className="flex justify-between items-center mt-20">
+                    <div className=" absolute w-[80%] bottom-5 flex justify-between items-center mt-20">
                       <CardItem
                         translateZ={20}
                         className="px-4 py-2 underline underline-offset-4 rounded-xl text-xs font-normal text-white"

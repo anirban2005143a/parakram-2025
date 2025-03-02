@@ -133,7 +133,7 @@ function Teampage() {
           "Role": "Indoor Games",
           "AdmissionNo": "21je0759",
           "image": "/members/Revant vora.jpg",
-          "linkdin" : "https://www.linkedin.com/feed?trk=p_mwlite_my_network-primary_nav"
+          "linkdin" : "https://www.linkedin.com/in/revant-vora-316338248/?trk=contact-info"
         }
       ],
       "JointHeads": [
@@ -159,7 +159,7 @@ function Teampage() {
           "Name": "Anurag Shukla",
           "Role": "Indoor Games",
           "AdmissionNo": "22JE0151",
-          "image": "/members/Anurag_shukla.HEIC"
+          "image": "/members/demoUser.jpg"
         },
         {
           "Name": "Dabbada Sai Sandeep",

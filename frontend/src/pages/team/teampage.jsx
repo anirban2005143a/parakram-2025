@@ -24,36 +24,13 @@ function Teampage() {
     seconds: 56
   });
 
-  const words = [
-    {
-      text: "Build",
-    },
-    {
-      text: "awesome",
-    },
-    {
-      text: "apps",
-    },
-    {
-      text: "with",
-    },
-    {
-      text: "Aceternity.",
-      className: "text-blue-500",
-    },
-  ];
+
   const Organizers = [
     {
       "Position": "Sports Officer",
       "Name": "Dr. D.N. Acharya",
       "Email": "spo@iitism.ac.in",
       "image": "/members/D N Acharya.jpg"
-    },
-    {
-      "Position": "Organizing Secretary",
-      "Name": "Mr. Avishek Baisya",
-      "Email": "spo@iitism.ac.in",
-      "image": "/members/demoUser.jpg"
     }
   ];
 
@@ -71,17 +48,18 @@ function Teampage() {
       "image": "/members/esha SAHA.jpg"
     },
     {
-      "Position": "AO(Sports)",
-      "Name": "Shri. Naveen Kumar",
-      "Email": "aosports@iitism.ac.in",
-      "image": "/members/naveen kumar.jpg"
-    },
-    {
       "Position": "Treasurer",
       "Name": "Prof. Pattiapaban Sahu",
       "Email": "pattiapaban@iitism.ac.in",
       "image": "/members/prof patitapaban sahu.jpg"
     },
+    {
+      "Position": "AO(Sports)",
+      "Name": "Shri. Naveen Kumar",
+      "Email": "aosports@iitism.ac.in",
+      "image": "/members/naveen kumar.jpg"
+    },
+
     {
       "Position": "General Secretary (Sports)",
       "Name": "Mr. Shivam Kumar",
@@ -113,272 +91,273 @@ function Teampage() {
     }
   ];
 
-  const others = [{
-    "Team": "Event Management Team",
-    "Role": "Oversees the entire fest, ensures smooth execution",
-    "Head": [
-      {
-        "Name": "Guijani Sridhara Teja",
-        "Role": "Outdoor Games & Ground Management",
-        "AdmissionNo": "2AMB0027",
-        "image": "/members/Gujjari Sridhara teja .jpg"
+  const others = [
+    {
+      "Team": "Web and App development Team",
+      "Role": "Develops webstrategies for registrations, live updates, etc.",
+      "Head": {
+        "Name": "Angothu Rahul Naik",
+        "AdmissionNo": "21JE0110",
+        "image": "/members/rahul sir.jpg"
       },
-      {
-        "Name": "Recnat Vora",
-        "Role": "Indoor Games",
-        "AdmissionNo": "21JE0799",
-        "image": "/members/demoUser.jpg"
-      }
-    ],
-    "JointHeads": [
-      {
-        "Name": "Alhala Pinneth",
-        "Role": "Gonouls & Court Management",
-        "AdmissionNo": "22JE0089",
-        "image": "/members/demoUser.jpg"
-      },
-      {
-        "Name": "Shailesh Singh",
-        "Role": "Outdoor Games)",
-        "AdmissionNo": "22MC0084",
-        "image": "/members/demoUser.jpg"
-      },
-      {
-        "Name": "Lakavath Akhil",
-        "Role": "Indoor Games",
-        "AdmissionNo": "22JE0515",
-        "image": "/members/demoUser.jpg"
-      },
-      {
-        "Name": "Anurag Shukla",
-        "Role": "Indoor Games",
-        "AdmissionNo": "22JE0151",
-        "image": "/members/Anurag_shukla.HEIC"
-      },
-      {
-        "Name": "Dabioada Sai Sandeep",
-        "Role": "Outdoor Games",
-        "AdmissionNo": "22JE0289",
-        "image": "/members/demoUser.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Operations & Logistics Team",
-    "Role": "Handles venue setup, equipment, schedules, and logistics",
-    "Head": {
-      "Name": "Vikas Parthar",
-      "AdmissionNo": "23MT0439",
-      "image": "/members/Vikas Parihar.jpg"
+      "JointHeads": [
+        {
+          "Name": "Harsh Singh",
+          "AdmissionNo": "22JE0388",
+          "image": "/members/harsh sir.jpg"
+        },
+        {
+          "Name": "Savara Jayavardhan",
+          "AdmissionNo": "22JE0883",
+          "image": "/members/demoUser.jpg"
+        }
+      ]
+    }, {
+      "Team": "Event Management Team",
+      "Role": "Oversees the entire fest, ensures smooth execution",
+      "Head": [
+        {
+          "Name": "Guijani Sridhara Teja",
+          "Role": "Outdoor Games & Ground Management",
+          "AdmissionNo": "2AMB0027",
+          "image": "/members/Gujjari Sridhara teja .jpg"
+        },
+        {
+          "Name": "Revant Vora",
+          "Role": "Indoor Games",
+          "AdmissionNo": "21je0759",
+          "image": "/members/Revant vora.jpg"
+        }
+      ],
+      "JointHeads": [
+        {
+          "Name": "Allada Praneeth",
+          "Role": "Gonouls & Court Management",
+          "AdmissionNo": "22JE0089",
+          "image": "/members/demoUser.jpg"
+        },
+        {
+          "Name": "Shailesh Singh",
+          "Role": "Outdoor Games)",
+          "AdmissionNo": "22MC0084",
+          "image": "/members/demoUser.jpg"
+        },
+        {
+          "Name": "Lakavath Akhil",
+          "Role": "Indoor Games",
+          "AdmissionNo": "22JE0515",
+          "image": "/members/demoUser.jpg"
+        },
+        {
+          "Name": "Anurag Shukla",
+          "Role": "Indoor Games",
+          "AdmissionNo": "22JE0151",
+          "image": "/members/Anurag_shukla.HEIC"
+        },
+        {
+          "Name": "Dabbada Sai Sandeep",
+          "Role": "Outdoor Games",
+          "AdmissionNo": "22JE0289",
+          "image": "/members/demoUser.jpg"
+        }
+      ]
     },
-    "JointHeads": [
-      {
-        "Name": "Siddu Bhukya",
-        "AdmissionNo": "22JE0954",
+    {
+      "Team": "Operations & Logistics Team",
+      "Role": "Handles venue setup, equipment, schedules, and logistics",
+      "Head": {
+        "Name": "Vikas Parihar",
+        "AdmissionNo": "23MT0439",
+        "image": "/members/Vikas Parihar.jpg"
+      },
+      "JointHeads": [
+        {
+          "Name": "Siddu Bhukya",
+          "AdmissionNo": "22JE0954",
+          "image": "/members/demoUser.jpg"
+        },
+        {
+          "Name": "Sumit Kumar Raj",
+          "AdmissionNo": "22JE0989",
+          "image": "/members/demoUser.jpg"
+        }
+      ]
+    },
+    {
+      "Team": "Public Relation Team",
+      "Role": "Handles meet, contextual speakers & guests, communication, and record image",
+      "Head": {
+        "Name": "Aman Kumar",
+        "AdmissionNo": "21JE0085",
         "image": "/members/demoUser.jpg"
       },
-      {
-        "Name": "Sumit Kumar Raj",
-        "AdmissionNo": "22JE0989",
-        "image": "/members/demoUser.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Public Relation Team",
-    "Role": "Handles meet, contextual speakers & guests, communication, and record image",
-    "Head": {
-      "Name": "Aman Kumar",
-      "AdmissionNo": "21JE0085",
-      "image": "/members/demoUser.jpg"
+      "JointHeads": [
+        {
+          "Name": "Eisha Singh",
+          "AdmissionNo": "24MB0025",
+          "image": "/members/demoUser.jpg"
+        }
+      ]
     },
-    "JointHeads": [
-      {
-        "Name": "Eisha Singh",
-        "AdmissionNo": "24MB0025",
-        "image": "/members/demoUser.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Hospitality Team",
-    "Role": "Manager guest, VIP, and participant accommodation & fooding",
-    "Head": {
-      "Name": "Ridahi Patra",
-      "AdmissionNo": "21JE0761",
-      "image": "/members/RiddhiPatra.heic"
-    },
-    "JointHeads": [
-      {
-        "Name": "Bhukya Sriharsha",
-        "AdmissionNo": "22JE0251",
-        "image": "/members/Bhukya Sriharsha .jpg"
+    {
+      "Team": "Hospitality Team",
+      "Role": "Manager guest, VIP, and participant accommodation & fooding",
+      "Head": {
+        "Name": "Riddhi Patra",
+        "AdmissionNo": "21JE0761",
+        "image": "/members/riddhi patra.jpg"
       },
-      {
-        "Name": "Vikash Prasad",
-        "AdmissionNo": "23MT0438",
-        "image": "/members/VIKASH PRASAD.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Sponsorship Team",
-    "Role": "Secures funds and partnerships for the fest",
-    "Head": {
-      "Name": "Abhinav Prudhan",
-      "AdmissionNo": "21JE0021",
-      "image": "/members/demoUser.jpg"
+      "JointHeads": [
+        {
+          "Name": "Bhukya Sriharsha",
+          "AdmissionNo": "22JE0251",
+          "image": "/members/Bhukya Sriharsha .jpg"
+        },
+        {
+          "Name": "Vikash Prasad",
+          "AdmissionNo": "23MT0438",
+          "image": "/members/VIKASH PRASAD.jpg"
+        }
+      ]
     },
-    "JointHeads": [
-      {
-        "Name": "Siddela Keerthi",
-        "AdmissionNo": "21JE0916",
-        "image": "/members/Siddela keerthi.jpg"
-      },
-      {
-        "Name": "Shivam Sharan Bhagat",
-        "AdmissionNo": "24MT0423",
+    {
+      "Team": "Sponsorship Team",
+      "Role": "Secures funds and partnerships for the fest",
+      "Head": {
+        "Name": "Abhinav Pratham",
+        "AdmissionNo": "21JE0021",
         "image": "/members/demoUser.jpg"
       },
-      {
-        "Name": "Subhash Singh",
-        "AdmissionNo": "22JE0984",
-        "image": "/members/demoUser.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Security Team",
-    "Role": "Ensures safety, crowd control, and emergency response",
-    "Head": {
-      "Name": "Saumabh Kumar Singh",
-      "AdmissionNo": "21JE0848",
-      "image": "/members/demoUser.jpg"
+      "JointHeads": [
+        {
+          "Name": "Siddela Keerthi",
+          "AdmissionNo": "21JE0916",
+          "image": "/members/Siddela keerthi.jpg"
+        },
+        {
+          "Name": "Shivam Sharan Bhagat",
+          "AdmissionNo": "24MT0423",
+          "image": "/members/demoUser.jpg"
+        },
+        {
+          "Name": "Subhash Singh",
+          "AdmissionNo": "22JE0984",
+          "image": "/members/demoUser.jpg"
+        }
+      ]
     },
-    "JointHeads": [
-      {
-        "Name": "Virendra Bilouiya",
-        "AdmissionNo": "22JE1079",
-        "image": "/members/Virendra Biloniya.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Design Team",
-    "Role": "Creates logo, teaser, posters, banners, branding materials, etc.",
-    "Head": {
-      "Name": "Abhinav Diliman",
-      "AdmissionNo": "22JE0023",
-      "image": "/members/demoUser.jpg"
-    },
-    "JointHeads": [
-      {
-        "Name": "Aukita Negi",
-        "AdmissionNo": "24MB0011",
-        "image": "/members/Ankita Negi .JPG"
-      },
-      {
-        "Name": "Khushi",
-        "AdmissionNo": "22JE0478",
-        "image": "/members/demoUser.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Content and Documentation Team",
-    "Role": "Manager content, press releases, and reports; Manager media for wider dissemination of the fest",
-    "Head": {
-      "Name": "Harshita Mahdubani",
-      "AdmissionNo": "22JE0398",
-      "image": "/members/Harshita Mahbubani.jpeg"
-    },
-    "JointHeads": [
-      {
-        "Name": "Kadiyala Bhaskar",
-        "AdmissionNo": "22JE0444",
-        "image": "/members/demoUser.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Finance Team",
-    "Role": "Manages budget, payments, and financial planning",
-    "Head": {
-      "Name": "Preet Samanta",
-      "AdmissionNo": "23MT0273",
-      "image": "/members/demoUser.jpg"
-    },
-    "JointHeads": [
-      {
-        "Name": "Arko Bhattacharyba",
-        "AdmissionNo": "22JE0168",
-        "image": "/members/demoUser.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Web and App development Team",
-    "Role": "Develops webstrategies for registrations, live updates, etc.",
-    "Head": {
-      "Name": "Angodha Rahal Naik",
-      "AdmissionNo": "21JE0110",
-      "image": "/members/demoUser.jpg"
-    },
-    "JointHeads": [
-      {
-        "Name": "Harah Singh",
-        "AdmissionNo": "22JE0388",
+    {
+      "Team": "Security Team",
+      "Role": "Ensures safety, crowd control, and emergency response",
+      "Head": {
+        "Name": "Saurabh Kumar Singh",
+        "AdmissionNo": "21JE0848",
         "image": "/members/demoUser.jpg"
       },
-      {
-        "Name": "Savana Jayamatthan",
-        "AdmissionNo": "22JE0883",
-        "image": "/members/demoUser.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Aburnit Connect Team",
-    "Role": "Engages aburnit for sponsorships and participation",
-    "Head": {
-      "Name": "Rishav Ranjan",
-      "AdmissionNo": "21JE0765",
-      "image": "/members/Rishav Ranjan.jpg"
+      "JointHeads": [
+        {
+          "Name": "Virendra Biloniya",
+          "AdmissionNo": "22JE1079",
+          "image": "/members/Virendra Biloniya.jpg"
+        }
+      ]
     },
-    "JointHeads": [
-      {
-        "Name": "Anurag Jha",
-        "AdmissionNo": "22JE0148",
-        "image": "/members/Anurag Jha.jpg"
-      },
-      {
-        "Name": "Vimlesh Awasthi",
-        "AdmissionNo": "22MC0114",
+    {
+      "Team": "Design Team",
+      "Role": "Creates logo, teaser, posters, banners, branding materials, etc.",
+      "Head": {
+        "Name": "Abhinav Dhiman",
+        "AdmissionNo": "22JE0023",
         "image": "/members/demoUser.jpg"
-      }
-    ]
-  },
-  {
-    "Team": "Promotion and Marketing Team",
-    "Role": "Drives publicity, attracts participants",
-    "Head": {
-      "Name": "Chhavi Sharma",
-      "AdmissionNo": "24MB0022",
-      "image": "/members/Chhavi Sharma.JPG"
-    },
-    "JointHeads": [
-      {
-        "Name": "Swaili Chavan",
-        "AdmissionNo": "22JE1006",
-        "image": "/members/Swathi Chavan.jpeg"
       },
-      {
-        "Name": "Khushu",
-        "AdmissionNo": "24MB0039",
-        "image": "/members/Khushu.jpg"
-      }
-    ]
-  }];
+      "JointHeads": [
+        {
+          "Name": "Ankita Negi",
+          "AdmissionNo": "24MB0011",
+          "image": "/members/Ankita Negi .JPG"
+        },
+        {
+          "Name": "Khushi",
+          "AdmissionNo": "22JE0478",
+          "image": "/members/demoUser.jpg"
+        }
+      ]
+    },
+    {
+      "Team": "Content and Documentation Team",
+      "Role": "Manager content, press releases, and reports; Manager media for wider dissemination of the fest",
+      "Head": {
+        "Name": "Harshita Mahbubani",
+        "AdmissionNo": "22JE0398",
+        "image": "/members/Harshita Mahbubani.jpeg"
+      },
+      "JointHeads": [
+        {
+          "Name": "Kadiyala Bhaskar",
+          "AdmissionNo": "22JE0444",
+          "image": "/members/demoUser.jpg"
+        }
+      ]
+    },
+    {
+      "Team": "Finance Team",
+      "Role": "Manages budget, payments, and financial planning",
+      "Head": {
+        "Name": "Preet Samanta",
+        "AdmissionNo": "23MT0273",
+        "image": "/members/demoUser.jpg"
+      },
+      "JointHeads": [
+        {
+          "Name": "Arko Bhattacharjya",
+          "AdmissionNo": "22JE0168",
+          "image": "/members/demoUser.jpg"
+        }
+      ]
+    },
+
+    {
+      "Team": "Aburnit Connect Team",
+      "Role": "Engages aburnit for sponsorships and participation",
+      "Head": {
+        "Name": "Rishav Ranjan",
+        "AdmissionNo": "21JE0765",
+        "image": "/members/Rishav Ranjan.jpg"
+      },
+      "JointHeads": [
+        {
+          "Name": "Anurag Jha",
+          "AdmissionNo": "22JE0148",
+          "image": "/members/Anurag Jha.jpg"
+        },
+        {
+          "Name": "Vimlesh Awasthi",
+          "AdmissionNo": "22MC0114",
+          "image": "/members/demoUser.jpg"
+        }
+      ]
+    },
+    {
+      "Team": "Promotion and Marketing Team",
+      "Role": "Drives publicity, attracts participants",
+      "Head": {
+        "Name": "Chhavi Sharma",
+        "AdmissionNo": "24MB0022",
+        "image": "/members/Chhavi Sharma.JPG"
+      },
+      "JointHeads": [
+        {
+          "Name": "Swathi Chavan",
+          "AdmissionNo": "22JE1006",
+          "image": "/members/Swathi Chavan.jpeg"
+        },
+        {
+          "Name": "Khushu",
+          "AdmissionNo": "24MB0039",
+          "image": "/members/Khushu.jpg"
+        }
+      ]
+    }];
 
   const Developers = [
     {

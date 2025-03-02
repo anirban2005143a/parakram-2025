@@ -131,7 +131,7 @@ const AboutUsPage = () => {
                         sciences. Recently, the institute featured at 25th rank in the QS
                         World University Rankings of 2023 in the field of Mining and Mineral
                         Engineering. The IIT (ISM) admits its undergraduate students through
-                        the Joint Entrance Examination (Advanced). The institute has 18
+                        the Joint Entrance Examination (Advanced). The institute has 17
                         academic departments covering Engineering, Applied Sciences,
                         Humanities and Social Sciences, and Management studies.
                     </p>

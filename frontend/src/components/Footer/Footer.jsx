@@ -61,7 +61,9 @@ const Footer = () => {
 
       {/* Social Media Section */}
       <div className="mt-8 flex justify-center space-x-6 text-[#D1C5A1]">
-        <a href="#" className="text-2xl"><FaFacebook /></a> {/* Facebook Icon */}
+        <a href="https://www.facebook.com/share/15srDGaXgX/"
+          target="_blank"
+          className="text-2xl"><FaFacebook /></a> {/* Facebook Icon */}
         <a
           href="https://www.instagram.com/parakram.iitism?igsh=MXgwdTNtMTBrOTZ4Mg=="
           target="_blank"

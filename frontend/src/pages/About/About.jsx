@@ -6,6 +6,7 @@ import Convener from '/convener image.png';
 import SplitText from '../../components/reactBits/SplitText';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import proffImg from "/members/ajitkumar.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,24 +137,26 @@ const AboutUsPage = () => {
                     </p>
                     <div ref={convenerRef} className="lg:w-9/12 md:w-10/12 w-[92%] my-10 py-10 md:px-7 px-4 backdrop-blur-sm bg-white/20 text-white rounded-3xl shadow-2xl flex flex-col items-center">
                         <div className='flex md:flex-row flex-col gap-5 items-center'>
-                            <img ref={convenerImageRef} src={Convener} loading='lazy' alt="convener Image" className='md:w-40 w-25 md:h-40 h-25 object-cover object-center rounded-full ' />
+                            <img ref={convenerImageRef} src={proffImg} loading='lazy' alt="convener Image" className='md:w-40 w-25 md:h-40 h-25 object-cover object-center rounded-full ' />
                             <span ref={convenerTextRef} className='flex flex-col items-center justify-center '>
                                 <span className='text-2xl text-center pt-4'>Prof. Ajit Kumar</span>
-                                <span className='text-lg text-center text-yellow-200'>Assistant Professor, Dept. of Mechanical Engineering</span>
+                                <span className='text-lg text-center text-yellow-200'>Assistant Professor, Dept. of Mechanical Engineering IIT (ISM) Dhanbad</span>
                             </span>
                         </div>
-                        <h1 className="text-white text-5xl text-center my-8 font-bold">
+                        <h1 className="text-white text-4xl text-center my-8 font-bold">
                             Message from the Convener
                         </h1>
                         <p className="my-5 text-md text-justify">
-                        It is with immense pride and enthusiasm that I welcome you all to Parakram 2025—the Annual Sports Fest of IIT (ISM) Dhanbad, scheduled from 7th to 9th March 2025. As one of the premier sporting events in the country, Parakram embodies the spirit of resilience, determination, and teamwork, bringing together athletes from diverse backgrounds to compete, excel, and forge lasting bonds of sportsmanship.
-                        Sports have always been a testament to human endurance and excellence, and Parakram serves as a grand platform where talent meets passion, and challenges transform into triumphs. This year, we promise an exhilarating experience with high-energy competitions, thrilling moments, and an electrifying atmosphere that fuels the competitive spirit of every participant.
+                            It is with immense pride and enthusiasm that I welcome you all to <strong>Parakram 2025</strong> — the <strong>Annual Sports Fest of IIT (ISM) Dhanbad</strong> , scheduled from <strong>7th to 9th March 2025</strong> . As one of the premier sporting events in the country, Parakram embodies the spirit of resilience, determination, and teamwork, bringing together athletes from diverse backgrounds to compete, excel, and forge lasting bonds of sportsmanship.
                         </p>
                         <p className="my-5 text-md text-justify">
-                        I extend my heartfelt gratitude to the organizing team, our esteemed sponsors, and all the participants who make this event possible. Let us celebrate the essence of sports, push our limits, and create unforgettable memories together.
+                            Sports have always been a testament to human endurance and excellence, and Parakram serves as a grand platform where talent meets passion, and challenges transform into triumphs. This year, we promise an exhilarating experience with high-energy competitions, thrilling moments, and an electrifying atmosphere that fuels the competitive spirit of every participant.
                         </p>
-                        <p className="my-5 text-md text-left">
-                        Wishing everyone an exciting and successful Parakram 2025!
+                        <p className="my-5 text-md text-justify">
+                            I extend my heartfelt gratitude to the organizing team, our esteemed sponsors, and all the participants who make this event possible. Let us celebrate the essence of sports, push our limits, and create unforgettable memories together.
+                        </p>
+                        <p className="my-5 text-md text-justify">
+                            Wishing everyone an exciting and successful Parakram 2025!
                         </p>
                     </div>
                 </div>

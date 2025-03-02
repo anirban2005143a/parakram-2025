@@ -188,7 +188,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="min-h-screen md:w-7/12 w-full flex items-center justify-center bg-transparent  md:p-4 p-2 relative z-20">
+    <div className="min-h-screen md:w-7/12 w-full flex items-center justify-center bg-transparent  md:p-4 p-2 relative">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-4xl bg-[#0000006e] md:p-8 p-4  rounded-xl shadow-2xl transition-all duration-300 hover:shadow-gray-800 border border-gray-800"
@@ -210,7 +210,7 @@ const RegistrationForm = () => {
             <option value="Cricket">Cricket</option>
             <option value="Football">Football</option>
             <option value="Basketball">Basketball</option>
-            <option value="Tennis">Tennis</option>
+            <option value="LawnTennis">Lawn Tennis</option>
             <option value="Athletics">Athletics</option>
             <option value="TableTennis">Table Tennis</option>
             <option value="Volleyboll">Volleyboll</option>
@@ -334,7 +334,7 @@ const RegistrationForm = () => {
             {/* Payment amount display */}
             <div className="p-6 border-t border-b border-neutral-700">
               {player.money && player.money !== "---" && (
-                <div className="text-center text-3xl text-white z-30">
+                <div className="text-center text-3xl text-white ">
                   only Rs.{" "}
                   <text className="font-extrabold">{player.money}</text> /-
                 </div>

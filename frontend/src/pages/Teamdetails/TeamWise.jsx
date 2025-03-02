@@ -119,8 +119,8 @@ const TeamWiseDetails = () => {
                 <div className="font-medium  text-gray-100">
                   {team.sportName}
                 </div>
-                <a href={team.payment?.paymentScreenshot?.url || "#"} target="_blank" className="font-medium  text-gray-100">
-                  Check
+                <a href={team.payment?.paymentScreenshot?.url || "#"} target="_blank" className="font-light text-sm  text-blue-500 underline underline-offset-4">
+                  Check payment screenshot
                 </a>
               </div>
               <span className="transform transition-transform duration-200 text-gray-300">
@@ -129,7 +129,7 @@ const TeamWiseDetails = () => {
             </div>
             <div
               ref={(el) => (dropdownRefs.current[index] = el)}
-              className="overflow-hidden border-[1px] rounded-lg bg-black  border-white p-3"
+              className="overflow-hidden border-[1px] rounded-lg bg-black  border-white p-3 my-2"
               style={{ display: "none" }}
             >
               {
@@ -137,12 +137,12 @@ const TeamWiseDetails = () => {
                   return (
                     <div
                       key={ind}
-                      className="p-6 bg-white my-3 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-700"
+                      className="p-6  rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-700"
                     >
                       <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
                         {/* Left Section: Player Details */}
                         <div className="flex-1 space-y-4">
-                          <div className="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                          <div className="text-2xl font-bold text-gray-100">
                             {player.name}
                           </div>
                           <div className="text-sm text-gray-300">
@@ -171,12 +171,12 @@ const TeamWiseDetails = () => {
                             <a
                               href={player.idCardPicture || "#"}
                               target="_blank"
-                              className="w-full h-auto rounded-lg border border-gray-200 dark:border-gray-600"
+                              className="w-full h-auto rounded-lg border text-blue-300 underline underline-offset-4 border-gray-600"
                             >
                               Check Player id card
                             </a>
                           ) : (
-                            <div className="text-sm text-gray-500 dark:text-gray-400">
+                            <div className="text-sm text-gray-400">
                               No ID card picture available.
                             </div>
                           )}

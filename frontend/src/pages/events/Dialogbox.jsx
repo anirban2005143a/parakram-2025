@@ -24,7 +24,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
             className="bg-neutral-900 rounded-xl shadow-2xl overflow-hidden max-w-md w-full mx-4"
           >
             {/* Image Section */}
-            <div className="relative h-70 w-full">
+            <div className="relative h-60 w-full">
               <img
                 src={imageUrl}
                 alt="Game"

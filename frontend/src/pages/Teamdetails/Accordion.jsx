@@ -82,10 +82,10 @@ const PlayersAccordion = ({ data }) => {
                                                         <a
                                                             href={player.idCardPicture || "#"}
                                                             target="_blank"
-                                                            className="w-full h-auto rounded-lg border border-gray-200 dark:border-gray-600"
+                                                            className="w-full h-auto rounded-lg border border-gray-600"
                                                         >Check player id card</a>
                                                     ) : (
-                                                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                                                        <div className="text-sm text-gray-400">
                                                             No ID card picture available.
                                                         </div>
                                                     )}

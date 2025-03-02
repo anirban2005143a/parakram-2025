@@ -110,7 +110,7 @@ const HeroSection = ({ setisLoaded }) => {
             ref={imgRef}
             src={parakramFont}
             alt="Glowing Image"
-            className="relative z-10 w-full object-center object-cover"
+            className="relative  w-full object-center object-cover"
           />
 
           {/* Sparkling Particles */}
@@ -138,7 +138,7 @@ const HeroSection = ({ setisLoaded }) => {
           ))}
 
           {/* Countdown Timer */}
-          <div ref={timerRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-8 px-4 -z-30">
+          <div ref={timerRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-8 px-4 ">
             {[
               { label: 'Days', value: timeLeft.days },
               { label: 'Hours', value: timeLeft.hours },
@@ -147,14 +147,14 @@ const HeroSection = ({ setisLoaded }) => {
             ].map((item, index) => (
               <div
                 key={item.label}
-                className="relative group bg-black bg-opacity-30 backdrop-blur-sm rounded-lg p-4 text-center border border-orange-200 border-opacity-20"
+                className="relative group bg-[#00000044] bg-opacity-30 backdrop-blur-sm rounded-lg p-4 text-center border border-orange-200 border-opacity-20"
               >
                 <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                   {String(item.value).padStart(2, '0')}
                 </div>
                 <div className="text-sm text-gray-300 uppercase tracking-wider">{item.label}</div>
                 {/* Animated corner borders */}
-                hello
+                
                 <div className="absolute inset-0">
                   <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-yellow-200 border-opacity-50 rounded-tl" />
                   <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-yellow-200 border-opacity-50 rounded-tr" />
@@ -174,7 +174,7 @@ const HeroSection = ({ setisLoaded }) => {
               onClick={() => navigate('/events')}
               className="relative inline-flex items-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-blue-400 to-slate-700 rounded-full overflow-hidden group"
             >
-              <span className="relative z-10">Registration is Live!</span>
+              <span className="relative ">Registration is Live!</span>
               {/* Animated background effect */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800"

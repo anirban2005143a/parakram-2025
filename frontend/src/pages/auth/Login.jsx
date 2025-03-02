@@ -81,7 +81,7 @@ const Login = () => {
       <ToastContainer />
       <div className=' min-h-screen' style={{ backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)" }}>
         <Navbar />
-        <div id='login' className=' py-[150px] relative z-10'>
+        <div id='login' className=' py-[150px] relative '>
           <section >
             <div className="flex flex-col items-center justify-center px-6 mx-auto lg:py-0">
 

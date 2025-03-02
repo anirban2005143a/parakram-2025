@@ -374,7 +374,7 @@ function Teampage() {
           </div>
 
           {/* Main content */}
-          <div className="container mx-auto z-10 text-center">
+          <div className="container mx-auto  text-center">
             <div ref={textRef} className="mb-12">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
                 <span className="typing-text">Coming Soon</span>

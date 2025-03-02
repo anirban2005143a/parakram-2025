@@ -250,7 +250,7 @@ const AccommodationCard = ({
     <>
       <div
         ref={cardRef}
-        className="max-w-xl w-full bg-[#0000004f] backdrop-blur-xs rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-neutral-700 z-40 transform hover:scale-101"
+        className="max-w-xl w-full bg-[#0000004f] backdrop-blur-xs rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-neutral-700  transform hover:scale-101"
       >
         <div className="p-6">
           <h2
@@ -276,7 +276,7 @@ const AccommodationCard = ({
         ))}
 
         <div className="p-6 border-t border-b border-neutral-700">
-          <div className="text-center text-3xl md:text-4xl text-white z-30">
+          <div className="text-center text-3xl md:text-4xl text-white ">
             only Rs. <span className="font-extrabold">{totalPrice}</span> /-
           </div>
         </div>
@@ -356,7 +356,7 @@ const AccommodationCard = ({
               e.preventDefault()
               handelDownloadRecipt()
             }}
-            className="text-white cursor-pointer bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+            className="text-white cursor-pointer bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
             {isDownloading ? (
               <FaSpinner className=" animate-spin mx-auto" />
             ) : (

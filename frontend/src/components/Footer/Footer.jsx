@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+
+
 const Footer = () => {
   return (
     <footer className=" bg-gradient-to-b from-[#272e374d] to-[#00000079] backdrop-blur-sm text-white py-12 px-3 md:px-8 m-3 rounded-2xl relative z-30">
@@ -52,8 +56,8 @@ const Footer = () => {
 
       {/* Social Media Section */}
       <div className="mt-8 flex justify-center space-x-6 text-[#D1C5A1]">
-        <a href="#" className="text-2xl">&#xf09a;</a> {/* Facebook Icon */}
-        <a href="#" className="text-2xl">&#xf16d;</a> {/* Instagram Icon */}
+        <a href="#" className="text-2xl"><FaFacebook/></a> {/* Facebook Icon */}
+        <a href="#" className="text-2xl"><FaInstagram/></a> {/* Instagram Icon */}
       </div>
     </footer>
   );

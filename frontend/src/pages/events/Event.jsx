@@ -47,7 +47,7 @@ function Event() {
     },
     {
       name: "Table Tennis",
-      image: "https://images.pexels.com/photos/18511482/pexels-photo-18511482/free-photo-of-ping-pong-ball-and-rackets.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/sports/11.webp",
     },
     {
       name: "Volleyball",
@@ -55,11 +55,19 @@ function Event() {
     },
     {
       name: "WeightLifting",
-      image: "/sports/wl.jpg",
+      image: "/sports/12.jpg",
     },
     {
-      name: "Tennis",
-      image: "/sports/tt.jpg",
+      name: "Lawn Tennis",
+      image: "/sports/13.jpg",
+    },
+    {
+      name: "Karate",
+      image: "/sports/15.jpg",
+    },
+    {
+      name: "Kabaddi",
+      image: "/sports/14.png",
     },
   ];
 
@@ -73,8 +81,9 @@ function Event() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: card, // Trigger animation when the card enters the viewport
-          start: "top 80%", // Start animation when the top of the card is 80% in view
-          end: "bottom 20%", // End animation when the bottom of the card is 20% in view
+          scroller: document.body,
+          start: "top 90%", // Start animation when the top of the card is 80% in view
+          end: "top 70%", // End animation when the bottom of the card is 20% in view
         },
       });
     });

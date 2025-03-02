@@ -104,7 +104,7 @@ const Merchpage = () => {
                     </div>
                     
                     {/* Main content */}
-                    <div className="container mx-auto z-10 text-center">
+                    <div className="container mx-auto text-center">
                         <div ref={textRef} className="mb-12">
                             <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
                                 <span className="typing-text">Coming Soon</span>
@@ -148,8 +148,8 @@ const Merchpage = () => {
             style={{ border: "2px solid white" }}
           >
             <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500 via-cyan-500 to-sky-600 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
-            <span className="relative z-10 block px-6 py-3 rounded-2xl bg-neutral-950">
-              <div className="relative z-10 flex items-center space-x-3">
+            <span className="relative  block px-6 py-3 rounded-2xl bg-neutral-950">
+              <div className="relative  flex items-center space-x-3">
                 <span className="transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-emerald-300">
                   {" "}
                   Buy Merchandise

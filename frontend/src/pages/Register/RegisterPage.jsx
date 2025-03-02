@@ -7,8 +7,7 @@ function RegisterPage() {
   return (
     <>
       <Navbar />
-      <div className="mb-36 h-5 text-white">{/* feff */}</div>
-      <div className="flex-grow flex items-center justify-center relative z-10">
+      <div className="flex-grow flex items-center py-[120px] justify-center relative ">
         <RegistrationForm />
       </div>
       <Footer />

@@ -382,13 +382,13 @@ function Teampage() {
 
   const Developers = [
     {
-      "name": "Anirban Das",
+      "name": "Anirban Kritika Das",
       "admission_number": "23JE0104",
       "linkedin": "https://www.linkedin.com/in/anirban-das-2014412b9/",
       "image": "/members/anirban.jpg"
     },
     {
-      "name": "Mahammad Vaibhav Aryan",
+      "name": "Vaibhav Aryan",
       "image": "/members/vaibhav.jpg",
       "admission_number": "23JE1055",
       "linkedin": "https://www.linkedin.com/in/vaibhav-aryan-00650b287/"
@@ -762,7 +762,7 @@ function Teampage() {
                     translateZ="60"
                     className="text-blue-500 underline underline-offset-8 text-md max-w-sm mt-2"
                   >
-                    Linkdin
+                    Linkedin
                   </a>
                   <CardItem translateZ="100" className="w-fit mx-auto my-10 shadow-2xl shadow-[#444444c5] rounded-md overflow-hidden">
                     <img

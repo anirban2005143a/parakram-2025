@@ -86,7 +86,7 @@ function Teampage() {
       "Position": "General Secretary (Sports)",
       "Name": "Mr. Shivam Kumar",
       "Email": "gsec_gns@iitism.ac.in",
-      "image": "/members/demoUser.jpg"
+      "image": "/members/shivam.jpg"
     },
     {
       "Position": "Advisor",
@@ -747,7 +747,7 @@ function Teampage() {
 
             {Developers.map((person, index) => {
 
-              return (<CardContainer key={index} className="inter-var md:w-[380px] h-[450px] w-full md:mx-4">
+              return (<CardContainer key={index} className="inter-var md:w-[380px] sm:h-[480px] h-[450px] w-full md:mx-4">
                 <CardBody className=" relative group/card hover:shadow-2xl h-full hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full rounded-xl p-6 border">
                   <CardItem
                     translateZ="50"

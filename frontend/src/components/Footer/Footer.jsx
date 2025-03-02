@@ -10,9 +10,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Left Section */}
         <div className="text-center md:text-left">
-          <h2 className="text-lg font-semibold">PARAKRAM '24</h2>
+          <h2 className="text-lg font-semibold">PARAKRAM '25</h2>
           <p className="text-gray-400 mt-2">
-            Defy odds, define legacy EAST INDIA'S LARGEST SPORTS FESTIVAL, IIT (ISM), DHANBAD
+          <p> EVOLVE. CONQUER. REPEAT </p>
+          EAST INDIA'S LARGEST SPORTS FESTIVAL, IIT (ISM), DHANBAD
           </p>
           <div className="flex justify-center md:justify-start mt-4 space-x-3">
             <a href="https://drive.google.com/file/d/1CpHGoGXqassZXuHrEPl2Le0GAkxlqfLH/view?usp=sharing" className="bg-[#D1C5A1] text-black px-2 py-2 w-[150px] justify-center md:text-base text-sm rounded-lg cursor-pointer flex items-center text-center">
@@ -32,7 +33,7 @@ const Footer = () => {
           <div className="w-fit mx-auto">
             <h2 className="text-lg font-semibold">For any queries:</h2>
             <p className="text-[#D1A001] mt-2">parakram@iitism.ac.in</p>
-            <p className="text-gray-400 mt-1">9963981308</p>
+            <p className="text-gray-400 mt-1">9508823691</p>
             <p className="text-gray-400 mt-1">
               Indian Institute of Technology (ISM), Dhanbad - 826004, Jharkhand, India
             </p>

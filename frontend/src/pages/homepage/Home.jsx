@@ -23,7 +23,7 @@ const Home = () => {
         <MemorySection />
         <div className="mt-20"></div>
         <hr/>
-        <Sponsers />
+        {/* <Sponsers /> */}
         <Footer />
       </div>
     </>

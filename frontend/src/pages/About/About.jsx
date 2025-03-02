@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BgImage from '/bgimg.jpeg';
-import Convener from '/bgimg.jpeg';
+import Convener from '/convener image.png';
 import SplitText from '../../components/reactBits/SplitText';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/Footer/Footer';

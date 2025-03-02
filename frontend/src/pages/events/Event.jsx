@@ -43,7 +43,7 @@ function Event() {
     },
     {
       name: "Squash",
-      image: "/sports/Squashv.jpg",
+      image: "/sports/sa.png",
     },
     {
       name: "Table Tennis",
@@ -59,7 +59,7 @@ function Event() {
     },
     {
       name: "Lawn Tennis",
-      image: "/sports/13.jpg",
+      image: "/sports/1.png",
     },
     {
       name: "Karate",

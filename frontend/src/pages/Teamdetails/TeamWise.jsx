@@ -137,7 +137,7 @@ const TeamWiseDetails = () => {
                   return (
                     <div
                       key={ind}
-                      className="p-6  rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-700"
+                      className="p-6 my-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-700"
                     >
                       <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
                         {/* Left Section: Player Details */}

@@ -6,6 +6,7 @@ import Convener from '/bgimg.jpeg';
 import SplitText from '../../components/reactBits/SplitText';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import proffImg from "/members/ajitkumar.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,44 +137,26 @@ const AboutUsPage = () => {
                     </p>
                     <div ref={convenerRef} className="lg:w-9/12 md:w-10/12 w-[92%] my-10 py-10 md:px-7 px-4 backdrop-blur-sm bg-white/20 text-white rounded-3xl shadow-2xl flex flex-col items-center">
                         <div className='flex md:flex-row flex-col gap-5 items-center'>
-                            <img ref={convenerImageRef} src={Convener} loading='lazy' alt="convener Image" className='md:w-40 w-25 md:h-40 h-25 object-cover object-center rounded-full ' />
+                            <img ref={convenerImageRef} src={proffImg} loading='lazy' alt="convener Image" className='md:w-40 w-25 md:h-40 h-25 object-cover object-center rounded-full ' />
                             <span ref={convenerTextRef} className='flex flex-col items-center justify-center '>
-                                <span className='text-2xl text-center pt-4'>Prof. Annavarapu Chandra Sekhara Rao</span>
-                                <span className='text-lg text-center text-yellow-200'>Dept. of Computer Science & Engg.</span>
+                                <span className='text-2xl text-center pt-4'>Prof. Ajit Kumar</span>
+                                <span className='text-lg text-center text-yellow-200'>Assistant Professor, Dept. of Mechanical Engineering IIT (ISM) Dhanbad</span>
                             </span>
                         </div>
-                        <h1 className="text-white text-5xl text-center my-8 font-bold">
-                            Convener’s Message
+                        <h1 className="text-white text-4xl text-center my-8 font-bold">
+                            Message from the Convener
                         </h1>
                         <p className="my-5 text-md text-justify">
-                            The combination of talent, hard effort, compassion, competitive
-                            spirit, and enthusiasm is what makes sports great. It is the one
-                            thing that, regardless of gender, age, color, religion, caste, or
-                            anything else, can unite the entire globe in a state of innocent
-                            surprise and delight. Without a strong sports culture, I think
-                            education is still incomplete since healthy growth benefits
-                            everyone—individuals as well as society at large. Sports are the
-                            only activities that combine work with delight, anger with serenity,
-                            and brotherhood with rivalry. As we at IIT(ISM), Dhanbad are proud
-                            of India&apos;s multifarious sports culture, we are pleased to
-                            announce the creation of &apos;Parakram &apos;24&apos;, the most
-                            opulent annual sports gathering in East India, in honor of it. The
-                            three day annual sports festival strives to showcase the
-                            sportsmanship in every individual and make them realize their true
-                            potential ,rebrand the culture of sports and gaming that is
-                            unfortunately often looked down upon in our country. “In the
-                            symphony of life, sports provide the rhythm, the discipline, and the
-                            harmony that elevate us to the highest notes of achievement.”
+                            It is with immense pride and enthusiasm that I welcome you all to <strong>Parakram 2025</strong> — the <strong>Annual Sports Fest of IIT (ISM) Dhanbad</strong> , scheduled from <strong>7th to 9th March 2025</strong> . As one of the premier sporting events in the country, Parakram embodies the spirit of resilience, determination, and teamwork, bringing together athletes from diverse backgrounds to compete, excel, and forge lasting bonds of sportsmanship.
                         </p>
                         <p className="my-5 text-md text-justify">
-                            The goal of &apos;&apos;Parakram&apos;24&apos;&apos; is to provide
-                            an equitable and level playing field where all individuals and teams
-                            can showcase their full potential, both mentally and physically. As
-                            a team, we extend our warmest greetings and look forward to having
-                            you visit us at IIT (ISM), Winning or losing is a part of the
-                            game,the only thing that matters is that whether you give your best
-                            or not. “To be a champ you have to believe in yourself when no one
-                            else will”
+                            Sports have always been a testament to human endurance and excellence, and Parakram serves as a grand platform where talent meets passion, and challenges transform into triumphs. This year, we promise an exhilarating experience with high-energy competitions, thrilling moments, and an electrifying atmosphere that fuels the competitive spirit of every participant.
+                        </p>
+                        <p className="my-5 text-md text-justify">
+                            I extend my heartfelt gratitude to the organizing team, our esteemed sponsors, and all the participants who make this event possible. Let us celebrate the essence of sports, push our limits, and create unforgettable memories together.
+                        </p>
+                        <p className="my-5 text-md text-justify">
+                            Wishing everyone an exciting and successful Parakram 2025!
                         </p>
                     </div>
                 </div>

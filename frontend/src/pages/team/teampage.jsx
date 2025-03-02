@@ -132,7 +132,8 @@ function Teampage() {
           "Name": "Revant Vora",
           "Role": "Indoor Games",
           "AdmissionNo": "21je0759",
-          "image": "/members/Revant vora.jpg"
+          "image": "/members/Revant vora.jpg",
+          "linkdin" : "https://www.linkedin.com/feed?trk=p_mwlite_my_network-primary_nav"
         }
       ],
       "JointHeads": [
@@ -669,7 +670,7 @@ function Teampage() {
             {Coordinators.map((item, index) => {
 
               return (
-                <CardContainer key={index} className="inter-var h-[500px] sm:w-[380px]  sm:mx-4">
+                <CardContainer key={index} className="inter-var h-[500px] sm:w-[380px] w-full sm:mx-4">
                   <CardBody className=" h-full relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#0000008b] border-white/[0.2]  w-full rounded-xl p-6 border">
                     <CardItem
                       translateZ="50"

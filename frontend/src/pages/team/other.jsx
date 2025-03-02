@@ -51,6 +51,15 @@ const OthersDisplay = ({ others }) => {
                                                 >
                                                     {head.Role}
                                                 </CardItem>
+                                                {head.linkdin && <a
+                                                    as="p"
+                                                    href={head.linkdin}
+                                                    target="_blank"
+                                                    translateZ="60"
+                                                    className="text-blue-500 underline underline-offset-8 text-md max-w-sm mt-2"
+                                                >
+                                                    Linkedin
+                                                </a>}
                                                 <CardItem translateZ="100" className="w-fit mx-auto my-10 shadow-2xl shadow-[#444444c5] rounded-md overflow-hidden">
                                                     <img
                                                         src={head.image || '/members/demoUser.jpg'}

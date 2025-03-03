@@ -16,7 +16,7 @@ const RegistrationForm = () => {
       email: "",
       idCardLink: "",
       sportName: "Cricket",
-      size : "NAN",
+      tshirtSize : "NAN",
       type: "",
       money: "---",
     },
@@ -53,14 +53,14 @@ const RegistrationForm = () => {
   const handleTshirtSizeChange = (index, e) => {
     const selectedType = e.target.value;
     const newPlayers = [...players];
-    newPlayers[index].size = selectedType;
+    newPlayers[index].tshirtSize = selectedType;
     setPlayers(newPlayers);
   };
 
   const handleJackettSizeChange = (index, e) => {
     const selectedType = e.target.value;
     const newPlayers = [...players];
-    newPlayers[index].size = selectedType;
+    newPlayers[index].tshirtSize = selectedType;
     setPlayers(newPlayers);
   };
 
@@ -354,7 +354,7 @@ const RegistrationForm = () => {
                 Select Tshirt size
               </label>
               <select
-                value={player.size}
+                value={player.tshirtSize}
                 onChange={(e) => handleTshirtSizeChange(index, e)}
                 className={`w-full p-3  bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500`}
                 required
@@ -375,7 +375,7 @@ const RegistrationForm = () => {
                 Select Jacket size
               </label>
               <select
-                value={player.size}
+                value={player.tshirtSize}
                 onChange={(e) => handleJackettSizeChange(index, e)}
                 className={`w-full p-3  bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500`}
                 required

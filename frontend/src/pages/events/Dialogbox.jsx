@@ -86,7 +86,6 @@
 
 // export default GameDialog;
 
-
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -110,7 +109,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
             initial={{ scale: 0.8, y: -50 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.8, y: -50 }}
-            className="bg-neutral-900 rounded-xl shadow-2xl overflow-hidden lg:w-5/12 md:w-7/12 sm:w-10/12 w-full mx-4 h-[80%] min-h-[300px] flex flex-col"
+            className="bg-neutral-900 rounded-xl shadow-2xl overflow-hidden lg:w-5/12 md:w-7/12 sm:w-10/12 w-full mx-4 h-[80%] overflow-y-auto min-h-[300px] flex flex-col"
           >
             {/* Image Section */}
             <div className="relative w-full h-[65%]">
@@ -142,7 +141,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
             </div>
 
             {/* Game Info Section */}
-            <div className="p-6  h-[35%]">
+            <div className="p-6  h-[35%] flex flex-col justify-between">
               <h2 className="text-2xl font-bold text-white mb-4">
                 {gameInfo.title}
               </h2>

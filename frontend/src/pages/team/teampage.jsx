@@ -324,7 +324,7 @@ function Teampage() {
     },
 
     {
-      "Team": "Aburnit Connect Team",
+      "Team": "Alumni connect team",
       "Role": "Engages aburnit for sponsorships and participation",
       "Head": {
         "Name": "Rishav Ranjan",

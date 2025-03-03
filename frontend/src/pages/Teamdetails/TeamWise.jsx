@@ -163,6 +163,9 @@ const TeamWiseDetails = () => {
                           <div className="text-sm text-gray-300">
                             <span className="font-medium">AccommodationType :</span> {player.accommodationType || "none"} {player.accommodationType? player.accommodationPrice : ""}
                           </div>
+                          <div className="text-sm text-gray-300">
+                            <span className="font-medium">T-shirt/Jacket Size :</span> {player.tshirtSize || "NAN"} 
+                          </div>
                         </div>
 
                         {/* Right Section: ID Card Image */}

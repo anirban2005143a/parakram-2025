@@ -16,7 +16,7 @@ const RegistrationForm = () => {
       email: "",
       idCardLink: "",
       sportName: "Cricket",
-      tshirtSize : "NAN",
+      tshirtSize: "NAN",
       type: "",
       money: "---",
     },
@@ -330,7 +330,13 @@ const RegistrationForm = () => {
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-300 my-2">
                 <p>Select Payment Type</p>
-                <Link to='/Accomodation' className=" text-blue-500 underline text-sm font-light">Check Accomodation</Link>
+                <a
+                  href='/Accomodation'
+                  className=" text-blue-500 underline text-sm font-light"
+                  about="_blank"
+                >
+                  Check Accomodation
+                </a>
               </label>
               <select
                 value={player.type}

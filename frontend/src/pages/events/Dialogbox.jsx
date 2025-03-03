@@ -141,7 +141,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
             </div>
 
             {/* Game Info Section */}
-            <div className="p-6  h-[35%] flex flex-col justify-between my-4">
+            <div className="sm:p-4 m-3 h-[35%] flex flex-col justify-between">
               <h2 className="text-2xl font-bold text-white mb-4">
                 {gameInfo.title}
               </h2>

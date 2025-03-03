@@ -112,7 +112,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
             className="bg-neutral-900 rounded-xl shadow-2xl overflow-hidden lg:w-5/12 md:w-7/12 sm:w-10/12 w-full mx-4 p-3 h-[80%] overflow-y-auto min-h-[300px] flex flex-col"
           >
             {/* Image Section */}
-            <div className="relative w-full h-[65%]">
+            <div className="relative w-full h-[55%]">
               <img
                 src={imageUrl}
                 alt="Game"
@@ -141,11 +141,11 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
             </div>
 
             {/* Game Info Section */}
-            <div className="sm:p-4 m-3 h-[35%] flex flex-col justify-between">
-              <h2 className="text-2xl font-bold text-white mb-4">
+            <div className="sm:p-4 m-3 h-auto flex flex-col justify-between">
+              <h2 className="text-2xl font-bold text-white">
                 {gameInfo.title}
               </h2>
-              <p className=" text-gray-300 mb-6">
+              <p className=" text-gray-300">
                 {gameInfo.description}
               </p>
 

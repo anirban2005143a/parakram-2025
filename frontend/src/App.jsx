@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop.jsx"; // Moved to a separate file
 import bgImg from "/bgimg.jpeg"; // Ensure the correct path
 import Home from './pages/homepage/Home.jsx'
@@ -21,7 +21,7 @@ const App = () => {
         className="fixed w-screen h-screen top-0 bg-[#000000be] bg-blend-darken bg-no-repeat bg-cover bg-center"
         style={{ backgroundImage: `url(${bgImg})` }}
       ></div>
-      <BrowserRouter>
+      <HashRouter>
         <ScrollToTop /> {/* Ensures scroll reset on route change */}
         <Routes>
           <Route path='/' element={<Home />} />
@@ -36,7 +36,7 @@ const App = () => {
           <Route path="/event/payment" element={<Payment />} />
           <Route path='/team/details' element={<TeamDetails />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 };

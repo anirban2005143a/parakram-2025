@@ -331,9 +331,9 @@ const RegistrationForm = () => {
               <label className="block text-sm font-medium text-gray-300 my-2">
                 <p>Select Payment Type</p>
                 <a
-                  href='/Accomodation'
+                  href='/#/Accomodation'
                   className=" text-blue-500 underline text-sm font-light"
-                  about="_blank"
+                  target="_blank"
                 >
                   Check Accomodation
                 </a>

@@ -109,7 +109,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
             initial={{ scale: 0.8, y: -50 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.8, y: -50 }}
-            className="bg-neutral-900 rounded-xl shadow-2xl overflow-hidden lg:w-5/12 md:w-7/12 sm:w-10/12 w-full mx-4 p-3 h-[80%] overflow-y-auto min-h-[300px] flex flex-col justify-between"
+            className="bg-neutral-900 rounded-xl shadow-2xl overflow-hidden lg:w-6/12 md:w-8/12 sm:w-10/12 w-full mx-4 p-3 h-[80%] overflow-y-auto min-h-[300px] flex flex-col justify-between"
           >
             {/* Image Section */}
             <div className="relative w-full h-[60%]">

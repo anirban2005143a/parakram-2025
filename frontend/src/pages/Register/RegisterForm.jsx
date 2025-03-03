@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { FaSpinner } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ const RegistrationForm = () => {
       email: "",
       idCardLink: "",
       sportName: "Cricket",
+      size : "NAN",
       type: "",
       money: "---",
     },
@@ -49,6 +50,20 @@ const RegistrationForm = () => {
     setPlayers(newPlayers);
   };
 
+  const handleTshirtSizeChange = (index, e) => {
+    const selectedType = e.target.value;
+    const newPlayers = [...players];
+    newPlayers[index].size = selectedType;
+    setPlayers(newPlayers);
+  };
+
+  const handleJackettSizeChange = (index, e) => {
+    const selectedType = e.target.value;
+    const newPlayers = [...players];
+    newPlayers[index].size = selectedType;
+    setPlayers(newPlayers);
+  };
+
   const handlePlayerChange = (index, e) => {
     const newPlayers = [...players];
     newPlayers[index][e.target.name] = e.target.value;
@@ -65,6 +80,7 @@ const RegistrationForm = () => {
         email: "",
         idCardLink: "",
         sportName: sportName,
+        size: "NAN",
         type: "", // Initialize with empty type
         money: "---", // Initialize with default money value
       },
@@ -81,7 +97,7 @@ const RegistrationForm = () => {
   const sending_data = players.map((player) => ({
     name: player.name,
     price: player.money,
-    accomodationtype:player.type
+    accomodationtype: player.type
   }));
 
   //function to show alert
@@ -135,8 +151,6 @@ const RegistrationForm = () => {
     setisLoading(true);
     e.preventDefault();
 
-
-
     // Check if all players have a selected payment type
     const allPlayersHaveType = players.every((player) => player.type !== "");
     if (!allPlayersHaveType) {
@@ -186,6 +200,8 @@ const RegistrationForm = () => {
       setisLoading(false);
     }
   };
+
+  console.log(players);
 
   return (
     <div className="min-h-screen md:w-7/12 w-full flex items-center justify-center bg-transparent  md:p-4 p-2 relative">
@@ -312,8 +328,9 @@ const RegistrationForm = () => {
 
             {/* Type of payment selection - Each player has their own independent dropdown */}
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Select Payment Type
+              <label className="block text-sm font-medium text-gray-300 my-2">
+                <p>Select Payment Type</p>
+                <Link to='/Accomodation' className=" text-blue-500 underline text-sm font-light">Check Accomodation</Link>
               </label>
               <select
                 value={player.type}
@@ -322,12 +339,54 @@ const RegistrationForm = () => {
                 required
               >
                 <option value="selecttype"> select pack type</option>
-                <option value="Type1"> Type 1 &nbsp;-&nbsp; Rs.2250</option>
+                <option value="Type1"> Type 1 &nbsp;-&nbsp; Rs.2250  </option>
                 <option value="Type2"> Type 2 &nbsp;-&nbsp; Rs.1850</option>
                 <option value="Type3"> Type 3 &nbsp;-&nbsp; Rs.1450</option>
                 <option value="Type4"> Type 4 &nbsp;-&nbsp; Rs.1600</option>
                 <option value="Type5"> Type 5 &nbsp;-&nbsp; Rs.1200</option>
-                <option value="Type6"> Type 6 &nbsp;-&nbsp; Rs.800</option>
+                <option value="Type6"> Type 6 &nbsp;-&nbsp; Rs.800 </option>
+              </select>
+            </div>
+
+            {/* tshirt size  */}
+            <div className={`mb-6 ${player.type === "Type2" || player.type === "Type5" ? "" : " hidden "}`}>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
+                Select Tshirt size
+              </label>
+              <select
+                value={player.size}
+                onChange={(e) => handleTshirtSizeChange(index, e)}
+                className={`w-full p-3  bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500`}
+                required
+              >
+                <option value="selecttype"> select size</option>
+                <option value="S"> S</option>
+                <option value="M">M </option>
+                <option value="L"> L</option>
+                <option value="XL"> XL</option>
+                <option value="XXL"> XXL</option>
+                <option value="XXXL">XXXL </option>
+              </select>
+            </div>
+
+            {/* jacket size  */}
+            <div className={`mb-6 ${player.type === "Type1" || player.type === "Type4" ? "" : " hidden "}`}>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
+                Select Jacket size
+              </label>
+              <select
+                value={player.size}
+                onChange={(e) => handleJackettSizeChange(index, e)}
+                className={`w-full p-3  bg-[#000000] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500`}
+                required
+              >
+                <option value="selecttype"> select size</option>
+                <option value="S"> S</option>
+                <option value="M">M </option>
+                <option value="L"> L</option>
+                <option value="XL"> XL</option>
+                <option value="XXL"> XXL</option>
+                <option value="XXXL">XXXL </option>
               </select>
             </div>
 

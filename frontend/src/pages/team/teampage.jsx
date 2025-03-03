@@ -28,7 +28,7 @@ function Teampage() {
   const Organizers = [
     {
       "Position": "Sports Officer",
-      "Name": "Dr. D.N. Acharya",
+      "Name": "Dr. D .N. Acharya",
       "Email": "spo@iitism.ac.in",
       "image": "/members/D N Acharya.jpg"
     }
@@ -59,8 +59,8 @@ function Teampage() {
       "image": "/members/demoUser.jpg"
     },
     {
-      "Position": "AO(Sports)",
-      "Name": "Shri. Naveen Kumar",
+      "Position": "AO (Sports)",
+      "Name": "Shri Naveen Kumar",
       "Email": "aosports@iitism.ac.in",
       "image": "/members/naveen kumar.jpg"
     },
@@ -99,7 +99,7 @@ function Teampage() {
 
   const others = [
     {
-      "Team": "Web and App development Team",
+      "Team": "Web and App Development Team",
       "Role": "Develops webstrategies for registrations, live updates, etc.",
       "Head": {
         "Name": "Angothu Rahul Naik",

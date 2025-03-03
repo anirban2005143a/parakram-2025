@@ -17,7 +17,7 @@ const Accompage = () => {
         "Participation fees",
         "Three meals per day for three days (Breakfast, Lunch and Dinner)",
         "Accommodation inside campus (For 3 days)",
-        "Transportation to and fro the Railway station to IIT (ISM) Campus",
+        "Transportation to and fro the Railway station to IIT (ISM) DHANBAD",
         "An attractive welcome kit for each participant",
         "Pro Nights (EDM night, Band night etc)",
         "Refreshments in between the matches",

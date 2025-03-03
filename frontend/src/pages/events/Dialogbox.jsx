@@ -150,7 +150,7 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex gap-4 ">
+              <div className="flex gap-4 py-4">
                 <button
                   onClick={onClose}
                   className="flex-1 py-2 px-4 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition-colors cursor-pointer "

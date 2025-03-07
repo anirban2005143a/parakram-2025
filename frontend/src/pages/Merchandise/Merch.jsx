@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import tshirt1Img from "/tshirt1.png"
+import tshirt2Img from "/tshirt2.png"
 
 const images = [
-  "https://res.cloudinary.com/dmf9vpeu2/image/upload/v1708955492/T-shirt_mlb5tv.png",
-  "https://res.cloudinary.com/dmf9vpeu2/image/upload/v1708955492/Jacket_h6xhte.png",
+  tshirt1Img,
+  tshirt2Img,
 ];
 
 const Carousel = () => {
@@ -35,21 +37,25 @@ const Carousel = () => {
 
   return (
     <div
-      className="relative w-full min-h-fit overflow-hidden mt-10"
+      className="relative w-full  bg-white py-4 overflow-hidden mt-10"
       style={{ objectFit: "fill" }}
     >
+        <div className="price text-4xl font-bold text-center my-5 ">Only 399/-</div>
+        <div>
       <div
-        className="flex transition-transform duration-500 ease-in-out"
+        className="flex transition-transform duration-500 ease-in-out "
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {images.map((img, index) => (
+          {images.map((img, index) => (
           <img
             key={index}
             src={img}
             alt={`Slide ${index + 1}`}
-            className="w-full flex-shrink-0"
+            className="w-full flex-shrink-0 h-full object-contain max-h-[80vh] "
           />
         ))}
+        </div>
+        
       </div>
       <button
         onClick={prevSlide}

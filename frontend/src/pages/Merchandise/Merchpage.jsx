@@ -14,7 +14,7 @@ const Merchpage = () => {
   const formRef = useRef(null);
   
 
-  const showComingSoon = true;
+  const showComingSoon = false;
 
       useEffect(() => {
           if (showComingSoon && comingSoonRef.current) {
@@ -36,16 +36,6 @@ const Merchpage = () => {
                   ease: "back.out(1.7)",
                   delay: 0.5
               });
-  
-              // Animate the countdown
-              // gsap.from(countdownRef.current.querySelectorAll('.countdown-item'), {
-              //     y: 50,
-              //     opacity: 0,
-              //     duration: 0.8,
-              //     stagger: 0.15,
-              //     ease: "power3.out",
-              //     delay: 1
-              // });
   
               // Animate the form
               gsap.from(formRef.current, {
@@ -133,7 +123,7 @@ const Merchpage = () => {
           delay={180}
           animateBy="words"
           direction="top"
-          className="lg:text-6xl md:text-4xl text-2xl mb-8 text-white macondo-swash-caps-regular"
+          className="lg:text-6xl p-4 text-center md:text-4xl text-2xl mb-8 text-white macondo-swash-caps-regular"
         />
       </div>
       <div className=" md:m-4 m-2">
@@ -142,7 +132,9 @@ const Merchpage = () => {
 
 
       <div className="my-10 h-4 flex justify-center">
-        <Link to="/events">
+        <a 
+        href="https://docs.google.com/forms/d/e/1FAIpQLSe5EZWUT3kiWPnPb770HxWbm7fKhqHcDXpPtoc1Dn8rF8Eo1g/viewform?usp=sharing"
+        target="_blank">
           <button
             className="relative inline-block p-px font-semibold leading-6 text-white bg-neutral-900 shadow-2xl cursor-pointer rounded-2xl shadow-emerald-900 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 hover:shadow-emerald-600"
             style={{ border: "2px solid white" }}
@@ -165,7 +157,7 @@ const Merchpage = () => {
               </div>
             </span>
           </button>
-        </Link>
+        </a>
       </div>
       <div className="mt-20 h-5 "></div>
       <FooterT />

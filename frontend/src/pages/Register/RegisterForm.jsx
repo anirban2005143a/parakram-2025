@@ -16,7 +16,7 @@ const RegistrationForm = () => {
       email: "",
       idCardLink: "",
       sportName: "Cricket",
-      tshirtSize: "NAN",
+      tshirtSize: "NA",
       type: "",
       money: "---",
     },

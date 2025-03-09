@@ -80,7 +80,7 @@ const RegistrationForm = () => {
         email: "",
         idCardLink: "",
         sportName: sportName,
-        tshirtSize: "NAN",
+        tshirtSize: "NA",
         type: "", // Initialize with empty type
         money: "---", // Initialize with default money value
       },

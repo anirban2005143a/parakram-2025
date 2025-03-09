@@ -31,7 +31,7 @@ const registerTeam = async (req, res) => {
         sportName: playerData.sportName,
         email: playerData.email || null,
         idCardPicture: playerData.idCardLink || null,
-        tshirtSize: playerData.tshirtSize || 'NA',
+        tshirtSize: playerData.tshirtSize || 'NAN',
         team: team._id
       });
       

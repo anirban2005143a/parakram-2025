@@ -7,7 +7,8 @@ const streamifier = require('streamifier');
 const processPayment = async (req, res) => {
   try {
     const { teamId, transactionId, amountPaid } = req.body;
-
+    
+    // Find team
     const team = await Team.findOne({ teamId }).populate({
       path: 'players',
       populate: {
@@ -84,64 +85,6 @@ const processPayment = async (req, res) => {
     });
   }
 };
-
-// controllers/paymentController.js - update the processPayment function
-// const processPayment = async (req, res) => {
-//   try {
-//     const { teamId, transactionId, amountPaid } = req.body;
-//     const paymentScreenshot = req.file.path;
-    
-//     // Find team
-//     const team = await Team.findOne({ teamId }).populate({
-//       path: 'players',
-//       populate: {
-//         path: 'accommodation'
-//       }
-//     });
-    
-//     if (!team) {
-//       return res.status(404).json({
-//         success: false,
-//         message: 'Team not found'
-//       });
-//     }
-    
-//     // Create payment
-//     const payment = await Payment.create({
-//       team: team._id,
-//       transactionId,
-//       amountPaid,
-//       paymentScreenshot
-//     });
-    
-//     // Update team with payment
-//     team.payment = payment._id;
-//     await team.save();
-    
-//     res.status(200).json({
-//       success: true,
-//       data: {
-//         teamId: team.teamId,
-//         players: team.players.map(player => ({
-//           playerId: player.playerId,
-//           name: player.name
-//         })),
-//         payment: {
-//           transactionId: payment.transactionId,
-//           amountPaid: payment.amountPaid
-//         },
-//         pdfUrl: `/api/pdf/download/${team.teamId}` // Updated PDF URL
-//       }
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({
-//       success: false,
-//       message: 'Server error',
-//       error: error.message
-//     });
-//   }
-// };
 
 // Add an endpoint to get the payment screenshot
 const getPaymentScreenshot = async (req, res) => {

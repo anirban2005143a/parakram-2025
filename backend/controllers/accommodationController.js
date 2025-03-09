@@ -33,7 +33,7 @@ const selectAccommodation = async (req, res) => {
       if (!player) {
         return res.status(404).json({
           success: false,
-          message: `Player with ID ${playerId} not found or not in team`
+          message: 'Player with ID ${playerId} not found or not in team'
         });
       }
       

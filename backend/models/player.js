@@ -48,6 +48,11 @@ const playerSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Team'
   },
+  tshirtSize: {
+    type: String,
+    enum: ['S', 'M', 'L', 'XL', 'XXL', 'NA'],
+    required: false
+  },
   createdAt: {
     type: Date,
     default: Date.now

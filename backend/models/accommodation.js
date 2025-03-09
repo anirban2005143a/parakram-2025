@@ -19,12 +19,12 @@ const accommodationSchema = new mongoose.Schema({
 
 accommodationSchema.statics.getPrices = function() {
   return {
-    'Type1': 1949,
-    'Type2': 1549,
-    'Type3': 1149,
-    'Type4': 1299,
-    'Type5': 899,
-    'Type6': 399
+    'Type1': 2250,
+    'Type2': 1850,
+    'Type3': 1450,
+    'Type4': 1600,
+    'Type5': 1200,
+    'Type6': 800
   };
 };
 

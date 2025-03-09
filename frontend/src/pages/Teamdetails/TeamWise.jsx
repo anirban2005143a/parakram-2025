@@ -80,11 +80,11 @@ const TeamWiseDetails = () => {
         }
       })
 
-      console.log(res.data)
+      // console.log(res.data)
       setAllTeamDetails(res.data.data)
       showToast("Get team details successfully", 0)
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       if (error.response && error.response.data) showToast(error.response.data.message, 1)
       else showToast(error.message, 1)
     }finally{

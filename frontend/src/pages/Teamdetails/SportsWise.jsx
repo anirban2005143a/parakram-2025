@@ -41,7 +41,7 @@ const SportsWiseDetails = ({ selectedSports }) => {
   // console.log(window.localStorage.getItem("token"))
   const getAllTeams = async () => {
     try {
-      console.log(`${import.meta.env.VITE_REACT_BACKEND_URL}/api/admin/players/sport/${selectedSports}`)
+      // console.log(`${import.meta.env.VITE_REACT_BACKEND_URL}/api/admin/players/sport/${selectedSports}`)
       setisLoading(true)
       const res = await axios.get(`${import.meta.env.VITE_REACT_BACKEND_URL}/api/admin/players/sport/${selectedSports}`, {
         headers: {
@@ -49,11 +49,11 @@ const SportsWiseDetails = ({ selectedSports }) => {
         }
       })
 
-      console.log(res.data)
+      // console.log(res.data)
       setAllPlayers(res.data.data)
       showToast("Get team details successfully", 0)
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       if (error.response && error.response.data) showToast(error.response.data.message, 1)
       else showToast(error.message, 1)
     } finally {

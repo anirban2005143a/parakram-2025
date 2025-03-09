@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 function RegisterPage() {
   const location = useLocation();
   const { sending_data } = location.state || { sending_data: [] };
-  console.log(sending_data);
+  // console.log(sending_data);
   const features = [
     "Access to All Features",
     "20% discount on backorders",

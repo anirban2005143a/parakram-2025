@@ -50,7 +50,7 @@ const Login = () => {
       const res = await axios.post(`${import.meta.env.VITE_REACT_BACKEND_URL}/api/auth/login`, {
         username, password
       })
-      console.log(res)
+      // console.log(res)
       res.data.message && showToast(res.data.message, 0)
 
       //store data in local storage
@@ -58,7 +58,7 @@ const Login = () => {
       navigate("/team/details")
       showToast("Admin login successfully", 0)
     } catch (error) {// handel errors
-      console.log(error)
+      // console.log(error)
       if (error.response && error.response.data) showToast(error.response.data.message, 1)
       else showToast(error.message, 1)
     } finally {

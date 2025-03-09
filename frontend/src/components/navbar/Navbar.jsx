@@ -193,7 +193,7 @@ const Navbar = () => {
                     <button
                         ref={toggleButtonRef}
                         onClick={() => {
-                            console.log(menuRef.current)
+                            // console.log(menuRef.current)
                             setIsMenuOpen(!isMenuOpen)
                         }}
                         className="text-white cursor-pointer focus:outline-none"

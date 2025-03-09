@@ -170,29 +170,29 @@ const RegistrationForm = () => {
       sportName,
       players,
     };
-    console.log(data);
+    // console.log(data);
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_REACT_BACKEND_URL}/api/teams/register`,
         data
       );
-      console.log("Response:", response);
-      console.log(response);
+      // console.log("Response:", response);
+      // console.log(response);
       if (response.data.success) {
         localStorage.setItem("TeamID", response.data.data.team.teamId);
         const playersArray = response.data.data.players;
-        console.log(response.data.data.players);
+        // console.log(response.data.data.players);
         if (Array.isArray(playersArray)) {
           localStorage.setItem("Playersdata", JSON.stringify(playersArray));
-          console.log("Array saved to localStorage.");
+          // console.log("Array saved to localStorage.");
         } else {
-          console.error("Data is not an array:", playersArray);
+          // console.error("Data is not an array:", playersArray);
         }
         showToast("Registered Successfully", 0);
         navigate("/event/payment", { state: { sending_data } });
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       if (error.response && error.response.data)
         showToast(error.response.data.message, 1);
       else showToast(error.message, 1);
@@ -201,7 +201,7 @@ const RegistrationForm = () => {
     }
   };
 
-  console.log(players);
+  // console.log(players);
 
   return (
     <div className="min-h-screen md:w-7/12 w-full flex items-center justify-center bg-transparent  md:p-4 p-2 relative">

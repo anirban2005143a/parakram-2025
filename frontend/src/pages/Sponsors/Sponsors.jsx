@@ -147,21 +147,6 @@ const Sponsors = () => {
         return () => clearInterval(timer);
     }, [showComingSoon]);
 
-    //     e.preventDefault();
-    //     if (email) {
-    //         // Here you would typically send the email to your backend
-    //         console.log("Email submitted:", email);
-    //         setIsSubmitted(true);
-
-    //         // Animation for successful submission
-    //         gsap.to(formRef.current.querySelector('.form-success'), {
-    //             opacity: 1,
-    //             y: 0,
-    //             duration: 0.5,
-    //             ease: "power2.out"
-    //         });
-    //     }
-    // };
 
     const images = [
         tata, cairn, SBI, vodafone, dominos, lensfit, pepsi, Indian_oil, pantaloons, ntpc, Reliance, ojas, gail, american_swan, volvo, shell, canara_bank

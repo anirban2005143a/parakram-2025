@@ -40,8 +40,8 @@ const AccommodationCard = ({
         sending_array.push({ playerId: item.playerId, name: item.name });
       });
 
-      console.log("Sending array:", sending_array);
-      console.log("sending data array:", sending_data);
+      // console.log("Sending array:", sending_array);
+      // console.log("sending data array:", sending_data);
       let final_array = [];
       for (let i = 0; i < sending_array.length; i++) {
         for (let j = 0; j < sending_data.length; j++) {
@@ -50,13 +50,13 @@ const AccommodationCard = ({
               playerId: sending_array[i].playerId,
               accommodationType: sending_data[j].accomodationtype,
             });
-            console.log("Match found:", sending_array[i].name);
+            // console.log("Match found:", sending_array[i].name);
             break;
           }
         }
       }
 
-      console.log("Final array:", final_array);
+      // console.log("Final array:", final_array);
       if (final_array.length > 0) {
         try {
           const response = await axios.post(
@@ -66,9 +66,9 @@ const AccommodationCard = ({
               playerAccommodations: final_array,
             }
           );
-          console.log(response);
+          // console.log(response);
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       }
     }
@@ -156,7 +156,7 @@ const AccommodationCard = ({
     );
 
     const teamId = window.localStorage.getItem("TeamID");
-    console.log(teamId);
+    // console.log(teamId);
     const formData = new FormData();
     formData.append("teamId", teamId);
     formData.append("transactionId", transactionId);
@@ -173,13 +173,13 @@ const AccommodationCard = ({
           },
         }
       );
-      console.log("Server Response:", response);
+      // console.log("Server Response:", response);
       showToast("Transaction uploaded successfully!", 0);
       setisPaymentSuccessful(response.data.success)
       handelDownloadRecipt()
 
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       // showToast(error.response?.data?.message || "Transaction failed!", 1);
       if (error.response && error.response.data)
         showToast(error.response.data.message, 1);
@@ -199,7 +199,7 @@ const AccommodationCard = ({
           responseType: "blob",
         }
       );
-      console.log(response);
+      // console.log(response);
       const url = window.URL.createObjectURL(new Blob([response.data]));
 
       // Create a temporary anchor element to trigger the download
@@ -232,7 +232,7 @@ const AccommodationCard = ({
       showToast('Recipt download succesfully', 0)
       navigate("/")
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       if (error.response && error.response.data)
         showToast(error.response.data.message, 1);
       else showToast(error.message, 1);

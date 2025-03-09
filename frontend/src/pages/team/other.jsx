@@ -7,7 +7,7 @@ import {
 import SplitText from '../../components/reactBits/SplitText.jsx';
 
 const OthersDisplay = ({ others }) => {
-    console.log(others)
+    // console.log(others)
     return (
         <div className=" min-h-screen text-white z-10 relative">
             <div className="space-y-8">

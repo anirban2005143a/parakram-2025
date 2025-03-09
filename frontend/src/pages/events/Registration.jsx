@@ -10,9 +10,9 @@ const Registration = () => {
             <Stepper
                 initialStep={1}
                 onStepChange={(step) => {
-                    console.log(step);
+                    // console.log(step);
                 }}
-                onFinalStepCompleted={() => console.log("All steps completed!")}
+                // onFinalStepCompleted={() => console.log("All steps completed!")}
                 backButtonText="Previous"
                 nextButtonText="Next"
             >

@@ -31,7 +31,7 @@ const TeamDetails = () => {
     const [selectedCategory, setselectedCategory] = useState(null)
     const [selectedSports, setselectedSports] = useState(null)
 
-    console.log(selectedCategory)
+    // console.log(selectedCategory)
 
     return (
         <>

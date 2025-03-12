@@ -123,7 +123,7 @@ function Teampage() {
       "Role": "Oversees the entire fest, ensures smooth execution",
       "Head": [
         {
-          "Name": "Guijani Sridhara Teja",
+          "Name": "Gujjari Sridhara Teja",
           "Role": "Outdoor Games & Ground Management",
           "AdmissionNo": "2AMB0027",
           "image": "/members/Gujjari Sridhara teja .jpg"

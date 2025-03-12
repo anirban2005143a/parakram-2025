@@ -20,7 +20,7 @@ const AccommodationCard = ({
   const featuresRef = useRef(null);
   const buttonRef = useRef(null);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const card = cardRef.current;
@@ -76,15 +76,27 @@ const AccommodationCard = ({
       gsap.set(card, { scale: 1 });
 
       card.addEventListener("mouseenter", () => {
-        gsap.to(card, { scale: 1.02, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", duration: 0.1 });
+        gsap.to(card, {
+          scale: 1.02,
+          boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)",
+          duration: 0.1,
+        });
       });
 
       card.addEventListener("mouseleave", () => {
-        gsap.to(card, { scale: 1.02, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", duration: 0.3 });
+        gsap.to(card, {
+          scale: 1.02,
+          boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)",
+          duration: 0.3,
+        });
       });
 
       card.addEventListener("mouseleave", () => {
-        gsap.to(card, { scale: 1, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", duration: 0.3 });
+        gsap.to(card, {
+          scale: 1,
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          duration: 0.3,
+        });
       });
     }
   }, []);
@@ -99,21 +111,18 @@ const AccommodationCard = ({
           <h2 ref={titleRef} className="text-2xl font-bold text-white">
             {title}
           </h2>
-          <p className="text-sm text-white/80 mt-2">{description}</p>
+          <p className="text-sm text-white/80 mt-2">
+            {title == "Option-D" || title == "Option-E" || title == "Option-F"
+              ? "For those who don't want to stay in the IIT-ISM campus"
+              : description}
+          </p>
         </div>
 
         <div className="p-6">
           <div ref={priceRef} className="flex items-end">
-            <span className="text-4xl font-bold  text-white">
-              {price}
-            </span>
-
+            <span className="text-4xl font-bold  text-white">{price}</span>
           </div>
-          {discount && (
-            <p className="text-sm text-gray-300 mt-2">
-              {discount}
-            </p>
-          )}
+          {discount && <p className="text-sm text-gray-300 mt-2">{discount}</p>}
         </div>
 
         <div className="p-6 border-t  border-neutral-700">
@@ -134,9 +143,7 @@ const AccommodationCard = ({
                 >
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
-                <span className="text-gray-300">
-                  {feature}
-                </span>
+                <span className="text-gray-300">{feature}</span>
               </li>
             ))}
           </ul>
@@ -145,8 +152,8 @@ const AccommodationCard = ({
       <div className="p-6 absolute bottom-2 w-full h-[75px] border-t border-gray-200">
         <button
           onClick={(e) => {
-            e.preventDefault()
-            navigate("/events")
+            e.preventDefault();
+            navigate("/events");
           }}
           ref={buttonRef}
           className="w-full py-1 bg-white text-black cursor-pointer rounded-lg font-semibold hover:bg-gray-600 hover:text-white transition-colors"

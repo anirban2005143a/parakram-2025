@@ -8,7 +8,7 @@ const images = [
   tshirt2Img,
 ];
 
-const Carousel = () => {
+const CarouselTshirt = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState("next");
 
@@ -73,4 +73,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default CarouselTshirt;

@@ -1,11 +1,11 @@
 import React from "react";
-import Carousel from "../Merchandise/Merch.jsx";
+import CarouselTshirt from "../Merchandise/Merch.jsx";
 import Navbar from "../../components/navbar/Navbar";
 import FooterT from "../../components/Footer/Footer.jsx";
-import { Link } from "react-router-dom";
 import BlurText from "../../components/reactBits/BlurText.jsx";
 import { gsap } from 'gsap';
 import { useRef, useEffect } from "react";
+import Carouseljacket from "./MarchJacket.jsx";
 
 const Merchpage = () => {
   const comingSoonRef = useRef(null);
@@ -127,7 +127,10 @@ const Merchpage = () => {
         />
       </div>
       <div className=" md:m-4 m-2">
-        <Carousel />
+        <CarouselTshirt />
+      </div>
+      <div className=" md:m-4 m-2">
+        <Carouseljacket />
       </div>
 
 

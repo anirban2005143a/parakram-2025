@@ -289,6 +289,7 @@ const AccommodationCard = ({
             className="w-full h-full object-contain "
           />
         </div>
+        <div className=" sm:text-2xl text-xl font-bold text-blue-600 text-center ">preet.parakram25@cnrb</div>
 
         {/* Transaction ID Input */}
         <div className="p-4">
@@ -348,23 +349,7 @@ const AccommodationCard = ({
           </button>
         </div>
 
-        {/* pdf download btn  */}
-        {/* {isPaymentSuccessful && <div className="download-btn w-full px-3 justify-center flex mb-5">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault()
-              handelDownloadRecipt()
-            }}
-            className="text-white cursor-pointer bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-            {isDownloading ? (
-              <FaSpinner className=" animate-spin mx-auto" />
-            ) : (
-              "Download Recipt"
-            )}
-          </button>
-
-        </div>} */}
+       
       </div>
       <ToastContainer />
     </>

@@ -117,7 +117,7 @@ const Footer = () => {
             <h2 className="text-lg font-semibold">For any queries:</h2>
             <p className="text-[#D1A001] mt-2">parakram@iitism.ac.in</p>
             <p className="text-gray-400 mt-1 hover:underline hover:underline-offset-4">9508823691</p>
-            <p className="text-gray-400 mt-1 hover:underline hover:underline-offset-4">8125961154 <span className=" text-sm font-extralight ">(For registration issue)</span> </p>
+            <p className="text-gray-400 mt-1 hover:underline hover:underline-offset-4">9728040945 <span className=" text-sm font-extralight ">(For registration issue)</span> </p>
             <p className="text-gray-400 mt-1">
               Indian Institute of Technology (ISM), Dhanbad - 826004, Jharkhand, India
             </p>

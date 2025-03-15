@@ -186,7 +186,7 @@ const AccommodationCard = ({
       else showToast(error.message, 1);
 
       setisLoading(false);
-    } 
+    }
   };
 
   const handelDownloadRecipt = async () => {
@@ -289,7 +289,38 @@ const AccommodationCard = ({
             className="w-full h-full object-contain "
           />
         </div>
-        <div className=" sm:text-2xl text-xl font-bold text-blue-600 text-center ">preet.parakram25@cnrb</div>
+
+        {/* bank details */}
+        <div class=" p-8 rounded-lg shadow-lg  bg-gray-300/10 m-3">
+          <h2 class="text-2xl font-bold mb-6 text-center text-blue-400">Account Details</h2>
+          <div class="space-y-4">
+            <div className=" text-center">
+              <label class="block text-sm font-light underline underline-offset-4 text-gray-200">Account Holder Name</label>
+              <p class="mt-1 text-lg font-semibold text-gray-300">PREET SAMANTA</p>
+            </div>
+            <div className=" text-center">
+              <label class="block text-sm font-light underline underline-offset-4 text-gray-200">Account Number</label>
+              <p class="mt-1 text-lg font-semibold text-gray-300">110227352804</p>
+            </div>
+            <div className=" text-center">
+              <label class="block text-sm font-light underline underline-offset-4 text-gray-200">Bank Name</label>
+              <p class="mt-1 text-lg font-semibold text-gray-300">CANARA BANK</p>
+            </div>
+            <div className=" text-center">
+              <label class="block text-sm font-light underline underline-offset-4 text-gray-200">Branch</label>
+              <p class="mt-1 text-lg font-semibold text-gray-300">SERAIDHELA</p>
+            </div>
+            <div className=" text-center">
+              <label class="block text-sm font-light underline underline-offset-4 text-gray-200">IFSC Code</label>
+              <p class="mt-1 text-lg font-semibold text-gray-300">CNRB0000986</p>
+            </div>
+            <div className=" text-center">
+              <label class="block text-sm font-light underline underline-offset-4 text-gray-200">UPI ID</label>
+              <p class="mt-1 text-lg font-semibold text-gray-300">preet.parakram25@cnrb</p>
+            </div>
+          </div>
+        </div>
+
 
         {/* Transaction ID Input */}
         <div className="p-4">
@@ -349,7 +380,7 @@ const AccommodationCard = ({
           </button>
         </div>
 
-       
+
       </div>
       <ToastContainer />
     </>

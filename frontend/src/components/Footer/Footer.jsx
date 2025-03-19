@@ -106,7 +106,7 @@ const Footer = () => {
             <a target="_blank"
               href="https://drive.google.com/file/d/1a7vMjBO5SYlnBxNRgYN16kmUIx7reUxe/view?usp=sharing"
               className="bg-[#D1C5A1] my-2 text-black px-4 py-2  justify-center md:text-base text-xs rounded-lg flex items-center">
-              <FaDownload /> <span className='mx-2'>NOC'24</span>
+              <FaDownload /> <span className='mx-2'>NOC'25</span>
             </a>
           </div>
         </div>

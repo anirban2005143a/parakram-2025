@@ -172,12 +172,12 @@ const HeroSection = ({ setisLoaded }) => {
               whileHover="hover"
               whileTap="tap"
               onClick={() => navigate('/events')}
-              className="relative inline-flex items-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-blue-400 to-slate-700 rounded-full overflow-hidden group"
+              className="relative inline-flex items-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-400 to-red-700 rounded-full overflow-hidden group"
             >
-              <span className="relative ">Registration is Live!</span>
+              <span className="relative ">Registration closed!</span>
               {/* Animated background effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800"
+                className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-800"
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0, 0.3, 0],

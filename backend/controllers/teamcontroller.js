@@ -15,15 +15,12 @@ const registerTeam = async (req, res) => {
       teamId,
       sportName
     });
-
-    // console.log(players)
     
     // Create players
     const playerObjects = [];
     
     for (const playerData of players) {
       // Generate player ID
-      console.log(playerData)
       const playerId = await generatePlayerId();
       
       const player = await Player.create({

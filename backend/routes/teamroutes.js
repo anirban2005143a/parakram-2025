@@ -1,6 +1,6 @@
 const express = require('express');
-const { registerTeam, getTeamById } = require('../controllers/teamController.js');
-const { validateTeamRegistration } = require('../middlewares/validation.js');
+const { registerTeam, getTeamById } = require('../controllers/teamController');
+const { validateTeamRegistration } = require('../middlewares/validation');
 
 const router = express.Router();
 

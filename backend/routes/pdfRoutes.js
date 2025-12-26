@@ -1,6 +1,6 @@
 const express = require('express');
-const Team = require('../models/team');
-const { generatePDF } = require('../utils/pdfGenerator');
+const Team = require('../models/team.js');
+const { generatePDF } = require('../utils/pdfGenerator.js');
 const router = express.Router();
 
 router.get('/download/:teamId', async (req, res) => {

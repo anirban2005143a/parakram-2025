@@ -7,8 +7,8 @@ const {
   getDashboardStats,
   getPaymentScreenshotByTeam, 
   getTeamsBySport
-} = require('../controllers/adminController');
-const { protect } = require('../middlewares/auth');
+} = require('../controllers/adminController.js');
+const { protect } = require('../middlewares/auth.js');
 
 const router = express.Router();
 

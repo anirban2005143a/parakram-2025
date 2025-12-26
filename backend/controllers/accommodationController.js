@@ -1,7 +1,7 @@
 // controllers/accommodationController.js
-const Player = require('../models/player');
-const Accommodation = require('../models/accommodation');
-const Team = require('../models/team');
+const Player = require('../models/player.js');
+const Accommodation = require('../models/accommodation.js');
+const Team = require('../models/team.js');
 
 const selectAccommodation = async (req, res) => {
   try {

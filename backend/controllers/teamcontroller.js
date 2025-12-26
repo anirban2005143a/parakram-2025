@@ -1,7 +1,7 @@
-const Team = require('../models/team');
-const Player = require('../models/player');
-const Accommodation = require('../models/accommodation');
-const { generateTeamId, generatePlayerId } = require('../utils/idGenerator');
+const Team = require('../models/team.js');
+const Player = require('../models/player.js');
+const Accommodation = require('../models/accommodation.js');
+const { generateTeamId, generatePlayerId } = require('../utils/idGenerator.js');
 
 const registerTeam = async (req, res) => {
   try {

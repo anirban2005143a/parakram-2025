@@ -1,5 +1,5 @@
 const express = require('express');
-const { selectAccommodation, getAccommodationTypes } = require('../controllers/accommodationController');
+const { selectAccommodation, getAccommodationTypes } = require('../controllers/accommodationController.js');
 
 const router = express.Router();
 

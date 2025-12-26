@@ -1,7 +1,7 @@
-const Team = require('../models/team');
-const Payment = require('../models/payment');
-const { generatePDF } = require('../utils/pdfGenerator');
-const cloudinary = require('../config/cloudinary');
+const Team = require('../models/team.js');
+const Payment = require('../models/payment.js');
+const { generatePDF } = require('../utils/pdfGenerator.js');
+const cloudinary = require('../config/cloudinary.js');
 const streamifier = require('streamifier');
 
 const processPayment = async (req, res) => {

@@ -1,5 +1,5 @@
-const Team = require('../models/team');
-const Player = require('../models/player');
+const Team = require('../models/team.js');
+const Player = require('../models/player.js');
 
 const generateTeamId = async () => {
   const prefix = 'IITISM';

@@ -1,6 +1,6 @@
-const Team = require('../models/team');
-const Player = require('../models/player');
-const Payment = require('../models/payment');
+const Team = require('../models/team.js');
+const Player = require('../models/player.js');
+const Payment = require('../models/payment.js');
 
 const getAllTeams = async (req, res) => {
   try {

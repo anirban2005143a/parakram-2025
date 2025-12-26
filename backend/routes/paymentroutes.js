@@ -1,7 +1,7 @@
 const express = require('express');
-const { processPayment } = require('../controllers/paymentController');
-const { validatePayment } = require('../middlewares/validation');
-const { getPaymentScreenshot }=require('../controllers/paymentController');
+const { processPayment } = require('../controllers/paymentController.js');
+const { validatePayment } = require('../middlewares/validation.js');
+const { getPaymentScreenshot }=require('../controllers/paymentController.js');
 const multer = require('multer');
 
 // Configure multer for temporary storage

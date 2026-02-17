@@ -12,7 +12,7 @@ connectDB();
 // Initialize app
 const app = express();
 app.use(cors({
-  origin: ['https://parakram25-iitism.in' , "http://localhost:5173"], 
+  origin: ['https://parakram-2025-iitism.vercel.app' , "http://localhost:5173"], 
   credentials: true
 }));
 // Middleware

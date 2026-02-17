@@ -32,8 +32,8 @@ const App = () => {
           <Route path='/Accomodation' element={<Accomodationpage />} />
           <Route path='/Sponsors' element={<Sponsors />} />
           <Route path='/Admin/login' element={<Login />} />
-          {/* <Route path="/event/registration" element={<RegisterPage />} /> */}
-          {/* <Route path="/event/payment" element={<Payment />} /> */}
+          <Route path="/event/registration" element={<RegisterPage />} />
+          <Route path="/event/payment" element={<Payment />} />
           <Route path='/team/details' element={<TeamDetails />} />
         </Routes>
       </HashRouter>

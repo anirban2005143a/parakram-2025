@@ -104,7 +104,7 @@ const AccommodationCard = ({
   return (
     <div
       ref={cardRef}
-      className="max-w-sm w-full h-[750px] bg-[#0000004f] backdrop-blur-xl rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-neutral-700 "
+      className="max-w-sm w-full h-[750px] bg-[#0000004f] backdrop-blur-xl rounded-xl shadow-lg overflow-hidden hover:shadow-2xl border border-neutral-700 "
     >
       <div className=" pb-[100px] ">
         <div className="p-6 ">

@@ -12,7 +12,7 @@ connectDB();
 // Initialize app
 const app = express();
 app.use(cors({
-  origin: 'https://parakram25-iitism.in', 
+  origin: ['https://parakram25-iitism.in' , "http://localhost:5173"], 
   credentials: true
 }));
 // Middleware
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Mount routes
 app.use("/api/teams", require("./routes/teamroutes"));
 app.use("/api/accommodation", require("./routes/accommodationroutes"));
-// app.use("/api/payments", require("./routes/paymentroutes"));
+app.use("/api/payments", require("./routes/paymentroutes"));
 app.use("/api/admin", require("./routes/adminroutes"));
 app.use("/api/auth", require("./routes/authroutes"));
 // In app.js, add this with the other routes

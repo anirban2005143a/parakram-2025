@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
   if (!isOpen) return null;
-
+  const navigate = useNavigate()
   const showToast = (message, err) => {
     if (err === 1) {
       toast.error(message, {
@@ -45,8 +45,8 @@ const GameDialog = ({ isOpen, onClose, imageUrl, gameInfo }) => {
   };
 
   const handlingregister = () => {
-    //  navigate('/event/registration')
-    showToast("Registration has closed", 1)
+     navigate('/event/registration')
+    // showToast("Registration has closed", 1)
   }
   return (
     <>
